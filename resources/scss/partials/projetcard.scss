@@ -1,0 +1,27 @@
+.projetcard {
+  position: relative;
+  margin-bottom: 2.4em;
+
+  &__link {
+    position: absolute;
+    inset: 0;
+  }
+
+  &__title {
+    text-transform: uppercase;
+    font-family: "Kalnia", "Times New Roman", serif;
+    font-weight: 600;
+  }
+
+  &__container {
+    width: 100%;
+  }
+
+  &__img {
+    display: block;
+    width: 100%;
+    margin-bottom: 1.2em;
+    border-radius: 8px;
+
+  }
+}

@@ -9,7 +9,8 @@
   transition: .3s;
   line-height: 1em;
 
-  &:hover {
+  &:hover,
+  &:focus {
     background-color: transparent;
     border: 1px solid $ctaBackgroundColor;
     color: $ctaTextColorAlt;
@@ -19,7 +20,8 @@
     background-color: transparent;
     color: $ctaTextColorAlt;
 
-    &:hover {
+    &:hover,
+    &:focus {
       background-color: $ctaBackgroundColor;
       color: $ctaTextColor;
     }

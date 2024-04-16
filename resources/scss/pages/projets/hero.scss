@@ -1,4 +1,4 @@
-.herocontact {
+.heroprojets {
   display: flex;
   flex-direction: column;
   background-image: url("../img/hero-bg-mobile.svg");
@@ -7,6 +7,7 @@
 
   &__title {
     margin-bottom: 29px;
+    max-width: 250px;
 
     & span {
       font-weight: 300;
@@ -14,6 +15,10 @@
   }
 }
 
-.contact {
-  padding-top: 3em;
+.projets {
+  display: flex;
+  flex-direction: column;
+  margin-top: -3em;
+  align-items: center;
+  padding-bottom: 80px;
 }

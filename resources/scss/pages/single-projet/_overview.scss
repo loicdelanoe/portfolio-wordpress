@@ -1,0 +1,13 @@
+.overview {
+  padding-bottom: 2.5em;
+  &__container {
+    width: 100%;
+    margin-bottom: 2.5em;
+  }
+
+  &__img {
+    border-radius: 8px;
+    width: 100%;
+    height: auto;
+  }
+}

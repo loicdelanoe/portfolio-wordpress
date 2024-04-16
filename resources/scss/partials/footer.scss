@@ -1,7 +1,7 @@
 .footer {
   background-color: $backgroundColor;
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: 1fr;
   padding: 42px 24px;
 
   &__branding {
@@ -18,15 +18,11 @@
     }
   }
 
-  &__container {
-    margin-bottom: 35px;
-  }
-
   &__legal {
     display: flex;
     flex-direction: column;
     gap: 10px;
     border-top: 1px solid $textColor;
-    padding-top: 25px;
+    padding-top: 2.5em;
   }
 }

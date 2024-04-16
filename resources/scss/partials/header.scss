@@ -4,9 +4,6 @@
   background-color: $backgroundColor;
 
   &__container {
-    display: flex;
-    flex-direction: row-reverse;
-    justify-content: space-between;
     width: 100%;
     border-bottom: 1px solid $textColor;
     padding-bottom: 20px;

@@ -16,13 +16,15 @@
                 <label class="field__label" for="phone">Téléphone</label>
                 <input class="field__input" type="tel" name="phone" id="phone" placeholder="06 89 78 67 45">
                 <label class="field__label" for="message">Message</label>
-                <textarea class="field__textarea" name="message" id="message" cols="30" rows="10" placeholder="J'ai un projet pour vous..."></textarea>
+                <textarea class="field__textarea" name="message" id="message" cols="30" rows="10"
+                          placeholder="J'ai un projet pour vous..."></textarea>
                 <button class="cta field__submit" type="submit">Envoyer</button>
             </form>
         </section>
         <section class="cordcontact">
             <h2 class="sro">Coordonnées</h2>
-            <p class="cordcontact__content">Lorem ipsum dolor sit amet consectetur. Nulla ipsum elementum in laoreet at. Facilisis tortor mauris sem.</p>
+            <p class="cordcontact__content">Lorem ipsum dolor sit amet consectetur. Nulla ipsum elementum in laoreet at.
+                Facilisis tortor mauris sem.</p>
             <dl class="cordcontact__container info">
                 <dt class="info__title">Email</dt>
                 <dd class="info__content">loic.del4127@gmail.com</dd>

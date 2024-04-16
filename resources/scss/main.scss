@@ -5,13 +5,21 @@
 
 @import 'partials/cta';
 @import 'partials/header';
+@import 'partials/burger';
 @import 'partials/nav';
 
 @import "pages/home/hero";
+@import "pages/projets/hero";
 @import "pages/about/hero";
+@import "pages/single-projet/hero";
+@import "pages/single-projet/resume";
+@import "pages/single-projet/overview";
+@import "pages/single-projet/functionality";
+@import "pages/single-projet/other";
 
 @import "pages/about/about";
 @import "pages/home/project";
+@import "partials/projetcard";
 
 @import "pages/contact/hero";
 @import "partials/form/form";

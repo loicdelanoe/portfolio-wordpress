@@ -20,7 +20,7 @@
             <dd class="footerlist__description">
                 <ul>
                     <?php foreach (dw_get_navigation_links('main') as $link): ?>
-                        <li class="nav__items"><a href="<?= $link->url ?>" class="nav__link"><?= $link->label ?></a></li>
+                        <li class="nav__items"><a href="<?= $link->url ?>" class="footernav__link"><?= $link->label ?></a></li>
                     <?php endforeach; ?>
                 </ul>
             </dd>
@@ -28,7 +28,7 @@
     </article>
     <article class="footer__legal">
         <h2 class="sro">Juridique</h2>
-        <small><a href="#">© 2024 Loïc Delanoë - Tous droits réservés.</a></small>
+        <small>© 2024 Loïc Delanoë - Tous droits réservés.</small>
         <small><a href="#">Mentions légales</a></small>
     </article>
 </footer>

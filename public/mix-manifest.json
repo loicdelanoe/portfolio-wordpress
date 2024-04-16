@@ -1,5 +1,6 @@
 {
     "/js/main.js": "/js/main.js",
+    "/css/main.css": "/css/main.css",
     "/img/Fichier 1logoGradient.svg": "/img/Fichier 1logoGradient.svg",
     "/img/hero-bg-mobile.svg": "/img/hero-bg-mobile.svg",
     "/img/hero-bottom.svg": "/img/hero-bottom.svg",
@@ -10,6 +11,5 @@
     "/img/projet-cv.png": "/img/projet-cv.png",
     "/img/test.svg": "/img/test.svg",
     "/img/test2.svg": "/img/test2.svg",
-    "/fonts/Kalnia-VariableFont_wdth,wght.ttf": "/fonts/Kalnia-VariableFont_wdth,wght.ttf",
-    "/css/main.css": "/css/main.css"
+    "/fonts/Kalnia-VariableFont_wdth,wght.ttf": "/fonts/Kalnia-VariableFont_wdth,wght.ttf"
 }

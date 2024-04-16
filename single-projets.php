@@ -3,71 +3,63 @@
     <?php if (have_posts()): while (have_posts()): the_post(); // Ouverture de "The Loop" de Wordpress ?>
 
         <h1 class="sro"><?= get_the_title() ?></h1>
-        <section class="projecthero">
-            <a class="projecthero__back" href="/projets" data-animation="showUp">← Retour aux projets</a>
-            <div class="projecthero__head" data-animation="showUp">
-                <h2 class="projecthero__title"><?= get_the_title() ?></h2>
-                <a class="cta" href="https://cv.loicdelanoe.com">Visiter le site</a>
+        <section class="herosingle">
+            <a class="herosingle__back" href="/projets" data-animation="showUp">← Retour aux projets</a>
+            <h2 class="herosingle__title"><?= get_the_title() ?></h2>
+            <div class="herosingle__container" data-animation="showUp">
+                <a class="cta" href="<?= get_field('github_link') ?>" data-variant="secondary">Github</a>
+                <a class="cta" href="<?= get_field('site_link') ?>">Visiter le site</a>
             </div>
-            <article class="projecthero__context">
-                <div class="projecthero__container">
-                    <h3 data-animation="showUp">Contexte</h3>
-                    <p data-animation="showUp"><?= get_field('context') ?></p>
-                </div>
-                <img class="projecthero__thumb" src="<?= get_field('thumb') ?>" alt="" data-animation="showUp">
-            </article>
         </section>
-        <div class="bg">
-            <section class="projectprocess">
-                <h2 class="projectprocess__title" data-animation="showUp">Processus de création</h2>
-                <p class="projectprocess__text" data-animation="showUp"><?= get_field('process') ?></p>
-            </section>
-        </div>
-        <img class="projectprocess__img" src="<?= get_field('processImg') ?>" alt="">
-        <section class="projectresult">
-            <h2 class="projectresult__title" data-animation="showUp">Résultats / Images</h2>
-            <p class="projectresult__text" data-animation="showUp">Un fois le développement terminé, j’ai pu déployé mon site, faire des tests de performances sur GTMetrix et des test d’accessibilités avec Wave. Les résultats étaient plutôt satisfaisants avec un score de 99% pour GTMetrix et 90% pour l’accessibilité.</p>
-            <article class="slider">
-                <h3 class="sro">Images</h3>
-                <div class="slider__container">
-                    <div class="slider__item"></div>
-                    <div class="slider__item"></div>
-                    <div class="slider__item"></div>
-                    <div class="slider__item"></div>
-                </div>
+        <section class="resume">
+            <h2 class="resume__title">Résumé</h2>
+            <p class="resume__content"><?= get_field('resume') ?></p>
+            <div class="resume__container">
+                <img class="resume__img" src="<?= get_field('resume_image') ?>" alt="">
+            </div>
+        </section>
+        <section class="color">
+            <h2 class="color__title">Palette de couleurs</h2>
+        </section>
+        <section class="overview">
+            <h2 class="overview__title sro">Vue d'ensemble</h2>
+            <div class="overview__container">
+                <img class="overview__img" src="<?= get_field('overview_image') ?>" alt="">
+            </div>
+            <article class="functionality">
+                <h3 class="functionality__title">Fonctionnalités</h3>
+                <p class="functionality__content"><?= get_field('functionality') ?></p>
             </article>
         </section>
 
     <?php endwhile; endif; // Fermeture de "The Loop" de Wordpress ?>
 
-    <section>
-        <article class="project__more">
-            <h3 data-animation="showUp">Mes autres projets</h3>
-            <ul class="projects__container">
-                <?php
-                $projects = new WP_Query([
-                    'post_type' => 'projets',
-                    'post_status' => 'publish',
-                    'posts_per_page' => 3,
-                    'orderby' => 'date',
-                    'order' => 'DESC',
-                ]);
+    <section class="other">
+        <h3 class="other__title">Mes autres projets</h3>
+        <?php
 
-                if ($projects->have_posts()): while ($projects->have_posts()): $projects->the_post(); ?>
-                    <!--                    <h1>--><?php //= get_the_ID() ?><!--</h1>-->
-                    <li class="projects__card" data-animation="showUp">
-                        <a class="card__link" href="<?= get_permalink(); ?>">
-                            <span class="sro">Voir le projet</span>
-                        </a>
-                        <div class="card__box">
-                            <h3 class="projects__name"><?= get_the_title() ?></h3>
-                            <img class="card__img" src="<?= get_field('thumb') ?>" alt="">
-                        </div>
-                    </li>
-                <?php endwhile; endif; // Fermeture de "The Loop" de Wordpress ?>
-            </ul>
-            <a class="cta secondary" href="/projets" data-animation="showUp">Tout mes projets</a>
-        </article>
+        $projects = new WP_Query([
+            'post_type' => 'projets',
+            'post_status' => 'publish',
+            'posts_per_page' => 3,
+            'orderby' => 'date',
+            'order' => 'DESC',
+        ]);
+
+        if ($projects->have_posts()): while ($projects->have_posts()): $projects->the_post(); ?>
+
+            <article class="projetcard">
+                <a class="projetcard__link" href="<?= get_permalink(); ?>"><span class="sro">
+                            Consulter le <?= get_the_title(); ?>
+                        </span></a>
+                <div class="projetcard__container">
+                    <img class="projetcard__img" src="<?= get_field('resume_image') ?>" alt="">
+                    <p class="projetcard__title"><?= get_the_title() ?></p>
+                </div>
+            </article>
+
+        <?php endwhile; endif; // Fermeture de "The Loop" de Wordpress ?>
+        <a class="cta project__cta" href="/projets" data-animation="showUp">Tous mes projets</a>
     </section>
 </main>
 <?php get_footer() ?>
