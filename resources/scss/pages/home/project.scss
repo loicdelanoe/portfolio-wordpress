@@ -1,0 +1,14 @@
+.project {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 90px;
+  
+  &__title {
+    & span {
+      font-weight: 300;
+    }
+  }
+  &__cta {
+    align-self: center;
+  }
+}

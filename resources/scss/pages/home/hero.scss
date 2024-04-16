@@ -1,0 +1,28 @@
+.hero {
+  display: flex;
+  flex-direction: column;
+  background-image: url("../img/hero-bg-mobile.svg");
+  background-repeat: no-repeat;
+  padding: 81px 24px 77px 24px;
+
+  &:after {
+    content: url("../img/hero-bottom.svg");
+    width: calc(100% + 24px);
+    height: auto;
+    overflow: hidden;
+  }
+
+  &__title {
+    margin-bottom: 29px;
+    max-width: 100%;
+
+    & span {
+      font-weight: 300;
+    }
+  }
+
+  &__container {
+    display: flex;
+    gap: 15px;
+  }
+}

@@ -1,0 +1,18 @@
+html, html * {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: $bodyBackground;
+}
+
+section, header, footer {
+  //max-width: 325px;
+  width: 100%;
+  //margin: auto;
+  padding: 0 24px;
+}
+
+a {
+  display: inline-block;
+}

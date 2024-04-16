@@ -1,0 +1,32 @@
+.footer {
+  background-color: $backgroundColor;
+  display: flex;
+  flex-direction: column;
+  padding: 42px 24px;
+
+  &__branding {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    font-weight: 600;
+    font-size: 1.5em;
+    margin-bottom: 37px;
+
+    &:before {
+      content: url("../img/logo.svg");
+      width: 35px;
+    }
+  }
+
+  &__container {
+    margin-bottom: 35px;
+  }
+
+  &__legal {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    border-top: 1px solid $textColor;
+    padding-top: 25px;
+  }
+}

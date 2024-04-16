@@ -1,0 +1,25 @@
+.field {
+  &__input {
+    border: none;
+    background-color: $bodyBackground;
+    border-bottom: 1px solid $textColor;
+    padding: 14px 0;
+    margin-bottom: 15px;
+  }
+
+  &__textarea {
+    border: none;
+    background-color: $bodyBackground;
+    border-bottom: 1px solid $textColor;
+    padding: 14px 0;
+    margin-bottom: 15px;
+  }
+
+  &__label {
+    padding-bottom: 5px;
+  }
+
+  &__submit {
+    align-self: flex-start;
+  }
+}

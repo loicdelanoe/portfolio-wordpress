@@ -1,0 +1,15 @@
+.herocontact {
+  display: flex;
+  flex-direction: column;
+  background-image: url("../img/hero-bg-mobile.svg");
+  background-repeat: no-repeat;
+  padding: 81px 24px 77px 24px;
+
+  &__title {
+    margin-bottom: 29px;
+
+    & span {
+      font-weight: 300;
+    }
+  }
+}

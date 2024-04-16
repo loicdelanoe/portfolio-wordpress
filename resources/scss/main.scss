@@ -1,0 +1,23 @@
+@import 'reset';
+@import 'var';
+@import 'typography';
+@import 'normalize';
+
+@import 'partials/cta';
+@import 'partials/header';
+@import 'partials/nav';
+
+@import "pages/home/hero";
+@import "pages/about/hero";
+
+@import "pages/about/about";
+@import "pages/home/project";
+
+@import "pages/contact/hero";
+@import "partials/form/form";
+@import "partials/form/field";
+@import "pages/contact/cordcontact";
+@import "pages/contact/info";
+
+@import "partials/footer";
+@import "partials/footerlist";

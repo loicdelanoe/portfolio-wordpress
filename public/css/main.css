@@ -1,0 +1,337 @@
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+  text-decoration: none;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+.sro {
+  position: absolute;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  /*clip-path: inset(50%);*/
+  height: 1px;
+  width: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+}
+
+/* CTA */
+@font-face {
+  font-family: "Kalnia";
+  src: url("../fonts/Kalnia-VariableFont_wdth,wght.ttf") format("ttf supports variations");
+  font-weight: 100 1000;
+}
+h1, h2, h3, h4, dt, label {
+  font-family: "Kalnia", "Times New Roman", serif;
+  font-weight: 600;
+}
+
+p, a, small, textarea, dd {
+  font-family: Poppins, Helvetica, Arial, sans-serif;
+  line-height: 1.2em;
+}
+
+a {
+  color: inherit;
+}
+
+textarea, input {
+  font-size: inherit;
+}
+
+h1, h2, h3, h4, p, a, small, label, input, textarea {
+  color: #2C231E;
+}
+
+h2 {
+  font-size: 2.1em;
+  max-width: 200px;
+  margin-bottom: 45px;
+}
+
+h3, dt {
+  font-size: 1.2em;
+  margin-bottom: 15px;
+}
+
+html, html * {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #F8F7F5;
+}
+
+section, header, footer {
+  width: 100%;
+  padding: 0 24px;
+}
+
+a {
+  display: inline-block;
+}
+
+.cta {
+  font-family: "Kalnia", "Times New Roman", serif;
+  display: inline-block;
+  background-color: #2C231E;
+  color: #EFECE6;
+  padding: 20px 25px;
+  border-radius: 5px;
+  border: 1px solid #2C231E;
+  transition: 0.3s;
+  line-height: 1em;
+}
+.cta:hover {
+  background-color: transparent;
+  border: 1px solid #2C231E;
+  color: #2C231E;
+}
+.cta[data-variant=secondary] {
+  background-color: transparent;
+  color: #2C231E;
+}
+.cta[data-variant=secondary]:hover {
+  background-color: #2C231E;
+  color: #EFECE6;
+}
+
+.header {
+  display: flex;
+  padding: 30px 24px 0 24px;
+  background-color: #EFECE6;
+}
+.header__container {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  width: 100%;
+  border-bottom: 1px solid #2C231E;
+  padding-bottom: 20px;
+}
+
+.nav__branding {
+  font-family: "Kalnia", "Times New Roman", serif;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  font-weight: 600;
+  font-size: 1.5em;
+}
+.nav__branding:before {
+  content: url("../img/logo.svg");
+  width: 35px;
+}
+.nav__link {
+  display: flex;
+  flex-direction: column;
+  padding: 5px 0;
+}
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  background-image: url("../img/hero-bg-mobile.svg");
+  background-repeat: no-repeat;
+  padding: 81px 24px 77px 24px;
+}
+.hero:after {
+  content: url("../img/hero-bottom.svg");
+  width: calc(100% + 24px);
+  height: auto;
+  overflow: hidden;
+}
+.hero__title {
+  margin-bottom: 29px;
+  max-width: 100%;
+}
+.hero__title span {
+  font-weight: 300;
+}
+.hero__container {
+  display: flex;
+  gap: 15px;
+}
+
+.heroabout {
+  display: flex;
+  flex-direction: column;
+  background-image: url("../img/hero-bg-mobile.svg");
+  background-repeat: no-repeat;
+  padding: 81px 24px 77px 24px;
+}
+.heroabout__title {
+  margin-bottom: 29px;
+  max-width: 200px;
+}
+.heroabout__title span {
+  font-weight: 300;
+}
+
+.about {
+  margin-top: -3em;
+  padding-bottom: 80px;
+}
+.about__img {
+  width: 100%;
+  height: 325px;
+  background-color: #2C231E;
+  margin-bottom: 37px;
+}
+
+.project {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 90px;
+}
+.project__title span {
+  font-weight: 300;
+}
+.project__cta {
+  align-self: center;
+}
+
+.herocontact {
+  display: flex;
+  flex-direction: column;
+  background-image: url("../img/hero-bg-mobile.svg");
+  background-repeat: no-repeat;
+  padding: 81px 24px 77px 24px;
+}
+.herocontact__title {
+  margin-bottom: 29px;
+}
+.herocontact__title span {
+  font-weight: 300;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 60px;
+}
+
+.field__input {
+  border: none;
+  background-color: #F8F7F5;
+  border-bottom: 1px solid #2C231E;
+  padding: 14px 0;
+  margin-bottom: 15px;
+}
+.field__textarea {
+  border: none;
+  background-color: #F8F7F5;
+  border-bottom: 1px solid #2C231E;
+  padding: 14px 0;
+  margin-bottom: 15px;
+}
+.field__label {
+  padding-bottom: 5px;
+}
+.field__submit {
+  align-self: flex-start;
+}
+
+.cordcontact {
+  padding-bottom: 80px;
+}
+.cordcontact__content {
+  margin-bottom: 1.5em;
+}
+
+.info__title {
+  font-size: 1.1em;
+  margin-bottom: 0.5em;
+}
+.info__content {
+  margin-bottom: 1.5em;
+}
+
+.footer {
+  background-color: #EFECE6;
+  display: flex;
+  flex-direction: column;
+  padding: 42px 24px;
+}
+.footer__branding {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  font-weight: 600;
+  font-size: 1.5em;
+  margin-bottom: 37px;
+}
+.footer__branding:before {
+  content: url("../img/logo.svg");
+  width: 35px;
+}
+.footer__container {
+  margin-bottom: 35px;
+}
+.footer__legal {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  border-top: 1px solid #2C231E;
+  padding-top: 25px;
+}
+
+.footerlist__description {
+  margin-bottom: 25px;
+}
+.footerlist__description > p {
+  margin-bottom: 15px;
+}
+.footerlist__link {
+  padding: 5px 0;
+}
