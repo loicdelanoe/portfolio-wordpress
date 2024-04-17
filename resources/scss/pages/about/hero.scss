@@ -7,10 +7,16 @@
 
   &__title {
     margin-bottom: 29px;
-    max-width: 200px;
 
     & span {
       font-weight: 300;
     }
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .heroabout {
+    padding-top: 6em;
+    padding-bottom: 6em;
   }
 }

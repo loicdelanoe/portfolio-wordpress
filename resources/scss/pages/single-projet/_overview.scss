@@ -1,5 +1,6 @@
 .overview {
   padding-bottom: 2.5em;
+
   &__container {
     width: 100%;
     margin-bottom: 2.5em;
@@ -9,5 +10,13 @@
     border-radius: 8px;
     width: 100%;
     height: auto;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .overview {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3em;
   }
 }

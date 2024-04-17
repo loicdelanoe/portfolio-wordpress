@@ -2,10 +2,15 @@
   background-color: $backgroundColor;
   display: grid;
   grid-template-columns: 1fr;
-  padding: 42px 24px;
+
+  &__container {
+    padding-top: 3em;
+    padding-bottom: 3em;
+  }
 
   &__branding {
     display: flex;
+    flex-direction: row;
     align-items: center;
     gap: 20px;
     font-weight: 600;
@@ -24,5 +29,25 @@
     gap: 10px;
     border-top: 1px solid $textColor;
     padding-top: 2.5em;
+  }
+}
+
+/* TABLET */
+@media screen and (min-width: 768px) {
+  .footer {
+    &__legal {
+      flex-direction: row;
+      justify-content: space-between;
+      margin: auto;
+    }
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .footer {
+    &__container {
+      padding-top: 5em;
+      padding-bottom: 5em;
+    }
   }
 }

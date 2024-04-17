@@ -6,7 +6,7 @@ body {
   background-color: $bodyBackground;
 }
 
-section, header, footer {
+section,.header__container, .footer__container {
   //max-width: 325px;
   width: 100%;
   //margin: auto;
@@ -19,4 +19,11 @@ a {
 
 button {
   cursor: pointer;
+}
+
+@media screen and (min-width: 1024px) {
+  section, .header__container, .footer__container {
+    max-width: 1200px;
+    margin: auto;
+  }
 }

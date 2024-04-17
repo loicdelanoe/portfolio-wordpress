@@ -7,7 +7,6 @@
 
   &__title {
     margin-bottom: 29px;
-    max-width: 250px;
 
     & span {
       font-weight: 300;
@@ -21,4 +20,15 @@
   margin-top: -3em;
   align-items: center;
   padding-bottom: 80px;
+}
+
+@media screen and (min-width: 768px) {
+  .heroprojets {
+    padding-top: 6em;
+    padding-bottom: 6em;
+  }
+
+  .projets {
+    padding-bottom: 8em;
+  }
 }

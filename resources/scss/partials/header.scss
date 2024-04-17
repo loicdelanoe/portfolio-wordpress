@@ -1,11 +1,18 @@
 .header {
   display: flex;
-  padding: 30px 24px 0 24px;
   background-color: $backgroundColor;
 
   &__container {
+    position: relative;
     width: 100%;
-    border-bottom: 1px solid $textColor;
-    padding-bottom: 20px;
+    padding: 30px 24px 0 24px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .header {
+    &__container {
+      padding-top: 2.2em;
+    }
   }
 }

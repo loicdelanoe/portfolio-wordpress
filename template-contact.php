@@ -7,17 +7,27 @@
         <section class="contact">
             <h2 class="sro">Formulaire de contact</h2>
             <form action="" class="form" method="post">
-                <label class="field__label" for="lastname">Nom</label>
-                <input class="field__input" type="text" name="lastname" id="lastname" placeholder="Doe">
-                <label class="field__label" for="name">Prénom</label>
-                <input class="field__input" type="text" name="name" id="name" placeholder="John">
-                <label class="field__label" for="email">Email</label>
-                <input class="field__input" type="email" name="email" id="email" placeholder="john@doe.com">
-                <label class="field__label" for="phone">Téléphone</label>
-                <input class="field__input" type="tel" name="phone" id="phone" placeholder="06 89 78 67 45">
-                <label class="field__label" for="message">Message</label>
-                <textarea class="field__textarea" name="message" id="message" cols="30" rows="10"
-                          placeholder="J'ai un projet pour vous..."></textarea>
+                <div class="field__container">
+                    <label class="field__label" for="lastname">Nom</label>
+                    <input class="field__input" type="text" name="lastname" id="lastname" placeholder="Doe">
+                </div>
+                <div class="field__container">
+                    <label class="field__label" for="name">Prénom</label>
+                    <input class="field__input" type="text" name="name" id="name" placeholder="John">
+                </div>
+                <div class="field__container">
+                    <label class="field__label" for="email">Email</label>
+                    <input class="field__input" type="email" name="email" id="email" placeholder="john@doe.com">
+                </div>
+                <div class="field__container">
+                    <label class="field__label" for="phone">Téléphone</label>
+                    <input class="field__input" type="tel" name="phone" id="phone" placeholder="06 89 78 67 45">
+                </div>
+                <div class="field__container field__container--textarea">
+                    <label class="field__label" for="message">Message</label>
+                    <textarea class="field__textarea" name="message" id="message" cols="30" rows="10"
+                              placeholder="J'ai un projet pour vous..."></textarea>
+                </div>
                 <button class="cta field__submit" type="submit">Envoyer</button>
             </form>
         </section>

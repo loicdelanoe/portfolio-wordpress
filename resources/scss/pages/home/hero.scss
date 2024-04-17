@@ -1,8 +1,6 @@
 .hero {
   display: flex;
   flex-direction: column;
-  background-image: url("../img/hero-bg-mobile.svg");
-  background-repeat: no-repeat;
   padding: 81px 24px 77px 24px;
 
   &:after {
@@ -24,5 +22,42 @@
   &__container {
     display: flex;
     gap: 15px;
+  }
+}
+
+/* TABLET */
+@media screen and (min-width: 768px) {
+  .hero {
+    &:after {
+      margin-bottom: 3em;
+    }
+
+    &__title {
+      margin-bottom: .5em;
+    }
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .hero {
+    padding-top: 7.75em;
+
+    &:before {
+      position: absolute;
+      content: url("../img/vertical-partition.svg");
+      z-index: -1;
+    }
+
+    &:after {
+      margin-bottom: 5em;
+    }
+
+    &__title {
+      //font-size: 4.5em;
+    }
+
+    &__container {
+      margin-bottom: 3em;
+    }
   }
 }

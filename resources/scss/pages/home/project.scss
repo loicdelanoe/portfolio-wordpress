@@ -1,7 +1,7 @@
 .project {
   display: flex;
   flex-direction: column;
-  margin-bottom: 90px;
+  padding-bottom: 90px;
   padding-top: 3em;
 
   &__title {
@@ -9,7 +9,48 @@
       font-weight: 300;
     }
   }
+
   &__cta {
     align-self: center;
   }
 }
+
+/* TABLET */
+@media screen and (min-width: 768px) {
+  .project {
+    padding-bottom: 8em;
+
+    &__container {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 3em;
+    }
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .project {
+    display: flex;
+
+    &:before {
+      position: absolute;
+      content: url("../img/vertical-partition.svg");
+      z-index: -1;
+    }
+
+    &__wrapper {
+      display: flex;
+      flex-direction: column;
+      padding-left: 8em;
+    }
+
+    &__container {
+      gap: 8em;
+    }
+
+    &__cta {
+      align-self: center;
+    }
+  }
+}
+

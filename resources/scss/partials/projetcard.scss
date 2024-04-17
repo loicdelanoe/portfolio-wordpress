@@ -8,9 +8,11 @@
   }
 
   &__title {
+    font-size: 1em;
     text-transform: uppercase;
     font-family: "Kalnia", "Times New Roman", serif;
     font-weight: 600;
+    margin-bottom: 0;
   }
 
   &__container {
@@ -23,5 +25,13 @@
     margin-bottom: 1.2em;
     border-radius: 8px;
 
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .projetcard {
+    & + & {
+      margin-top: 3em;
+    }
   }
 }

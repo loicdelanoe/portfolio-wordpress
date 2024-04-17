@@ -7,7 +7,6 @@ input[id="burger"] {
   cursor: pointer;
   z-index: 4;
 
-  &:checked,
   &:checked ~ .burger__wrapper {
     position: fixed;
     right: 24px;
@@ -52,5 +51,15 @@ input[id="burger"] {
 
   & > span:nth-child(2) {
     width: 20px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  input[id="burger"] {
+    display: none;
+  }
+
+  .burger__wrapper {
+    display: none;
   }
 }
