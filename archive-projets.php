@@ -15,7 +15,9 @@
                             Consulter le <?= get_the_title(); ?>
                         </span></a>
                     <div class="projetcard__container">
-                        <img class="projetcard__img" src="<?= get_field('resume_image') ?>" alt="">
+                        <?= wp_get_attachment_image(get_field('resume_image'), 'project_thumbnail', false, [
+                            'class' => 'projetcard__img',
+                        ]) ?>
                         <p class="projetcard__title"><?= get_the_title() ?></p>
                     </div>
                 </article>

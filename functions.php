@@ -3,6 +3,9 @@
 // Disable Gutenberg editor
 add_filter('use_block_editor_for_post', '__return_false');
 
+add_theme_support( 'post-thumbnails' );
+add_image_size('project_thumbnail', 600, 600);
+
 // Enregistrer des menus de navigation :
 register_nav_menu('main', 'Navigation principale, en-tête du site');
 register_nav_menu('footer', 'Navigation de pied de page');

@@ -30,3 +30,16 @@
 // });
 
 // observers.init();
+
+import {Cursor} from "./Cursor";
+
+class Main {
+
+    constructor() {
+        this.cursor = new Cursor();
+    }
+}
+
+window.addEventListener('load', () => {
+    window.main = new Main();
+});

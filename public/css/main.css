@@ -143,6 +143,36 @@ button {
     margin: auto;
   }
 }
+.cursor {
+  z-index: 100;
+  pointer-events: none;
+  width: 10px;
+  height: 10px;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+}
+
+.link {
+  border-radius: 50%;
+  width: 50px;
+  line-height: 50px;
+}
+.link:after {
+  display: inline-block;
+  transform: translate(-15%, -45%);
+  color: #2C231E;
+  font-family: "Kalnia", "Times New Roman", serif;
+  content: "Visiter";
+  padding: 20px 20px;
+  border-radius: 50%;
+  background-color: #F0ECE6;
+}
+
+.no-cursor {
+  cursor: none;
+}
+
 .bg {
   background-image: url("../img/hero-bg-mobile.svg");
   background-repeat: no-repeat;
@@ -366,6 +396,7 @@ input[id=burger]:checked ~ .burger__wrapper span:nth-child(3) {
 .hero__container {
   display: flex;
   gap: 15px;
+  margin-bottom: 2em;
 }
 
 /* TABLET */
@@ -720,6 +751,7 @@ input[id=burger]:checked ~ .burger__wrapper span:nth-child(3) {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 3em;
+    align-items: flex-start;
   }
 }
 @media screen and (min-width: 1024px) {
@@ -763,6 +795,11 @@ input[id=burger]:checked ~ .burger__wrapper span:nth-child(3) {
 .projetcard {
   position: relative;
   margin-bottom: 2.4em;
+  transition: 0.3s;
+}
+.projetcard:hover {
+  transform: scale(1.03);
+  filter: brightness(50%);
 }
 .projetcard__link {
   position: absolute;
@@ -778,6 +815,7 @@ input[id=burger]:checked ~ .burger__wrapper span:nth-child(3) {
 }
 .projetcard__title:before {
   content: url("../img/fermata.svg");
+  color: white;
   margin-right: 0.5em;
 }
 .projetcard__container {
@@ -788,6 +826,7 @@ input[id=burger]:checked ~ .burger__wrapper span:nth-child(3) {
   width: 100%;
   margin-bottom: 1.2em;
   border-radius: 8px;
+  height: auto;
 }
 
 @media screen and (min-width: 768px) {

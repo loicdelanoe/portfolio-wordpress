@@ -1,0 +1,27 @@
+.cursor {
+  z-index: 100;
+  pointer-events: none;
+  width: 10px;
+  height: 10px;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+}
+
+.link {
+  border-radius: 50%;
+  width: 50px;
+  line-height: 50px;
+
+  &:after {
+    display: inline-block;
+    transform: translate(-15%, -45%);
+    color: #2C231E;
+    font-family: "Kalnia", "Times New Roman", serif;
+
+    content: "Visiter";
+    padding: 20px 20px;
+    border-radius: 50%;
+    background-color: #F0ECE6;
+  }
+}

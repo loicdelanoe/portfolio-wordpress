@@ -25,7 +25,9 @@
                 <p class="resume__content"><?= get_field('resume') ?></p>
             </div>
             <div class="resume__container">
-                <img class="resume__img" src="<?= get_field('resume_image') ?>" alt="">
+                <?= wp_get_attachment_image(get_field('resume_image'), 'project_thumbnail', false, [
+                    'class' => 'resume__img',
+                ]) ?>
             </div>
         </section>
         <section class="color">
@@ -41,7 +43,10 @@
         <section class="overview">
             <h2 class="overview__title sro">Vue d'ensemble</h2>
             <div class="overview__container">
-                <img class="overview__img" src="<?= get_field('overview_image') ?>" alt="">
+<!--                <img class="overview__img" src="--><?php //= get_field('overview_image') ?><!--" alt="">-->
+                <?= wp_get_attachment_image(get_field('overview_image'), 'project_thumbnail', false, [
+                    'class' => 'overview__img',
+                ]) ?>
             </div>
             <article class="functionality">
                 <h3 class="functionality__title">Fonctionnalités</h3>
@@ -70,7 +75,9 @@
                             Consulter le <?= get_the_title(); ?>
                         </span></a>
                     <div class="projetcard__container">
-                        <img class="projetcard__img" src="<?= get_field('resume_image') ?>" alt="">
+                        <?= wp_get_attachment_image(get_field('resume_image'), 'project_thumbnail', false, [
+                            'class' => 'projetcard__img',
+                        ]) ?>
                         <h3 class="projetcard__title"><?= get_the_title() ?></h3>
                     </div>
                 </article>
