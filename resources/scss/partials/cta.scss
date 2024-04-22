@@ -26,6 +26,13 @@
       color: $ctaTextColor;
     }
   }
+
+  &[data-variant="disabled"] {
+    background-color: $ctaBackgroundColorDisabled;
+    border-color: $ctaBackgroundColorDisabled;
+    pointer-events: none;
+    cursor: not-allowed;
+  }
 }
 
 /* TABLET */

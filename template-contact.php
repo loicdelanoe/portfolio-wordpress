@@ -1,9 +1,11 @@
 <?php /* Template Name: "Contact" */ ?>
 <?php get_header() ?>
     <main>
-        <section class="herocontact">
-            <h2 class="herocontact__title"><span>Restons</span> En contact</h2>
-        </section>
+        <div class="bg">
+            <section class="herocontact">
+                <h2 class="herocontact__title"><span>Restons</span> En contact</h2>
+            </section>
+        </div>
         <section class="contact">
             <h2 class="sro">Formulaire de contact</h2>
             <form action="" class="form" method="post">
@@ -30,17 +32,18 @@
                 </div>
                 <button class="cta field__submit" type="submit">Envoyer</button>
             </form>
+            <article class="cordcontact">
+                <h2 class="sro">Coordonnées</h2>
+                <p class="cordcontact__content">Lorem ipsum dolor sit amet consectetur. Nulla ipsum elementum in laoreet at.
+                    Facilisis tortor mauris sem.</p>
+                <dl class="cordcontact__container info">
+                    <dt class="info__title">Email</dt>
+                    <dd class="info__content">loic.del4127@gmail.com</dd>
+                    <dt class="info__title">Téléphone</dt>
+                    <dd class="info__content">+33 (0)6 04 02 47 65</dd>
+                </dl>
+            </article>
         </section>
-        <section class="cordcontact">
-            <h2 class="sro">Coordonnées</h2>
-            <p class="cordcontact__content">Lorem ipsum dolor sit amet consectetur. Nulla ipsum elementum in laoreet at.
-                Facilisis tortor mauris sem.</p>
-            <dl class="cordcontact__container info">
-                <dt class="info__title">Email</dt>
-                <dd class="info__content">loic.del4127@gmail.com</dd>
-                <dt class="info__title">Téléphone</dt>
-                <dd class="info__content">+33 (0)6 04 02 47 65</dd>
-            </dl>
-        </section>
+
     </main>
 <?php get_footer() ?>

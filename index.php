@@ -1,5 +1,5 @@
 <?php get_header() ?>
-<main>
+<main class="key">
     <div class="bg">
         <section class="hero">
             <h2 class="hero__title"><span>Loïc Delanoë</span> Développeur Web</h2>

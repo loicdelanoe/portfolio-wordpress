@@ -1,8 +1,6 @@
 .herosingle {
   display: flex;
   flex-direction: column;
-  background-image: url("../img/hero-bg-mobile.svg");
-  background-repeat: no-repeat;
   padding: 81px 24px 77px 24px;
 
   &__back {
@@ -13,12 +11,11 @@
     text-decoration: underline;
     text-underline-offset: .3em;
     text-decoration-thickness: 1px;
-    margin-bottom: 10px;
+    padding-bottom: 10px;
   }
 
   &__title {
     margin-bottom: 25px;
-    max-width: 250px;
   }
 
   &__container {

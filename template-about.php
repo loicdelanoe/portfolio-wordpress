@@ -1,9 +1,11 @@
 <?php /* Template Name: "À Propos" */ ?>
 <?php get_header() ?>
     <main>
-        <section class="heroabout">
-            <h2 class="heroabout__title"><span>À Propos</span> De moi</h2>
-        </section>
+        <div class="bg">
+            <section class="heroabout">
+                <h2 class="heroabout__title"><span>À Propos</span> De moi</h2>
+            </section>
+        </div>
         <section class="about">
             <h2 class="sro">À Propos</h2>
             <div class="about__img"></div>

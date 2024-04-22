@@ -4,7 +4,7 @@
   padding: 81px 24px 77px 24px;
 
   &:after {
-    content: url("../img/hero-bottom.svg");
+    content: url("../img/hero-partition.svg");
     width: calc(100% + 24px);
     height: auto;
     overflow: hidden;
@@ -42,11 +42,11 @@
   .hero {
     padding-top: 7.75em;
 
-    &:before {
-      position: absolute;
-      content: url("../img/vertical-partition.svg");
-      z-index: -1;
-    }
+    //&:before {
+    //  position: absolute;
+    //  content: url("../img/vertical-partition.svg");
+    //  z-index: -1;
+    //}
 
     &:after {
       margin-bottom: 5em;

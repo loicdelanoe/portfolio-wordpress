@@ -35,3 +35,14 @@
     }
   }
 }
+
+@media screen and (min-width: 1024px) {
+  .resume {
+    padding-top: 6em;
+    padding-bottom: 6em;
+
+    &__title {
+      font-size: 52px;
+    }
+  }
+}

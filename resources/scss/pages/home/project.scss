@@ -31,21 +31,23 @@
 @media screen and (min-width: 1024px) {
   .project {
     display: flex;
+    @include upper-partition;
+    @include lower-partition;
 
-    &:before {
-      position: absolute;
-      content: url("../img/vertical-partition.svg");
-      z-index: -1;
+    &__title {
+      padding-left: 2em;
+      margin-bottom: 2em;
     }
 
     &__wrapper {
       display: flex;
       flex-direction: column;
-      padding-left: 8em;
     }
 
     &__container {
-      gap: 8em;
+      gap: 4em;
+      margin-bottom: 5em;
+      align-items: flex-start;
     }
 
     &__cta {

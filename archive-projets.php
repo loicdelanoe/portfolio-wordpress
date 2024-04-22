@@ -1,8 +1,10 @@
 <?php get_header() ?>
 <main>
-    <section class="heroprojets">
-        <h2 class="heroprojets__title" data-animation="showUp"><span>Découvrez</span> Mes travaux</h2>
-    </section>
+    <div class="bg">
+        <section class="heroprojets">
+            <h2 class="heroprojets__title" data-animation="showUp"><span>Découvrez</span> Mes travaux</h2>
+        </section>
+    </div>
     <section class="projets">
         <h2 class="sro">Mes travaux</h2>
 

@@ -3,9 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=2.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <!--    <link href="https://fonts.googleapis.com/css2?family=Kalnia:wght@100..700&display=swap" rel="stylesheet">-->
     <link rel="stylesheet" href="<?= dw_asset('css/main.css') ?>">
     <title>Loïc D. - Portfolio</title>
 </head>
@@ -25,8 +24,7 @@
             </div>
             <ul class="nav__container">
                 <?php foreach (dw_get_navigation_links('main') as $link): ?>
-                    <li class="nav__items"><a href="
-            <?= $link->url ?>" class="nav__link"><?= $link->label ?></a></li>
+                    <li class="nav__items"><a href="<?= $link->url ?>" class="nav__link"><?= $link->label ?></a></li>
                 <?php endforeach; ?>
             </ul>
         </nav>

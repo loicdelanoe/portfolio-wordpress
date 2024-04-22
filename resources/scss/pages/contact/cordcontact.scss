@@ -1,6 +1,4 @@
 .cordcontact {
-  padding-bottom: 80px;
-
   &__content {
     text-align: justify;
     margin-bottom: 1.5em;
@@ -9,6 +7,11 @@
 
 @media screen and (min-width: 768px) {
   .cordcontact {
-    padding-bottom: 8em;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .cordcontact {
+
   }
 }

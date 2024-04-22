@@ -8,3 +8,14 @@
     text-align: justify;
   }
 }
+
+@media screen and (min-width: 1024px) {
+  .functionality {
+    position: sticky;
+    top: 1.5em;
+
+    &__title {
+      font-size: 52px;
+    }
+  }
+}

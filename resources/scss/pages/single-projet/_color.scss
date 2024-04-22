@@ -1,0 +1,56 @@
+.color {
+  margin: 0;
+  padding-left: 0;
+  padding-right: 0;
+  width: 100%;
+  max-width: initial;
+  padding-bottom: 3em;
+
+  &__title {
+    margin-bottom: 1em;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 24px;
+  }
+
+  &__list {
+    border: .3px solid $textColor;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__card {
+    width: 100%;
+    min-height: 3em;
+  }
+}
+
+@media screen and (min-width: 768px){
+  .color {
+    padding-bottom: 4em;
+
+    &__list {
+      flex-direction: row;
+    }
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .color {
+    padding-bottom: 5em;
+
+    &__title {
+      font-size: 52px;
+    }
+
+    &__list {
+      border: .3px solid $textColor;
+      display: flex;
+    }
+
+    &__card {
+      min-height: 4.5em;
+    }
+  }
+}

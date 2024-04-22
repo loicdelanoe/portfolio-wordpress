@@ -11,3 +11,9 @@
     gap: 1em;
   }
 }
+
+@media screen and (min-width: 1024px) {
+  .form {
+    padding-bottom: 0;
+  }
+}

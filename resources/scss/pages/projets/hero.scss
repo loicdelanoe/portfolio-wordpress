@@ -1,8 +1,6 @@
 .heroprojets {
   display: flex;
   flex-direction: column;
-  background-image: url("../img/hero-bg-mobile.svg");
-  background-repeat: no-repeat;
   padding: 81px 24px 77px 24px;
 
   &__title {
@@ -30,5 +28,22 @@
 
   .projets {
     padding-bottom: 8em;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .heroprojets {
+    padding-top: 7.75em;
+    padding-bottom: 20em;
+  }
+
+  .projets {
+    position: relative;
+    //padding-left: 10em;
+    padding-top: 8em;
+    margin-top: -19em;
+
+    @include lower-partition;
+
   }
 }

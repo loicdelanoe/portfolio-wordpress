@@ -4,3 +4,10 @@
   -ms-background-position-y: -1px;
   background-position-y: -1px;
 }
+
+@media screen and (min-width: 1024px) {
+  .key {
+    background-image: url("../img/sol-key-large.svg");
+    background-repeat: no-repeat;
+  }
+}

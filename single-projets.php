@@ -3,16 +3,22 @@
     <?php if (have_posts()): while (have_posts()): the_post(); // Ouverture de "The Loop" de Wordpress ?>
 
         <h1 class="sro"><?= get_the_title() ?></h1>
-        <section class="herosingle">
-            <div>
-                <a class="herosingle__back" href="/projets" data-animation="showUp">← Retour aux projets</a>
-                <h2 class="herosingle__title"><?= get_the_title() ?></h2>
-            </div>
-            <div class="herosingle__container" data-animation="showUp">
-                <a class="cta" href="<?= get_field('github_link') ?>" data-variant="secondary">Github</a>
-                <a class="cta" href="<?= get_field('site_link') ?>">Visiter le site</a>
-            </div>
-        </section>
+        <div class="bg">
+            <section class="herosingle">
+                <div>
+                    <a class="herosingle__back" href="/projets" data-animation="showUp">← Retour aux projets</a>
+                    <h2 class="herosingle__title"><?= get_the_title() ?></h2>
+                </div>
+                <div class="herosingle__container" data-animation="showUp">
+                    <a class="cta" href="<?= get_field('github_link') ?>" data-variant="secondary">Github</a>
+                    <?php if (!get_field('site_link')): ?>
+                        <a class="cta" href="#" data-variant="disabled">Visiter le site</a>
+                    <?php else: ?>
+                        <a class="cta" href="<?= get_field('site_link') ?>">Visiter le site</a>
+                    <?php endif; ?>
+                </div>
+            </section>
+        </div>
         <section class="resume">
             <div>
                 <h2 class="resume__title">Résumé</h2>
@@ -24,6 +30,13 @@
         </section>
         <section class="color">
             <h2 class="color__title">Palette de couleurs</h2>
+            <ul class="color__list">
+                <?php
+                $colors = explode(',', get_field('colors'));
+                foreach ($colors as $color) {
+                    echo "<li class='color__card' style='background-color: {$color}'></li>";
+                }; ?>
+            </ul>
         </section>
         <section class="overview">
             <h2 class="overview__title sro">Vue d'ensemble</h2>

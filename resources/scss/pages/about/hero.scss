@@ -1,8 +1,6 @@
 .heroabout {
   display: flex;
   flex-direction: column;
-  background-image: url("../img/hero-bg-mobile.svg");
-  background-repeat: no-repeat;
   padding: 81px 24px 77px 24px;
 
   &__title {
@@ -18,5 +16,11 @@
   .heroabout {
     padding-top: 6em;
     padding-bottom: 6em;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .heroabout {
+    padding-top: 7.75em;
   }
 }
