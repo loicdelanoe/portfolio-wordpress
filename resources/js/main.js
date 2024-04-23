@@ -1,5 +1,3 @@
-// import {observers} from "./observers";
-
 // FOR PARALLAX EFFECT
 // const heroContainer = document.querySelector('.hero__container');
 // const imgElements = document.querySelectorAll('.img__placeholder');
@@ -29,13 +27,13 @@
 //     heroContainer.style.top = 0.1 * scrollY + 'px';
 // });
 
-// observers.init();
-
 import {Cursor} from "./Cursor";
+import {Observer} from "./Observer";
 
 class Main {
 
     constructor() {
+        this.observer = new Observer();
         this.cursor = new Cursor();
     }
 }
@@ -43,3 +41,4 @@ class Main {
 window.addEventListener('load', () => {
     window.main = new Main();
 });
+

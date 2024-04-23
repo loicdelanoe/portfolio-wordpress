@@ -1,8 +1,11 @@
 export class Cursor {
 
     constructor() {
+        document.body.insertAdjacentHTML('afterbegin', `<div class="cursor"></div>`);
+
         this.cursor = document.querySelector('.cursor');
         this.projectLinks = document.querySelectorAll('.projetcard__link');
+
 
         this.projectLinks.forEach((link) => {
             this.removePointer(link);

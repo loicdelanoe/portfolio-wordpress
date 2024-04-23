@@ -6,10 +6,11 @@
         <div class="bg">
             <section class="herosingle">
                 <div>
-                    <a class="herosingle__back" href="/projets" data-animation="showUp">← Retour aux projets</a>
-                    <h2 class="herosingle__title"><?= get_the_title() ?></h2>
+                    <a class="herosingle__back" href="/projets" data-animation="showUp" data-animation="show-up">←
+                        Retour aux projets</a>
+                    <h2 class="herosingle__title" data-animation="show-up"><?= get_the_title() ?></h2>
                 </div>
-                <div class="herosingle__container" data-animation="showUp">
+                <div class="herosingle__container" data-animation="show-up">
                     <a class="cta" href="<?= get_field('github_link') ?>" data-variant="secondary">Github</a>
                     <?php if (!get_field('site_link')): ?>
                         <a class="cta" href="#" data-variant="disabled">Visiter le site</a>
@@ -21,43 +22,44 @@
         </div>
         <section class="resume">
             <div>
-                <h2 class="resume__title">Résumé</h2>
-                <p class="resume__content"><?= get_field('resume') ?></p>
+                <h2 class="resume__title" data-animation="show-up">Résumé</h2>
+                <p class="resume__content" data-animation="show-up"><?= get_field('resume') ?></p>
             </div>
-            <div class="resume__container">
+            <div class="resume__container" data-animation="show-up">
                 <?= wp_get_attachment_image(get_field('resume_image'), 'project_thumbnail', false, [
                     'class' => 'resume__img',
                 ]) ?>
             </div>
         </section>
         <section class="color">
-            <h2 class="color__title">Palette de couleurs</h2>
+            <h2 class="color__title" data-animation="show-up">Palette de couleurs</h2>
             <ul class="color__list">
                 <?php
                 $colors = explode(',', get_field('colors'));
                 foreach ($colors as $color) {
-                    echo "<li class='color__card' style='background-color: {$color}'></li>";
+                    echo "<li class='color__card' style='background-color: {$color}' data-animation='show-up'></li>";
                 }; ?>
             </ul>
         </section>
         <section class="overview">
-            <h2 class="overview__title sro">Vue d'ensemble</h2>
-            <div class="overview__container">
-<!--                <img class="overview__img" src="--><?php //= get_field('overview_image') ?><!--" alt="">-->
+            <h2 class="overview__title sro" data-animation="show-up">Vue d'ensemble</h2>
+            <div class="overview__container" data-animation="show-up">
+                <!--                <img class="overview__img" src="-->
+                <?php //= get_field('overview_image') ?><!--" alt="">-->
                 <?= wp_get_attachment_image(get_field('overview_image'), 'project_thumbnail', false, [
                     'class' => 'overview__img',
                 ]) ?>
             </div>
             <article class="functionality">
-                <h3 class="functionality__title">Fonctionnalités</h3>
-                <p class="functionality__content"><?= get_field('functionality') ?></p>
+                <h3 class="functionality__title" data-animation="show-up">Fonctionnalités</h3>
+                <p class="functionality__content" data-animation="show-up"><?= get_field('functionality') ?></p>
             </article>
         </section>
 
     <?php endwhile; endif; // Fermeture de "The Loop" de Wordpress ?>
 
     <section class="other">
-        <h3 class="other__title">Mes autres projets</h3>
+        <h3 class="other__title" data-animation="show-up">Mes autres projets</h3>
         <div class="project__container">
             <?php
             $projects = new WP_Query([
@@ -70,7 +72,7 @@
 
             if ($projects->have_posts()): while ($projects->have_posts()): $projects->the_post(); ?>
 
-                <article class="projetcard">
+                <article class="projetcard" data-animation="slide-left">
                     <a class="projetcard__link" href="<?= get_permalink(); ?>"><span class="sro">
                             Consulter le <?= get_the_title(); ?>
                         </span></a>
@@ -84,7 +86,7 @@
 
             <?php endwhile; endif; // Fermeture de "The Loop" de Wordpress ?>
         </div>
-        <a class="cta project__cta" href="/projets" data-animation="showUp">Tous mes projets</a>
+        <a class="cta project__cta" href="/projets" data-animation="show-up">Tous mes projets</a>
     </section>
 </main>
 <?php get_footer() ?>

@@ -1,23 +1,13 @@
 {
     "/js/main.js": "/js/main.js",
     "/css/main.css": "/css/main.css",
-    "/img/Fichier 1logoGradient.svg": "/img/Fichier 1logoGradient.svg",
     "/img/fermata.svg": "/img/fermata.svg",
     "/img/footer-partition.svg": "/img/footer-partition.svg",
     "/img/hero-bg-mobile.svg": "/img/hero-bg-mobile.svg",
-    "/img/hero-bottom.svg": "/img/hero-bottom.svg",
     "/img/hero-partition.svg": "/img/hero-partition.svg",
     "/img/logo.svg": "/img/logo.svg",
-    "/img/logoGradient.svg": "/img/logoGradient.svg",
     "/img/lower-partition.svg": "/img/lower-partition.svg",
-    "/img/partition-desktop.svg": "/img/partition-desktop.svg",
-    "/img/partition-mobile.svg": "/img/partition-mobile.svg",
-    "/img/projects-partition.svg": "/img/projects-partition.svg",
-    "/img/projet-cv.png": "/img/projet-cv.png",
     "/img/sol-key-large.svg": "/img/sol-key-large.svg",
-    "/img/test.svg": "/img/test.svg",
-    "/img/test2.svg": "/img/test2.svg",
     "/img/upper-partition.svg": "/img/upper-partition.svg",
-    "/img/vertical-partition.svg": "/img/vertical-partition.svg",
     "/fonts/Kalnia-VariableFont_wdth,wght.ttf": "/fonts/Kalnia-VariableFont_wdth,wght.ttf"
 }

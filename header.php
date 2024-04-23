@@ -9,9 +9,7 @@
     <title>Loïc D. - Portfolio</title>
 </head>
 <body>
-<div class="cursor"></div>
-<div class="cursor-outline"></div>
-<header class="header" id="header">
+<header class="header" id="header" >
     <h1 class="sro"><?= get_the_title() ?></h1>
     <div class="header__container">
         <nav class="nav">

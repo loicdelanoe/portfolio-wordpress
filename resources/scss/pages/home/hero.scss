@@ -3,11 +3,10 @@
   flex-direction: column;
   padding: 81px 24px 77px 24px;
 
-  &:after {
-    content: url("../img/hero-partition.svg");
-    width: calc(100% + 24px);
-    height: auto;
+  &__partition {
+    display: flex;
     overflow: hidden;
+    margin-bottom: 4em;
   }
 
   &__title {
@@ -29,7 +28,7 @@
 /* TABLET */
 @media screen and (min-width: 768px) {
   .hero {
-    &:after {
+    &__partition {
       margin-bottom: 3em;
     }
 
@@ -49,7 +48,7 @@
     //  z-index: -1;
     //}
 
-    &:after {
+    &__partition {
       margin-bottom: 5em;
     }
 

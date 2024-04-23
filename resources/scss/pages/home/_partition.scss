@@ -1,0 +1,21 @@
+.partition {
+  display: flex;
+  align-items: flex-end;
+  gap: 1em;
+  justify-content: space-between;
+  margin-bottom: 2em;
+
+
+  &__text {
+    font-family: "Kalnia", "Times New Roman", serif;
+    text-transform: uppercase;
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .partition {
+    margin-bottom: 4.5em;
+  }
+}

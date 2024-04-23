@@ -15,12 +15,12 @@
   }
 
   &__list {
-    border: .3px solid $textColor;
     display: flex;
     flex-direction: column;
   }
 
   &__card {
+    border: .3px solid $textColor;
     width: 100%;
     min-height: 3em;
   }
@@ -45,7 +45,6 @@
     }
 
     &__list {
-      border: .3px solid $textColor;
       display: flex;
     }
 

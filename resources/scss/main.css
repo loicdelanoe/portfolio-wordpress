@@ -92,18 +92,6 @@ p, a {
   line-height: 24px;
 }
 
-header, section:not(.hero, .projects, .projecthero, .projectprocess), footer {
-  max-width: 1000px;
-  padding: 120px 25px;
-  margin: auto;
-}
-
-.bg {
-  max-width: 100%;
-  margin: auto;
-  background-image: linear-gradient(to right, #292727, #422F2F);
-}
-
 h2 {
   font-size: 64px;
 }

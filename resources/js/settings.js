@@ -1,5 +1,5 @@
 export const settings = {
-    showUpClass: 'showUp',
+    showUpClass: 'show-up',
     scaleUpClass: 'scaleUp',
     NoOpacityClass: 'no-opacity',
     expandClass: 'expand-dropdown',
@@ -10,4 +10,7 @@ export const settings = {
     burgerButtonId: 'burgerButton',
     mainNavId: 'mainNav',
     navTitleSelector: '.main-nav h2',
+    fullWidthClass: "full-width",
+    slideLeftClass: "slide-left",
+    slideRightClass: "slide-right"
 };

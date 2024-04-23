@@ -3,7 +3,17 @@
   align-items: center;
   justify-content: space-between;
   padding-bottom: 20px;
-  border-bottom: 1px solid $textColor;
+  position: relative;
+
+  &:after {
+    position: absolute;
+    bottom: -1px;
+    content: '';
+    width: 100%;
+    min-height: 1px;
+    background-color: $textColor;
+    animation: full-width 1.2s;
+  }
 
   &__branding {
     font-family: 'Kalnia', "Times New Roman", serif;
