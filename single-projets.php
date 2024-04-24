@@ -5,12 +5,12 @@
         <h1 class="sro"><?= get_the_title() ?></h1>
         <div class="bg">
             <section class="herosingle">
-                <div>
-                    <a class="herosingle__back" href="/projets" data-animation="showUp" data-animation="show-up">←
+                <div data-animation="slide-left">
+                    <a class="herosingle__back" href="/projets">←
                         Retour aux projets</a>
-                    <h2 class="herosingle__title" data-animation="show-up"><?= get_the_title() ?></h2>
+                    <h2 class="herosingle__title"><?= get_the_title() ?></h2>
                 </div>
-                <div class="herosingle__container" data-animation="show-up">
+                <div class="herosingle__container" data-animation="slide-left">
                     <a class="cta" href="<?= get_field('github_link') ?>" data-variant="secondary">Github</a>
                     <?php if (!get_field('site_link')): ?>
                         <a class="cta" href="#" data-variant="disabled">Visiter le site</a>
@@ -41,21 +41,23 @@
                 }; ?>
             </ul>
         </section>
-        <section class="overview">
-            <h2 class="overview__title sro" data-animation="show-up">Vue d'ensemble</h2>
-            <div class="overview__container" data-animation="show-up">
-                <!--                <img class="overview__img" src="-->
-                <?php //= get_field('overview_image') ?><!--" alt="">-->
-                <?= wp_get_attachment_image(get_field('overview_image'), 'project_thumbnail', false, [
-                    'class' => 'overview__img',
-                ]) ?>
-            </div>
-            <article class="functionality">
-                <h3 class="functionality__title" data-animation="show-up">Fonctionnalités</h3>
-                <p class="functionality__content" data-animation="show-up"><?= get_field('functionality') ?></p>
-            </article>
-        </section>
+        <div class="bg">
+            <section class="overview">
+                <h2 class="overview__title sro" data-animation="show-up">Vue d'ensemble</h2>
+                <div class="overview__container" data-animation="show-up">
+                    <!--                <img class="overview__img" src="-->
+                    <?php //= get_field('overview_image') ?><!--" alt="">-->
+                    <?= wp_get_attachment_image(get_field('overview_image'), 'project_thumbnail', false, [
+                        'class' => 'overview__img',
+                    ]) ?>
+                </div>
+                <article class="functionality">
+                    <h3 class="functionality__title" data-animation="show-up">Fonctionnalités</h3>
+                    <p class="functionality__content" data-animation="show-up"><?= get_field('functionality') ?></p>
+                </article>
+            </section>
 
+        </div>
     <?php endwhile; endif; // Fermeture de "The Loop" de Wordpress ?>
 
     <section class="other">

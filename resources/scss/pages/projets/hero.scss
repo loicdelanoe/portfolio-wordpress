@@ -18,6 +18,8 @@
   margin-top: -3em;
   align-items: center;
   padding-bottom: 80px;
+  position: relative;
+  z-index: 10;
 }
 
 @media screen and (min-width: 768px) {
@@ -41,7 +43,7 @@
     position: relative;
     //padding-left: 10em;
     padding-top: 8em;
-    margin-top: -19em;
+    margin-top: -22em;
 
     @include lower-partition;
 

@@ -7,7 +7,7 @@
 }
 
 .show-up {
-  animation: showUp 1s;
+  animation: showUp 1.5s;
 }
 
 @keyframes showUp {
@@ -33,13 +33,13 @@
 }
 
 .slide-left {
-  animation: slideLeft 1s;
+  animation: slideLeft 1.5s;
 }
 
 @keyframes slideLeft {
   0% {
     opacity: 0;
-    transform: translateX(-25px);
+    transform: translateX(-50px);
   }
   100% {
     opacity: 1;
@@ -48,13 +48,13 @@
 }
 
 .slide-right {
-  animation: slideRight 1s;
+  animation: slideRight 1.5s;
 }
 
 @keyframes slideRight {
   0% {
     opacity: 0;
-    transform: translateX(25px);
+    transform: translateX(50px);
   }
   100% {
     opacity: 1;

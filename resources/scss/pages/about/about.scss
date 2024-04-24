@@ -1,6 +1,8 @@
 .about {
   margin-top: -3em;
   padding-bottom: 80px;
+  position: relative;
+  z-index: 9;
 
   &__img {
     width: 100%;

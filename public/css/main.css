@@ -187,7 +187,7 @@ button {
 }
 
 .show-up {
-  animation: showUp 1s;
+  animation: showUp 1.5s;
 }
 
 @keyframes showUp {
@@ -211,13 +211,13 @@ button {
   }
 }
 .slide-left {
-  animation: slideLeft 1s;
+  animation: slideLeft 1.5s;
 }
 
 @keyframes slideLeft {
   0% {
     opacity: 0;
-    transform: translateX(-25px);
+    transform: translateX(-50px);
   }
   100% {
     opacity: 1;
@@ -225,13 +225,13 @@ button {
   }
 }
 .slide-right {
-  animation: slideRight 1s;
+  animation: slideRight 1.5s;
 }
 
 @keyframes slideRight {
   0% {
     opacity: 0;
-    transform: translateX(25px);
+    transform: translateX(50px);
   }
   100% {
     opacity: 1;
@@ -243,6 +243,8 @@ button {
   background-repeat: no-repeat;
   -ms-background-position-y: -1px;
   background-position-y: -1px;
+  position: relative;
+  z-index: 9;
 }
 
 @media screen and (min-width: 1024px) {
@@ -296,6 +298,8 @@ button {
 .header {
   display: flex;
   background-color: #EFECE6;
+  position: relative;
+  z-index: 10;
 }
 .header__container {
   position: relative;
@@ -504,8 +508,20 @@ input[id=burger]:checked ~ .burger__wrapper span:nth-child(3) {
   text-transform: uppercase;
   writing-mode: vertical-rl;
   text-orientation: mixed;
+  animation: partitionText infinite 2s 2s;
 }
 
+@keyframes partitionText {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
 @media screen and (min-width: 1024px) {
   .partition {
     margin-bottom: 4.5em;
@@ -529,6 +545,8 @@ input[id=burger]:checked ~ .burger__wrapper span:nth-child(3) {
   margin-top: -3em;
   align-items: center;
   padding-bottom: 80px;
+  position: relative;
+  z-index: 10;
 }
 
 @media screen and (min-width: 768px) {
@@ -548,7 +566,7 @@ input[id=burger]:checked ~ .burger__wrapper span:nth-child(3) {
   .projets {
     position: relative;
     padding-top: 8em;
-    margin-top: -19em;
+    margin-top: -22em;
     position: relative;
   }
   .projets:after {
@@ -661,7 +679,8 @@ input[id=burger]:checked ~ .burger__wrapper span:nth-child(3) {
   padding-right: 0;
   width: 100%;
   max-width: initial;
-  padding-bottom: 3em;
+  position: relative;
+  z-index: 10;
 }
 .color__title {
   margin-bottom: 1em;
@@ -681,17 +700,11 @@ input[id=burger]:checked ~ .burger__wrapper span:nth-child(3) {
 }
 
 @media screen and (min-width: 768px) {
-  .color {
-    padding-bottom: 4em;
-  }
   .color__list {
     flex-direction: row;
   }
 }
 @media screen and (min-width: 1024px) {
-  .color {
-    padding-bottom: 5em;
-  }
   .color__title {
     font-size: 52px;
   }
@@ -703,7 +716,8 @@ input[id=burger]:checked ~ .burger__wrapper span:nth-child(3) {
   }
 }
 .overview {
-  padding-bottom: 2.5em;
+  padding-bottom: 12em;
+  padding-top: 3em;
 }
 .overview__container {
   width: 100%;
@@ -721,11 +735,14 @@ input[id=burger]:checked ~ .burger__wrapper span:nth-child(3) {
     grid-template-columns: repeat(2, 1fr);
     gap: 3em;
     align-items: flex-start;
+    padding-top: 4em;
+    padding-bottom: 7em;
   }
 }
 @media screen and (min-width: 1024px) {
   .overview {
-    padding-bottom: 6em;
+    padding-top: 5em;
+    padding-bottom: 13em;
   }
   .overview__container {
     margin-bottom: 0;
@@ -787,6 +804,8 @@ input[id=burger]:checked ~ .burger__wrapper span:nth-child(3) {
 .about {
   margin-top: -3em;
   padding-bottom: 80px;
+  position: relative;
+  z-index: 9;
 }
 .about__img {
   width: 100%;
@@ -829,6 +848,10 @@ input[id=burger]:checked ~ .burger__wrapper span:nth-child(3) {
 .project__title span {
   font-weight: 300;
 }
+.project__wrapper {
+  display: flex;
+  flex-direction: column;
+}
 .project__cta {
   align-self: center;
 }
@@ -869,10 +892,6 @@ input[id=burger]:checked ~ .burger__wrapper span:nth-child(3) {
   .project__title {
     padding-left: 2em;
     margin-bottom: 2em;
-  }
-  .project__wrapper {
-    display: flex;
-    flex-direction: column;
   }
   .project__container {
     gap: 4em;

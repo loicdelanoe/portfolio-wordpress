@@ -4,12 +4,12 @@
         <section class="hero">
             <h2 class="hero__title" data-animation="show-up"><span>Loïc Delanoë</span> Développeur Web</h2>
             <div class="hero__container" data-animation="show-up">
-                <a class="cta" href="/projets">Mes Projets</a>
-                <a class="cta" href="/a-propos" data-variant="secondary">Me Découvrir</a>
+                <a class="cta" href="/projets" title="Vers la page projets">Mes Projets</a>
+                <a class="cta" href="/a-propos" data-variant="secondary" title="Vers la page à propos">Me Découvrir</a>
             </div>
             <div class="hero__container--partition partition" data-animation="show-up">
                 <p class="partition__text">Scroll down →</p>
-                <img src="<?= dw_asset('img/hero-partition.svg') ?>" alt="test">
+                <img src="<?= dw_asset('img/hero-partition.svg') ?>" alt="">
             </div>
         </section>
     </div>
@@ -35,15 +35,14 @@
                         </span></a>
                         <div class="projetcard__container">
                             <?= wp_get_attachment_image(get_field('resume_image'), 'project_thumbnail', false, [
-                                    'class' => 'projetcard__img',
+                                'class' => 'projetcard__img',
                             ]) ?>
                             <h3 class="projetcard__title"><?= get_the_title() ?></h3>
                         </div>
                     </article>
                 <?php endwhile; endif; ?>
             </div>
-
-            <a class="cta project__cta" href="/projets" data-animation="show-up">Voir mes projets</a>
+            <a class="cta project__cta" href="/projets" data-animation="show-up" title="Vers la page projets">Voir mes projets</a>
         </article>
     </section>
 </main>

@@ -9,12 +9,12 @@
     <title>Loïc D. - Portfolio</title>
 </head>
 <body>
-<header class="header" id="header" >
+<header class="header" id="header">
     <h1 class="sro"><?= get_the_title() ?></h1>
     <div class="header__container">
         <nav class="nav">
             <h2 class="sro">Navigation principale</h2>
-            <a class="nav__branding" href="/">Loïc D.</a>
+            <a class="nav__branding" href="/" title="Vers la page d'accueil">Loïc D.</a>
             <label class="sro" for="burger">Burger menu</label>
             <input type="checkbox" name="burger" id="burger">
             <div class="burger__wrapper">
@@ -24,7 +24,8 @@
             </div>
             <ul class="nav__container">
                 <?php foreach (dw_get_navigation_links('main') as $link): ?>
-                    <li class="nav__items"><a href="<?= $link->url ?>" class="nav__link"><?= $link->label ?></a></li>
+                    <li class="nav__items"><a href="<?= $link->url ?>" class="nav__link"
+                                              title="Vers la page <?= $link->label ?>"><?= $link->label ?></a></li>
                 <?php endforeach; ?>
             </ul>
         </nav>
