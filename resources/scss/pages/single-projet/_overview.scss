@@ -1,5 +1,5 @@
 .overview {
-  padding-bottom: 12em;
+  padding-bottom: 2em;
   padding-top: 3em;
 
   &__container {
@@ -21,16 +21,13 @@
     gap: 3em;
     align-items: flex-start;
     padding-top: 4em;
-    padding-bottom: 7em;
-
+    //padding-bottom: 4em;
   }
 }
 
 @media screen and (min-width: 1024px) {
   .overview {
     padding-top: 5em;
-
-    padding-bottom: 13em;
 
     &__container {
       margin-bottom: 0;

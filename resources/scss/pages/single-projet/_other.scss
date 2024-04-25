@@ -2,6 +2,8 @@
   display: flex;
   flex-direction: column;
   padding-bottom: 80px;
+  padding-top: 6em;
+
 
   & .project__container .projetcard + .projetcard {
     margin-top: 0;
@@ -23,6 +25,7 @@
 /* DESKTOP */
 @media screen and (min-width: 1024px) {
   .other {
+    padding-top: 8em;
     @include lower-partition;
 
     &__title {

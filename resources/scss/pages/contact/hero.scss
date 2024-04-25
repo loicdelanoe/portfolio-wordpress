@@ -1,7 +1,7 @@
 .herocontact {
   display: flex;
   flex-direction: column;
-  padding: 81px 24px 77px 24px;
+  padding: 81px 24px 2em 24px;
 
   &__title {
     margin-bottom: 29px;
@@ -13,12 +13,20 @@
 }
 
 .contact {
-  padding-top: 3em;
+  padding-top: 4em;
   padding-bottom: 80px;
 }
 
 @media screen and (min-width: 768px){
+  .herocontact {
+    padding-bottom: 3.5em;
+    &__title {
+      margin-bottom: 0;
+    }
+  }
   .contact {
+    padding-top: 7em;
+
     padding-bottom: 8em;
   }
 }
@@ -26,13 +34,14 @@
 @media screen and (min-width: 1024px) {
   .herocontact {
     padding-top: 7.75em;
-    padding-bottom: 6em;
+    padding-bottom: 4em;
   }
 
   .contact {
-    padding-top: 5em;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 8em;
+
+    @include lower-partition;
   }
 }

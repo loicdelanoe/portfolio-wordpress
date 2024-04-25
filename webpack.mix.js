@@ -7,7 +7,8 @@ mix.sass(`resources/scss/main.scss`, `public/css`).sourceMaps()
     .copy('resources/img', 'public/img')
     .copy('resources/fonts', 'public/fonts')
     .options({
-        processCssUrls: false
+        processCssUrls: false,
+        autoprefixer: { remove: false }
     });
 
 mix.browserSync({

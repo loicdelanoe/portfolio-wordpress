@@ -8,6 +8,16 @@
         </div>
         <section class="contact">
             <h2 class="sro">Formulaire de contact</h2>
+            <article class="cordcontact" data-animation="show-up">
+                <h2 class="sro">Coordonnées</h2>
+                <p class="cordcontact__content"><?= get_field('contact_text') ?></p>
+                <dl class="cordcontact__container info">
+                    <dt class="info__title">Email</dt>
+                    <dd class="info__content"><a href="<?= "mailto:" . get_field('email') ?>"><?= get_field('email') ?></a></dd>
+                    <dt class="info__title">Téléphone</dt>
+                    <dd class="info__content"><a href="<?= "tel:" . get_field('phone') ?>"><?= get_field('phone') ?></a></dd>
+                </dl>
+            </article>
             <form action="<?php echo esc_url( admin_url('admin-post.php') ); ?>" class="form" method="post">
                 <div class="field__container" data-animation="show-up">
                     <label class="field__label" for="lastname">Nom</label>
@@ -32,16 +42,6 @@
                 </div>
                 <button class="cta field__submit" type="submit" data-animation="show-up">Envoyer</button>
             </form>
-            <article class="cordcontact" data-animation="show-up">
-                <h2 class="sro">Coordonnées</h2>
-                <p class="cordcontact__content"><?= get_field('contact_text') ?></p>
-                <dl class="cordcontact__container info">
-                    <dt class="info__title">Email</dt>
-                    <dd class="info__content"><a href="<?= "mailto:" . get_field('email') ?>"><?= get_field('email') ?></a></dd>
-                    <dt class="info__title">Téléphone</dt>
-                    <dd class="info__content"><a href="<?= "tel:" . get_field('phone') ?>"><?= get_field('phone') ?></a></dd>
-                </dl>
-            </article>
         </section>
 
     </main>
