@@ -1,6 +1,7 @@
 {
     "/js/main.js": "/js/main.js",
     "/css/main.css": "/css/main.css",
+    "/img/bg.svg": "/img/bg.svg",
     "/img/fermata.svg": "/img/fermata.svg",
     "/img/footer-partition.svg": "/img/footer-partition.svg",
     "/img/hero-bg-mobile.svg": "/img/hero-bg-mobile.svg",
@@ -9,5 +10,8 @@
     "/img/lower-partition.svg": "/img/lower-partition.svg",
     "/img/sol-key-large.svg": "/img/sol-key-large.svg",
     "/img/upper-partition.svg": "/img/upper-partition.svg",
+    "/fonts/Kalnia-Light.ttf": "/fonts/Kalnia-Light.ttf",
+    "/fonts/Kalnia-Regular.ttf": "/fonts/Kalnia-Regular.ttf",
+    "/fonts/Kalnia-SemiBold.ttf": "/fonts/Kalnia-SemiBold.ttf",
     "/fonts/Kalnia-VariableFont_wdth,wght.ttf": "/fonts/Kalnia-VariableFont_wdth,wght.ttf"
 }

@@ -8,7 +8,7 @@
         </div>
         <section class="contact">
             <h2 class="sro">Formulaire de contact</h2>
-            <form action="" class="form" method="post">
+            <form action="<?php echo esc_url( admin_url('admin-post.php') ); ?>" class="form" method="post">
                 <div class="field__container" data-animation="show-up">
                     <label class="field__label" for="lastname">Nom</label>
                     <input class="field__input" type="text" name="lastname" id="lastname" placeholder="Doe">

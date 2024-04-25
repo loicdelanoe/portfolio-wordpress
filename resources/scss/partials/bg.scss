@@ -1,11 +1,20 @@
 .bg {
-  background-image: url("../img/hero-bg-mobile.svg");
-  background-repeat: no-repeat;
-  -ms-background-position-y: -1px;
-  background-position-y: -1px;
   position: relative;
-  z-index: 9;
+  z-index: 2;
+  background-color: $backgroundColor;
+
+  &:after {
+    position: absolute;
+    content: '';
+    background-image: url("../img/bg.svg");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    display: block;
+    width: 100%;
+    height: 5vw;
+  }
 }
+
 
 @media screen and (min-width: 1024px) {
   .key {

@@ -54,3 +54,10 @@ function dw_get_navigation_links(string $location): array
     // Retourner le tableau de liens formatés
     return $items;
 }
+
+function dw_contact_form_controller()
+{
+    var_dump($_POST);
+}
+
+add_action( 'admin_post_custom_contact_form', 'dw_contact_form_controller' );

@@ -4,7 +4,8 @@
   &:before {
     position: absolute;
     content: url("../img/upper-partition.svg");
-    margin-top: -5.5em;
+    margin-top: 3em;
+    //z-index: -1;
     top: 0;
     left: 24px;
   }

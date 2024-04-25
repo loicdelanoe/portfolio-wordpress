@@ -8,6 +8,10 @@
     filter: brightness(50%);
   }
 
+  &:hover ~ * {
+    opacity: 0.5;
+  }
+
   &__link {
     position: absolute;
     inset: 0;
