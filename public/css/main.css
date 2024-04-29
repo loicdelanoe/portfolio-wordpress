@@ -1061,7 +1061,7 @@ input[id=burger]:checked ~ .burger__wrapper span:nth-child(3) {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 5em 24px;
+  padding: 10em 24px;
 }
 
 @media screen and (min-width: 1024px) {
