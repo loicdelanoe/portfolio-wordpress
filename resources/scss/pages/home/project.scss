@@ -23,11 +23,13 @@
       pointer-events: auto;
     }
 
-    &:hover > * {
+    &:hover > * ,
+    &:focus > * {
       opacity: 0.8;
     }
 
-    &:hover > *:hover {
+    &:hover > *:hover,
+    &:focus > *:focus{
       opacity: 1;
     }
   }

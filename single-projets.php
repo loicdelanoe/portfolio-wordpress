@@ -13,7 +13,7 @@
                 <div class="herosingle__container" data-animation="slide-left">
                     <a class="cta" href="<?= get_field('github_link') ?>" data-variant="secondary">Github</a>
                     <?php if (!get_field('site_link')): ?>
-                        <a class="cta" href="#" data-variant="disabled">Visiter le site</a>
+                        <a class="cta" href="#" data-variant="disabled" aria-disabled="true">Visiter le site</a>
                     <?php else: ?>
                         <a class="cta" href="<?= get_field('site_link') ?>">Visiter le site</a>
                     <?php endif; ?>

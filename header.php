@@ -11,10 +11,11 @@
     <title>Loïc D. - Portfolio</title>
 </head>
 <body>
-<header class="header" id="header">
+<a href="#main" class="skip-link">Aller au contenu</a>
+<header class="header" id="header" role="banner">
     <h1 class="sro"><?= get_the_title() ?></h1>
     <div class="header__container">
-        <nav class="nav">
+        <nav class="nav" aria-label="Menu principal">
             <h2 class="sro">Navigation principale</h2>
             <a class="nav__branding" href="/" title="Vers la page d'accueil">Loïc D.</a>
             <label class="sro" for="burger">Burger menu</label>

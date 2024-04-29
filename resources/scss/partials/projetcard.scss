@@ -3,7 +3,8 @@
   margin-bottom: 2.4em;
   transition: .3s;
 
-  &:hover {
+  &:hover,
+  &:focus {
     transform: scale(1.03);
   }
 

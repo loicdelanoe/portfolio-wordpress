@@ -1,4 +1,4 @@
-<footer class="footer">
+<footer class="footer" role="contentinfo">
     <div class="footer__container">
         <article class="footer__upper">
             <h2 class="footer__branding">Loïc D.</h2>
