@@ -3,6 +3,11 @@
   flex-direction: column;
   align-items: center;
   padding: 5em 24px;
+}
 
-  @include lower-partition;
+@media screen and (min-width: 1024px){
+  .talk {
+    @include lower-partition;
+
+  }
 }

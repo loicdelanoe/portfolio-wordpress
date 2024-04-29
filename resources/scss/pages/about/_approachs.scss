@@ -1,5 +1,5 @@
 .approachs {
-  padding: 5em 24px 0 24px;
+  padding: 3em 24px 0 24px;
 
   &__container {
     display: flex;
@@ -11,29 +11,40 @@
       font-weight: 300;
     }
   }
+}
 
-  &__item {
-    display: flex;
+@media screen and (min-width: 768px) {
+  .approachs {
+    padding: 5em 24px 0 24px;
 
-    &:before {
-      display: inline-block;
-      font-family: "Karla", "Times New Roman", serif;
-      padding-right: 2em;
-      border-right: 1px solid $textColor;
-      height: auto;
-    }
+  }
+}
 
-    &--design:before {
-      content: url("../img/rythm-1.svg");
-    }
+@media screen and (min-width: 1024px) {
+  .approachs {
+    &__item {
+      display: flex;
 
-    &--dev:before {
-      content: url("../img/rythm-2.svg");
-    }
+      &:before {
+        display: inline-block;
+        font-family: "Karla", "Times New Roman", serif;
+        padding-right: 2em;
+        border-right: 1px solid $textColor;
+        height: auto;
+      }
 
-    &--access:before {
-      content: url("../img/rythm-3.svg");
+      &--design:before {
+        content: url("../img/rythm-1.svg");
+      }
 
+      &--dev:before {
+        content: url("../img/rythm-2.svg");
+      }
+
+      &--access:before {
+        content: url("../img/rythm-3.svg");
+
+      }
     }
   }
 }

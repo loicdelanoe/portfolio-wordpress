@@ -1,19 +1,36 @@
 .formation {
+  display: flex;
+  flex-direction: column;
 
+  &__container {
+    display: flex;
+    flex-direction: column;
+    margin: 1em 0;
+  }
+
+  &__date {
+    display: inline-block;
+    font-family: "Kalnia", "Times New Roman", serif;
+    font-weight: 600;
+    font-size: 1.5em;
+    margin-bottom: .2em;
+    color: $textColor;
+  }
+
+  &__title {
+    font-size: 1.5em;
+    margin-bottom: 0.2em;
+  }
 }
 
 @media screen and (min-width: 1024px) {
   .formation {
-    display: flex;
-    flex-direction: column;
     background-image: url("../img/about-partition-middle.svg");
     background-repeat: no-repeat;
     background-position: center;
     padding: 2em 0;
 
     &__container {
-      display: flex;
-      flex-direction: column;
       margin-right: auto;
       position: relative;
       min-width: 280px;
@@ -44,15 +61,8 @@
     }
 
     &__date {
-      display: inline-block;
-      font-family: "Kalnia", "Times New Roman", serif;
-      font-weight: 600;
       font-size: 2.5em;
-      margin-bottom: .2em;
-    }
-
-    &__title {
-      font-size: 1.5em;
     }
   }
+
 }

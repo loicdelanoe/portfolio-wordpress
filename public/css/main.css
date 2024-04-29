@@ -866,18 +866,29 @@ input[id=burger]:checked ~ .burger__wrapper span:nth-child(3) {
     padding-top: 10em;
   }
 }
-@media screen and (min-width: 1024px) {
+.formations {
+  padding: 3em 24px;
+}
+.formations__title span {
+  font-weight: 300;
+}
+
+@media screen and (min-width: 768px) {
   .formations {
     padding: 5em 24px;
   }
-  .formations__title span {
-    font-weight: 300;
-  }
   .formations__container {
     display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.5em;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .formations__container {
     grid-template-columns: 1fr;
     max-width: 800px;
     margin: auto;
+    gap: 0;
   }
   .formations__container:before {
     content: url("../img/about-upper-partition.svg");
@@ -894,18 +905,36 @@ input[id=burger]:checked ~ .burger__wrapper span:nth-child(3) {
     margin: auto;
   }
 }
+.formation {
+  display: flex;
+  flex-direction: column;
+}
+.formation__container {
+  display: flex;
+  flex-direction: column;
+  margin: 1em 0;
+}
+.formation__date {
+  display: inline-block;
+  font-family: "Kalnia", "Times New Roman", serif;
+  font-weight: 600;
+  font-size: 1.5em;
+  margin-bottom: 0.2em;
+  color: #2C231E;
+}
+.formation__title {
+  font-size: 1.5em;
+  margin-bottom: 0.2em;
+}
+
 @media screen and (min-width: 1024px) {
   .formation {
-    display: flex;
-    flex-direction: column;
     background-image: url("../img/about-partition-middle.svg");
     background-repeat: no-repeat;
     background-position: center;
     padding: 2em 0;
   }
   .formation__container {
-    display: flex;
-    flex-direction: column;
     margin-right: auto;
     position: relative;
     min-width: 280px;
@@ -931,44 +960,41 @@ input[id=burger]:checked ~ .burger__wrapper span:nth-child(3) {
     left: -4em;
   }
   .formation__date {
-    display: inline-block;
-    font-family: "Kalnia", "Times New Roman", serif;
-    font-weight: 600;
     font-size: 2.5em;
-    margin-bottom: 0.2em;
-  }
-  .formation__title {
-    font-size: 1.5em;
   }
 }
-@media screen and (min-width: 1024px) {
+.tools {
+  padding: 3em 24px 0 24px;
+  overflow: hidden;
+}
+.tools__title span {
+  font-weight: 300;
+}
+.tools__container {
+  display: flex;
+  animation: scroll 25s linear infinite;
+}
+.tools__item {
+  width: 64px;
+  height: auto;
+  margin: 0 2em;
+}
+
+@media screen and (min-width: 768px) {
   .tools {
-    padding: 7em 24px 0 24px;
-    overflow: hidden;
+    padding: 5em 24px 0 24px;
   }
-  .tools__title span {
-    font-weight: 300;
+}
+@keyframes scroll {
+  from {
+    transform: translateX(0);
   }
-  .tools__container {
-    display: flex;
-    animation: scroll 15s linear infinite;
-  }
-  .tools__item {
-    width: 64px;
-    height: auto;
-    margin: 0 2em;
-  }
-  @keyframes scroll {
-    from {
-      transform: translateX(0);
-    }
-    to {
-      transform: translateX(-1408px);
-    }
+  to {
+    transform: translateX(-1408px);
   }
 }
 .approachs {
-  padding: 5em 24px 0 24px;
+  padding: 3em 24px 0 24px;
 }
 .approachs__container {
   display: flex;
@@ -977,61 +1003,80 @@ input[id=burger]:checked ~ .burger__wrapper span:nth-child(3) {
 .approachs__title span {
   font-weight: 300;
 }
-.approachs__item {
-  display: flex;
-}
-.approachs__item:before {
-  display: inline-block;
-  font-family: "Karla", "Times New Roman", serif;
-  padding-right: 2em;
-  border-right: 1px solid #2C231E;
-  height: auto;
-}
-.approachs__item--design:before {
-  content: url("../img/rythm-1.svg");
-}
-.approachs__item--dev:before {
-  content: url("../img/rythm-2.svg");
-}
-.approachs__item--access:before {
-  content: url("../img/rythm-3.svg");
-}
 
-.approach {
-  margin: 1em 0;
-  align-items: center;
+@media screen and (min-width: 768px) {
+  .approachs {
+    padding: 5em 24px 0 24px;
+  }
 }
-.approach:nth-child(odd) {
-  margin-left: auto;
+@media screen and (min-width: 1024px) {
+  .approachs__item {
+    display: flex;
+  }
+  .approachs__item:before {
+    display: inline-block;
+    font-family: "Karla", "Times New Roman", serif;
+    padding-right: 2em;
+    border-right: 1px solid #2C231E;
+    height: auto;
+  }
+  .approachs__item--design:before {
+    content: url("../img/rythm-1.svg");
+  }
+  .approachs__item--dev:before {
+    content: url("../img/rythm-2.svg");
+  }
+  .approachs__item--access:before {
+    content: url("../img/rythm-3.svg");
+  }
 }
 .approach__container {
-  display: flex;
-  flex-direction: column;
-  padding-left: 2em;
+  margin-bottom: 1.5em;
 }
 .approach__title {
-  font-size: 2.5em;
-}
-.approach__content {
-  max-width: 325px;
+  font-size: 1.5em;
 }
 
+@media screen and (min-width: 1024px) {
+  .approach {
+    margin: 1em 0;
+    align-items: center;
+  }
+  .approach:nth-child(odd) {
+    margin-left: auto;
+  }
+  .approach__container {
+    display: flex;
+    flex-direction: column;
+    padding-left: 2em;
+  }
+  .approach__title {
+    font-size: 2.5em;
+  }
+  .approach__content {
+    max-width: 325px;
+  }
+}
 .talk {
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 5em 24px;
-  position: relative;
-}
-.talk:after {
-  position: absolute;
-  content: url("../img/lower-partition.svg");
-  z-index: -1;
-  bottom: 0;
-  margin-bottom: -0.25em;
-  left: 24px;
 }
 
+@media screen and (min-width: 1024px) {
+  .talk {
+    position: relative;
+  }
+  .talk:after {
+    position: absolute;
+    content: url("../img/lower-partition.svg");
+    z-index: -1;
+    bottom: 0;
+    margin-bottom: -0.25em;
+    left: 24px;
+  }
+}
 .project {
   display: flex;
   flex-direction: column;

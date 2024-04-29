@@ -1,24 +1,32 @@
 .formations {
-  &__title {
+  padding: 3em 24px;
 
+  &__title {
+    & span {
+      font-weight: 300;
+    }
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .formations {
+    padding: 5em 24px;
+
+    &__container {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0.5em;
+    }
   }
 }
 
 @media screen and (min-width: 1024px) {
   .formations {
-    padding: 5em 24px;
-
-    &__title {
-      & span {
-        font-weight: 300;
-      }
-    }
-
     &__container {
-      display: grid;
       grid-template-columns: 1fr;
       max-width: 800px;
       margin: auto;
+      gap: 0;
 
       &:before {
         content: url("../img/about-upper-partition.svg");
