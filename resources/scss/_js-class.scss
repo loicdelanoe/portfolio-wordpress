@@ -4,7 +4,6 @@
 
 .no-opacity {
   opacity: 0;
-  visibility: hidden;
 }
 
 .show-up {
@@ -14,12 +13,10 @@
 @keyframes showUp {
   0% {
     opacity: 0;
-    visibility: hidden;
     transform: translateY(25px);
   }
   100% {
     opacity: 1;
-    visibility: visible;
     transform: none;
   }
 }

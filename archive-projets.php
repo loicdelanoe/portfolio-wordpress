@@ -18,7 +18,7 @@
                         <?= wp_get_attachment_image(get_field('resume_image'), 'project_thumbnail', false, [
                             'class' => 'projetcard__img',
                         ]) ?>
-                        <p class="projetcard__title"><?= get_the_title() ?></p>
+                        <h3 class="projetcard__title"><?= get_the_title() ?></h3>
                     </div>
                 </article>
             <?php endwhile; endif; // Fermeture de "The Loop" de Wordpress ?>

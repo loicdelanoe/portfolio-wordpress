@@ -12,9 +12,6 @@
                 <img src="<?= dw_asset('img/hero-partition.svg') ?>" alt="">
             </div>
         </section>
-<!--        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none">-->
-<!--            <polygon fill="white" points="0,100 100,0 100,100"/>-->
-<!--        </svg>-->
     </div>
     <section class="project">
         <h2 class="sro">Projets</h2>

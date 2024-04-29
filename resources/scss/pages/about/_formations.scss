@@ -1,0 +1,40 @@
+.formations {
+  &__title {
+
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .formations {
+    padding: 5em 24px;
+
+    &__title {
+      & span {
+        font-weight: 300;
+      }
+    }
+
+    &__container {
+      display: grid;
+      grid-template-columns: 1fr;
+      max-width: 800px;
+      margin: auto;
+
+      &:before {
+        content: url("../img/about-upper-partition.svg");
+        width: 136px;
+        max-height: 105px;
+        display: block;
+        margin: auto;
+      }
+
+      &:after {
+        content: url("../img/about-lower-partition.svg");
+        width: 136px;
+        height: auto;
+        display: block;
+        margin: auto;
+      }
+    }
+  }
+}

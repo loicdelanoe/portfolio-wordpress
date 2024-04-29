@@ -1,0 +1,39 @@
+.approachs {
+  padding: 5em 24px 0 24px;
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__title {
+    & span {
+      font-weight: 300;
+    }
+  }
+
+  &__item {
+    display: flex;
+
+    &:before {
+      display: inline-block;
+      font-family: "Karla", "Times New Roman", serif;
+      padding-right: 2em;
+      border-right: 1px solid $textColor;
+      height: auto;
+    }
+
+    &--design:before {
+      content: url("../img/rythm-1.svg");
+    }
+
+    &--dev:before {
+      content: url("../img/rythm-2.svg");
+    }
+
+    &--access:before {
+      content: url("../img/rythm-3.svg");
+
+    }
+  }
+}

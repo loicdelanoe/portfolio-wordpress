@@ -1,0 +1,58 @@
+.formation {
+
+}
+
+@media screen and (min-width: 1024px) {
+  .formation {
+    display: flex;
+    flex-direction: column;
+    background-image: url("../img/about-partition-middle.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    padding: 2em 0;
+
+    &__container {
+      display: flex;
+      flex-direction: column;
+      margin-right: auto;
+      position: relative;
+      min-width: 280px;
+
+
+      &:after {
+        position: absolute;
+        content: url("../img/about-left-note.svg");
+        width: 100%;
+        height: auto;
+        bottom: -3em;
+        right: -9em;
+      }
+    }
+
+    &:nth-child(odd) &__container {
+      margin-left: auto;
+      margin-right: 0;
+
+      &:after {
+        margin-left: auto;
+        content: url("../img/about-right-note.svg");
+        width: 100%;
+        height: auto;
+        right: auto;
+        left: -4em;
+      }
+    }
+
+    &__date {
+      display: inline-block;
+      font-family: "Kalnia", "Times New Roman", serif;
+      font-weight: 600;
+      font-size: 2.5em;
+      margin-bottom: .2em;
+    }
+
+    &__title {
+      font-size: 1.5em;
+    }
+  }
+}

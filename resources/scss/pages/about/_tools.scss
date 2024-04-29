@@ -1,0 +1,33 @@
+@media screen and (min-width: 1024px) {
+  .tools {
+    padding: 7em 24px 0 24px;
+    overflow: hidden;
+
+    &__title {
+      & span {
+        font-weight: 300;
+      }
+    }
+
+
+    &__container {
+      display: flex;
+      animation: scroll 15s linear infinite;
+    }
+
+    &__item {
+      width: 64px;
+      height: auto;
+      margin: 0 2em;
+    }
+  }
+
+  @keyframes scroll {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(calc(-128px * 11));
+    }
+  }
+}

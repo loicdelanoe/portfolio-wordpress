@@ -24,6 +24,19 @@ register_post_type('projets', [
     ]
 ]);
 
+register_post_type('formations', [
+    'label' => 'Formations',
+    'description' => 'Mes formations',
+    'public' => true,
+    'hierarchical' => false,
+    'menu_position' => 22,
+    'menu_icon' => 'dashicons-portfolio',
+    'has_archive' => false,
+    'rewrite' => [
+        'slug' => 'formations',
+    ]
+]);
+
 function dw_asset(string $file): string
 {
     return get_template_directory_uri() . '/public/' . $file;

@@ -1,0 +1,25 @@
+.approach {
+  margin: 1em 0;
+  align-items: center;
+
+  &:nth-child(odd) {
+    margin-left: auto;
+  }
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    padding-left: 2em;
+
+  }
+
+  &__title {
+    font-size: 2.5em;
+
+  }
+
+  &__content {
+    max-width: 325px;
+
+  }
+}
