@@ -15,6 +15,22 @@
     flex-direction: column;
   }
 
+  &__container {
+    pointer-events: none;
+
+    & > * {
+      pointer-events: auto;
+    }
+
+    &:hover > * {
+      opacity: 0.8;
+    }
+
+    &:hover > *:hover {
+      opacity: 1;
+    }
+  }
+
   &__cta {
     align-self: center;
   }

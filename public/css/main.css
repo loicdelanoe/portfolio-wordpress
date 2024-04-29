@@ -1090,6 +1090,18 @@ input[id=burger]:checked ~ .burger__wrapper span:nth-child(3) {
   display: flex;
   flex-direction: column;
 }
+.project__container {
+  pointer-events: none;
+}
+.project__container > * {
+  pointer-events: auto;
+}
+.project__container:hover > * {
+  opacity: 0.8;
+}
+.project__container:hover > *:hover {
+  opacity: 1;
+}
 .project__cta {
   align-self: center;
 }
@@ -1145,13 +1157,10 @@ input[id=burger]:checked ~ .burger__wrapper span:nth-child(3) {
   position: relative;
   margin-bottom: 2.4em;
   transition: 0.3s;
+  opacity: 1;
 }
 .projetcard:hover {
   transform: scale(1.03);
-  filter: brightness(50%);
-}
-.projetcard:hover ~ * {
-  opacity: 0.5;
 }
 .projetcard__link {
   position: absolute;
@@ -1182,7 +1191,7 @@ input[id=burger]:checked ~ .burger__wrapper span:nth-child(3) {
 }
 
 @media screen and (min-width: 768px) {
-  .projetcard + .projetcard {
+  .projetcard:nth-child(even) {
     margin-top: 10em;
   }
 }

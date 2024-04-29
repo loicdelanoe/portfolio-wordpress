@@ -2,14 +2,10 @@
   position: relative;
   margin-bottom: 2.4em;
   transition: .3s;
+  opacity: 1;
 
   &:hover {
     transform: scale(1.03);
-    filter: brightness(50%);
-  }
-
-  &:hover ~ * {
-    opacity: 0.5;
   }
 
   &__link {
@@ -47,7 +43,7 @@
 
 @media screen and (min-width: 768px) {
   .projetcard {
-    & + & {
+    &:nth-child(even) {
       margin-top: 10em;
     }
   }
