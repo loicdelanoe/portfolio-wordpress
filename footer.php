@@ -1,7 +1,7 @@
 <footer class="footer" role="contentinfo">
     <div class="footer__container">
         <article class="footer__upper">
-            <h2 class="footer__branding">Loïc D.</h2>
+            <h2 class="footer__branding"><a href="/">Loïc D.</a></h2>
             <dl class="footerlist">
                 <div>
                     <dt class="footerlist__title">Contactez-moi</dt>
@@ -28,7 +28,7 @@
                         <ul>
                             <?php foreach (dw_get_navigation_links('main') as $link): ?>
                                 <li class="nav__items"><a href="<?= $link->url ?>"
-                                                          class="footernav__link"
+                                                          class="nav__link--footer"
                                                           title="Vers la page <?= $link->label ?>"><?= $link->label ?></a>
                                 </li>
                             <?php endforeach; ?>

@@ -20,6 +20,10 @@
       content: url("../img/logo.svg");
       width: 35px;
     }
+
+    & > a {
+      font-family: "Kalnia", "Times New Roman", serif;
+    }
   }
 
   &__legal {
@@ -46,9 +50,6 @@
 
 @media screen and (min-width: 1024px) {
   .footer {
-    &__container {
-    }
-    
     &__upper {
       background-image: url("../img/footer-partition.svg");
       background-position: 0 0;

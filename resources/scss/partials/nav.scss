@@ -46,17 +46,12 @@
     align-items: center;
   }
 
-  &__items {
-
-  }
-
   &__link {
     box-sizing: content-box;
     display: flex;
     flex-direction: column;
     padding: 20px;
     font-size: 2em;
-    //padding: .1em 0;
 
     &:after {
       content: '';
@@ -73,12 +68,17 @@
       height: 1px;
       background-color: $textColor;
     }
+
+    &--footer {
+      padding: 0.2em 0;
+    }
   }
 }
 
 @media screen and (min-width: 1024px) {
   .nav {
     padding-bottom: 1.5em;
+
     &__container {
       transform: none;
       position: initial;
@@ -90,9 +90,6 @@
     &__link {
       font-size: 1em;
       padding: 15px 20px;
-    }
-
-    &__branding {
     }
 
     &__items:last-child > a {

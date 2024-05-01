@@ -1,17 +1,15 @@
 .footerlist {
-  &__title {
-  }
-
   &__description {
     margin-bottom: 2.5em;
 
     & > p {
+      margin-top: 0.2em;
       margin-bottom: 1em;
     }
   }
 
   &__link {
-    //padding: 5px 0;
+    padding: 0.2em 0;
   }
 }
 

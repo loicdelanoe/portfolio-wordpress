@@ -6,6 +6,7 @@ class ContactForm
     {
         $_SESSION['errors'] = [];
         $_SESSION['old'] = [];
+        $_SESSION['feedback'] = '';
 
         $rules = [
             "name" => ['required'],
@@ -19,12 +20,12 @@ class ContactForm
 
         if (count($_SESSION['errors']) > 0) {
             $_SESSION['old'] = $data;
-
-            wp_redirect(wp_get_referer());
-            exit();
         } else {
             self::sendMail($data);
         }
+
+        wp_redirect(wp_get_referer());
+        exit();
     }
 
     protected static function validate(array $data, array $rules): void
@@ -62,14 +63,13 @@ class ContactForm
 
     private static function sendMail(array $data): void
     {
-        $headers[] = [
-            'Content-Type: text/html; charset=UTF-8',
-            "From {$data['name']} {$data['lastname']}: {$data['email']}",
-            "Reply-To: {$data['email']}",
-        ];
+        $headers[] = "From {$data['name']} {$data['lastname']}: {$data['email']}";
+        $headers[] = "Reply-To: {$data['email']}";
 
         $subject = "Prise de contact";
 
         wp_mail(get_bloginfo('admin_email'), $subject, $data['message'], $headers);
+
+        $_SESSION['feedback'] = "Merci&nbsp;! Votre message a bien été envoyé :)";
     }
 }

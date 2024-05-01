@@ -27,9 +27,8 @@
   }
 }
 
-@media screen and (min-width: 768px){
+@media screen and (min-width: 768px) {
   .color {
-
     &__list {
       flex-direction: row;
     }
@@ -38,7 +37,6 @@
 
 @media screen and (min-width: 1024px) {
   .color {
-
     &__title {
       font-size: 52px;
     }
