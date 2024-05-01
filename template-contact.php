@@ -21,7 +21,7 @@
                 </dl>
             </article>
             <form action="<?= esc_url(admin_url('admin-post.php')); ?>" class="form" method="post">
-                <?php if ($_SESSION['feedback']) : ?>
+                <?php if (isset($_SESSION['feedback'])) : ?>
                     <p class="field__valid"><?= $_SESSION['feedback'] ?></p>
                 <?php endif; ?>
                 <div class="field__container" data-animation="show-up">
@@ -69,7 +69,7 @@
                 <?php
                 $_SESSION['errors'] = [];
                 $_SESSION['old'] = [];
-                $_SESSION['feedback'] = '';
+                unset($_SESSION['feedback']);
                 ?>
             </form>
         </section>
