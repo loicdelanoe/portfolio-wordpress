@@ -21,7 +21,7 @@
                 </dl>
             </article>
             <?php
-            $feedback = $_SESSION['feedback'] ?? '';
+            $feedback = ContactForm::feedback();
             ?>
             <form action="<?= esc_url(admin_url('admin-post.php')); ?>" class="form" method="post">
                 <?php if ($feedback !== '') : ?>
@@ -72,7 +72,6 @@
                 <?php
                 $_SESSION['errors'] = [];
                 $_SESSION['old'] = [];
-                $_SESSION['feedback'] = '';
                 ?>
             </form>
         </section>
