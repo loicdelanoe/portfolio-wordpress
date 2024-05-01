@@ -69,7 +69,7 @@
                 <?php
                 $_SESSION['errors'] = [];
                 $_SESSION['old'] = [];
-                unset($_SESSION['feedback']);
+                $_SESSION['feedback'] = '';
                 ?>
             </form>
         </section>
