@@ -6,8 +6,10 @@
           content="width=device-width, initial-scale=1.0, maximum-scale=2.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="author" content="Loïc Delanoë">
+    <meta name="title" content="Loïc D.">
+    <meta name="keywords" content="Portfolio, Loïc Delanoë, développeur web, développeur, front-end, back-end, full-stack, HEPL, étudiant">
     <meta name="description" content="Loïc Delanoë, étudiant passionné en développement web et développeur full stack. Découvrez mon portfolio créatif et innovant, où chaque ligne de code raconte une histoire.">
-    <link rel="canonical" href="https://loicdelanoe.com/">
+    <link rel="canonical" href="<?= get_site_url() ?>">
     <link rel="stylesheet" href="<?= dw_asset('css/main.css') ?>">
     <title>Loïc D. - Portfolio</title>
 </head>

@@ -21,12 +21,11 @@
                 </dl>
             </article>
             <?php
-            $feedback = ContactForm::feedback();
-
+            $feedback = $_SESSION['feedback'] ?? '';
             ?>
             <form action="<?= esc_url(admin_url('admin-post.php')); ?>" class="form" method="post">
-                <?php if (isset($feedback) && $feedback !== '') : ?>
-                    <p class="field__valid"><?= $_SESSION['feedback'] ?></p>
+                <?php if ($feedback !== '') : ?>
+                    <p class="field__valid"><?= $feedback ?></p>
                 <?php endif; ?>
                 <div class="field__container" data-animation="show-up">
                     <label class="field__label" for="lastname">Nom *</label>
