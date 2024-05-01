@@ -1,6 +1,6 @@
 <?php /* Template Name: "À Propos" */ ?>
 <?php get_header() ?>
-    <main>
+    <main id="main">
         <div class="bg">
             <section class="heroabout">
                 <h2 class="heroabout__title" data-animation="show-up"><span>À Propos</span> De moi</h2>

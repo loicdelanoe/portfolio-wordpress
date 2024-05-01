@@ -1,0 +1,65 @@
+<?php
+
+class ContactForm
+{
+    public function __construct($data)
+    {
+        $_SESSION['errors'] = [];
+        $_SESSION['old'] = [];
+
+        $rules = [
+            "name" => ['required'],
+            "lastname" => ['required'],
+            "email" => ['required', 'email'],
+            "phone" => [],
+            "message" => ['required'],
+        ];
+
+        self::validate($data, $rules);
+
+        if (count($_SESSION['errors']) > 0) {
+            $_SESSION['old'] = $data;
+
+            wp_redirect(wp_get_referer());
+            exit();
+        } else {
+            $headers[] = "De {$data['name']} {$data['lastname']}: {$data['email']}";
+            $headers[] = $data['phone'] ?? null;
+
+            wp_mail(get_bloginfo('admin_email'), "Contact", $data['message'], $headers);
+        }
+    }
+
+    protected static function validate(array $data, array $rules): void
+    {
+        foreach ($rules as $field => $checks) {
+
+            $key = $field ?? null;
+
+            foreach ($checks as $check) {
+                $method = $check;
+
+                self::$method($key, $data);
+            }
+        }
+    }
+
+    private static function required(string $key, array $data): bool
+    {
+        if (empty($data[$key])) {
+            $_SESSION['errors'][$key] = "Ce champ est requis";
+            return false;
+        }
+
+        return true;
+    }
+
+    private static function email(string $key, array $data): bool
+    {
+        if (!filter_var($data[$key], FILTER_VALIDATE_EMAIL)) {
+            $_SESSION['errors'][$key] = "L'adresse mail n'est pas valide";
+            return false;
+        }
+        return true;
+    }
+}

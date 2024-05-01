@@ -1,6 +1,14 @@
 <?php
 
+require_once(__DIR__ . '/src/ContactForm.php');
+
+// Démarrer la session
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+
 // Disable Gutenberg editor
+
 add_filter('use_block_editor_for_post', '__return_false');
 
 add_theme_support( 'post-thumbnails' );
@@ -70,7 +78,7 @@ function dw_get_navigation_links(string $location): array
 
 function dw_contact_form_controller()
 {
-    var_dump($_POST);
+    new ContactForm($_POST);
 }
 
 add_action( 'admin_post_custom_contact_form', 'dw_contact_form_controller' );

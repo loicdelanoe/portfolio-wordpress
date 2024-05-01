@@ -1,5 +1,5 @@
 <?php get_header() ?>
-<main>
+<main id="main">
     <div class="bg">
         <section class="heroprojets">
             <h2 class="heroprojets__title" data-animation="show-up"><span>Découvrez</span> Mes travaux</h2>

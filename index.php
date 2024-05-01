@@ -9,7 +9,7 @@
             </div>
             <div class="hero__container--partition partition" data-animation="show-up">
                 <p class="partition__text">Scroll down →</p>
-                <img src="<?= dw_asset('img/hero-partition.svg') ?>" alt="">
+                <img src="<?= dw_asset('img/hero-partition.svg') ?>" width="1116" height="195" alt="">
             </div>
         </section>
     </div>
