@@ -22,6 +22,8 @@ class ContactForm
             $_SESSION['old'] = $data;
         } else {
             self::sendMail($data);
+
+            $_SESSION['feedback'] = "Merci&nbsp;! Votre message a bien été envoyé :)";
         }
 
         wp_redirect(wp_get_referer());
@@ -40,6 +42,11 @@ class ContactForm
                 self::$method($key, $data);
             }
         }
+    }
+
+    public static function feedback(): string
+    {
+        return $_SESSION['feedback'];
     }
 
     private static function required(string $key, array $data): bool
@@ -69,7 +76,5 @@ class ContactForm
         $subject = "Prise de contact";
 
         wp_mail(get_bloginfo('admin_email'), $subject, $data['message'], $headers);
-
-        $_SESSION['feedback'] = "Merci&nbsp;! Votre message a bien été envoyé :)";
     }
 }

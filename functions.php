@@ -81,5 +81,5 @@ function dw_contact_form_controller()
     new ContactForm($_POST);
 }
 
-add_action( 'admin_post_custom_contact_form', 'dw_contact_form_controller' );
 add_action( 'admin_post_nopriv_custom_contact_form', 'dw_contact_form_controller' );
+add_action( 'admin_post_custom_contact_form', 'dw_contact_form_controller' );
