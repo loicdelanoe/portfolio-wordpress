@@ -24,7 +24,7 @@
             $feedback = ContactForm::feedback();
             ?>
             <form action="<?= esc_url(admin_url('admin-post.php')); ?>" class="form" method="post">
-                <?php if ($feedback !== '') : ?>
+                <?php if ($feedback) : ?>
                     <p class="field__valid"><?= $feedback ?></p>
                 <?php endif; ?>
                 <div class="field__container" data-animation="show-up">

@@ -20,7 +20,7 @@
     <div class="header__container">
         <nav class="nav" aria-label="Menu principal">
             <h2 class="sro">Navigation principale</h2>
-            <a class="nav__branding" href="/" title="Vers la page d'accueil">Loïc D.</a>
+            <a class="nav__branding" href="<?= home_url() ?>" title="Vers la page d'accueil">Loïc D.</a>
             <label class="sro" for="burger">Burger menu</label>
             <input type="checkbox" name="burger" id="burger">
             <div class="burger__wrapper">

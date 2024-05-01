@@ -6,6 +6,7 @@ class ContactForm
     {
         $_SESSION['errors'] = [];
         $_SESSION['old'] = [];
+        $_SESSION['feedback'] = '';
 
         $rules = [
             "name" => ['required'],

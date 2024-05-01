@@ -4,8 +4,8 @@
         <section class="hero">
             <h2 class="hero__title" data-animation="show-up"><span>Loïc Delanoë</span> Développeur Web</h2>
             <div class="hero__container" data-animation="show-up">
-                <a class="cta" href="/projets" title="Vers la page projets">Mes Projets</a>
-                <a class="cta" href="/a-propos" data-variant="secondary" title="Vers la page à propos">Me Découvrir</a>
+                <a class="cta" href="<?= home_url() ?>/projets" title="Vers la page projets">Mes Projets</a>
+                <a class="cta" href="<?= home_url() ?>/a-propos" data-variant="secondary" title="Vers la page à propos">Me Découvrir</a>
             </div>
             <div class="hero__container--partition partition" data-animation="show-up">
                 <p class="partition__text">Scroll down →</p>
@@ -42,7 +42,7 @@
                     </article>
                 <?php endwhile; endif; ?>
             </div>
-            <a class="cta project__cta" href="/projets" data-animation="show-up" title="Vers la page projets">Voir mes projets</a>
+            <a class="cta project__cta" href="<?= home_url() ?>/projets" data-animation="show-up" title="Vers la page projets">Voir mes projets</a>
         </article>
     </section>
 </main>

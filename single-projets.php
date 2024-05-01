@@ -6,7 +6,7 @@
         <div class="bg">
             <section class="herosingle">
                 <div data-animation="slide-left">
-                    <a class="herosingle__back" href="/projets">←
+                    <a class="herosingle__back" href="<?= home_url() ?>/projets">←
                         Retour aux projets</a>
                     <h2 class="herosingle__title"><?= get_the_title() ?></h2>
                 </div>
@@ -45,8 +45,6 @@
             <section class="overview">
                 <h2 class="overview__title sro" data-animation="show-up">Vue d'ensemble</h2>
                 <div class="overview__container" data-animation="show-up">
-                    <!--                <img class="overview__img" src="-->
-                    <?php //= get_field('overview_image') ?><!--" alt="">-->
                     <?= wp_get_attachment_image(get_field('overview_image'), 'project_thumbnail', false, [
                         'class' => 'overview__img',
                     ]) ?>
@@ -88,7 +86,7 @@
 
             <?php endwhile; endif; // Fermeture de "The Loop" de Wordpress ?>
         </div>
-        <a class="cta project__cta" href="/projets" data-animation="show-up">Tous mes projets</a>
+        <a class="cta project__cta" href="<?= home_url() ?>/projets" data-animation="show-up">Tous mes projets</a>
     </section>
 </main>
 <?php get_footer() ?>
