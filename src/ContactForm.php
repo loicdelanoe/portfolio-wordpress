@@ -23,10 +23,7 @@ class ContactForm
             wp_redirect(wp_get_referer());
             exit();
         } else {
-            $headers[] = "De {$data['name']} {$data['lastname']}: {$data['email']}";
-            $headers[] = $data['phone'] ?? null;
-
-            wp_mail(get_bloginfo('admin_email'), "Contact", $data['message'], $headers);
+            self::sendMail($data);
         }
     }
 
@@ -61,5 +58,18 @@ class ContactForm
             return false;
         }
         return true;
+    }
+
+    private static function sendMail(array $data): void
+    {
+        $headers[] = [
+            'Content-Type: text/html; charset=UTF-8',
+            "From {$data['name']} {$data['lastname']}: {$data['email']}",
+            "Reply-To: {$data['email']}",
+        ];
+
+        $subject = "Prise de contact";
+
+        wp_mail(get_bloginfo('admin_email'), $subject, $data['message'], $headers);
     }
 }
