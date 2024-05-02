@@ -2,20 +2,23 @@
 
 require_once(__DIR__ . '/src/ContactForm.php');
 
-ini_set('display_errors','Off');
-ini_set('error_reporting', E_ALL );
-define('WP_DEBUG', false);
-define('WP_DEBUG_DISPLAY', false); // Disable warning for undefined feedback array key
-
-// Démarrer la session
-if (session_status() === PHP_SESSION_NONE) {
+if (!session_id()) {
     session_start();
 }
+
+// Handle contact form submit
+function dw_contact_form_controller()
+{
+    new ContactForm($_POST);
+}
+
+add_action('admin_post_nopriv_custom_contact_form', 'dw_contact_form_controller');
+add_action('admin_post_custom_contact_form', 'dw_contact_form_controller');
 
 // Disable Gutenberg editor
 add_filter('use_block_editor_for_post', '__return_false');
 
-add_theme_support( 'post-thumbnails' );
+add_theme_support('post-thumbnails');
 add_image_size('project_thumbnail', 600, 600);
 
 // Enregistrer des menus de navigation :
@@ -62,7 +65,7 @@ function dw_get_navigation_links(string $location): array
     $menuId = $locations[$location] ?? null;
 
     // Au cas où il n'y a pas de menu assignés à $location, renvoyer un tableau de liens vide.
-    if(is_null($menuId)) {
+    if (is_null($menuId)) {
         return [];
     }
 
@@ -79,11 +82,3 @@ function dw_get_navigation_links(string $location): array
     // Retourner le tableau de liens formatés
     return $items;
 }
-
-function dw_contact_form_controller()
-{
-    new ContactForm($_POST);
-}
-
-add_action( 'admin_post_nopriv_custom_contact_form', 'dw_contact_form_controller' );
-add_action( 'admin_post_custom_contact_form', 'dw_contact_form_controller' );
