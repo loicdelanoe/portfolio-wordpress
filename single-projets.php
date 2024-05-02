@@ -6,7 +6,7 @@
         <div class="bg">
             <section class="herosingle">
                 <div data-animation="slide-left">
-                    <a class="herosingle__back" href="<?= home_url() ?>/projets">←
+                    <a class="herosingle__back" href="<?= home_url() ?>/projets" title="Retour aux projets">←
                         Retour aux projets</a>
                     <h2 class="herosingle__title"><?= get_the_title() ?></h2>
                 </div>
@@ -86,7 +86,7 @@
 
             <?php endwhile; endif; // Fermeture de "The Loop" de Wordpress ?>
         </div>
-        <a class="cta project__cta" href="<?= home_url() ?>/projets" data-animation="show-up">Tous mes projets</a>
+        <a class="cta project__cta" href="<?= home_url() ?>/projets" title="Voir tous les projets" data-animation="show-up">Tous mes projets</a>
     </section>
 </main>
 <?php get_footer() ?>
