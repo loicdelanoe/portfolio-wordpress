@@ -7,13 +7,13 @@ if (!session_id()) {
 }
 
 // Handle contact form submit
+add_action('admin_post_nopriv_custom_contact_form', 'dw_contact_form_controller');
+add_action('admin_post_custom_custom_contact_form', 'dw_contact_form_controller');
+
 function dw_contact_form_controller()
 {
     new ContactForm($_POST);
 }
-
-add_action('admin_post_nopriv_custom_contact_form', 'dw_contact_form_controller');
-add_action('admin_post_custom_contact_form', 'dw_contact_form_controller');
 
 // Disable Gutenberg editor
 add_filter('use_block_editor_for_post', '__return_false');
