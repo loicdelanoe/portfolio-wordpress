@@ -5,7 +5,7 @@ export class Observer {
     constructor() {
         this.showUpElements = document.querySelectorAll(`[data-animation="${settings.showUpClass}"]`);
         this.slideLeftElements = document.querySelectorAll(`[data-animation="${settings.slideLeftClass}"]`)
-        this.slideRightElements = document.querySelectorAll(`[data-animation="${settings.slideLeftClass}"] + [data-animation="${settings.slideLeftClass}"]`)
+        this.slideRightElements = document.querySelectorAll(`[data-animation="${settings.slideLeftClass}"]:nth-child(even)`)
 
         this.slideLeftElements.forEach((slideLeftElement) => {
             slideLeftElement.classList.add(settings.NoOpacityClass);

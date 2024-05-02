@@ -19,6 +19,10 @@ button {
   cursor: pointer;
 }
 
+input, textarea, select {
+  border-radius: 0;
+}
+
 @media screen and (min-width: 1024px) {
   section, .header__container, .footer__container {
     max-width: 1200px;

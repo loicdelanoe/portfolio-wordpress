@@ -1,7 +1,8 @@
 <footer class="footer" role="contentinfo">
     <div class="footer__container">
         <article class="footer__upper">
-            <h2 class="footer__branding"><a href="<?= home_url() ?>">Loïc D.</a></h2>
+            <h2 class="sro">Footer</h2>
+            <a class="footer__branding" href="<?= home_url() ?>">Loïc D.</a>
             <dl class="footerlist">
                 <div>
                     <dt class="footerlist__title">Contactez-moi</dt>

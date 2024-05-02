@@ -4,13 +4,18 @@
   grid-template-columns: 1fr;
 
   &__upper {
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
     padding-top: 3em;
   }
 
   &__branding {
+    font-family: "Kalnia", "Times New Roman", serif;
     display: flex;
     flex-direction: row;
     align-items: center;
+    justify-self: flex-start;
     gap: 20px;
     font-weight: 600;
     font-size: 1.5em;
@@ -19,10 +24,6 @@
     &:before {
       content: url("../img/logo.svg");
       width: 35px;
-    }
-
-    & > a {
-      font-family: "Kalnia", "Times New Roman", serif;
     }
   }
 
