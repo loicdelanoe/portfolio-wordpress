@@ -20,13 +20,7 @@
                     </dd>
                 </dl>
             </article>
-            <?php
-            $feedback = ContactForm::feedback();
-            ?>
             <form action="<?= esc_url(admin_url('admin-post.php')); ?>" class="form" method="post">
-                <?php if ($feedback) : ?>
-                    <p class="field__valid"><?= $feedback ?></p>
-                <?php endif; ?>
                 <div class="field__container" data-animation="show-up">
                     <label class="field__label" for="lastname">Nom *</label>
                     <input class="field__input" type="text" name="lastname" id="lastname" placeholder="Doe"

@@ -44,15 +44,6 @@ class ContactForm
         }
     }
 
-    public static function feedback(): string
-    {
-        $feedback = $_SESSION['feedback'] ?? '';
-
-        unset($_SESSION['feedback']);
-
-        return $feedback;
-    }
-
     private static function required(string $key, array $data): bool
     {
         if (empty($data[$key])) {
