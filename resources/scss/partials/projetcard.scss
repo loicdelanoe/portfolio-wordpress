@@ -17,7 +17,7 @@
     display: flex;
     font-size: 1em;
     text-transform: uppercase;
-    font-family: "Kalnia", "Times New Roman", serif;
+    font-family: "Kalnia", "Georgia", serif;
     font-weight: 600;
     margin-bottom: 0;
 
@@ -45,6 +45,10 @@
   .projetcard {
     &:nth-child(odd) {
       margin-top: -10em;
+    }
+
+    &__two:nth-child(odd) {
+      margin-top: 0;
     }
   }
 }

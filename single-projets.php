@@ -60,19 +60,20 @@
 
     <section class="other">
         <h3 class="other__title" data-animation="show-up">Mes autres projets</h3>
-        <div class="project__container">
+        <div class="project__container project__container--two">
             <?php
             $projects = new WP_Query([
                 'post_type' => 'projets',
                 'post_status' => 'publish',
-                'posts_per_page' => 3,
+                'posts_per_page' => 2,
+                'post__not_in' => [get_the_ID()],
                 'orderby' => 'date',
                 'order' => 'DESC',
             ]);
 
             if ($projects->have_posts()): while ($projects->have_posts()): $projects->the_post(); ?>
 
-                <article class="projetcard" data-animation="slide-left">
+                <article class="projetcard projetcard__two" data-animation="slide-left">
                     <a class="projetcard__link" href="<?= get_permalink(); ?>"><span class="sro">
                             Consulter le <?= get_the_title(); ?>
                         </span></a>
@@ -86,7 +87,8 @@
 
             <?php endwhile; endif; // Fermeture de "The Loop" de Wordpress ?>
         </div>
-        <a class="cta project__cta" href="<?= home_url() ?>/projets" title="Voir tous les projets" data-animation="show-up">Tous mes projets</a>
+        <a class="cta project__cta" href="<?= home_url() ?>/projets" title="Voir tous les projets"
+           data-animation="show-up">Tous mes projets</a>
     </section>
 </main>
 <?php get_footer() ?>

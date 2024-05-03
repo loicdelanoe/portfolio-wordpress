@@ -2,6 +2,11 @@
 
 require_once(__DIR__ . '/src/ContactForm.php');
 
+function dw_is_active(string $path): string
+{
+    return dw_get_canonical_url() === $path ? 'active' : '';
+}
+
 if (!session_id()) {
     session_start();
 }

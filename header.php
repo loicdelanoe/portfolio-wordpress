@@ -8,10 +8,10 @@
     <meta name="author" content="Loïc Delanoë">
     <meta name="title" content="Loïc D.">
     <meta name="keywords" content="Portfolio, Loïc Delanoë, développeur web, développeur, front-end, back-end, full-stack, HEPL, étudiant">
-    <meta name="description" content="Loïc Delanoë, étudiant passionné en développement web et développeur full stack. Découvrez mon portfolio créatif et innovant, où chaque ligne de code raconte une histoire.">
+    <meta name="description" content="<?= get_bloginfo('description') ?>">
     <link rel="canonical" href="<?= dw_get_canonical_url() ?>">
     <link rel="stylesheet" href="<?= dw_asset('css/main.css') ?>">
-    <title>Loïc D. - Portfolio</title>
+    <title><?= get_bloginfo('name') ?></title>
 </head>
 <body>
 <a href="#main" class="skip-link">Aller au contenu</a>
@@ -30,7 +30,7 @@
             </div>
             <ul class="nav__container">
                 <?php foreach (dw_get_navigation_links('main') as $link): ?>
-                    <li class="nav__items"><a href="<?= $link->url ?>" class="nav__link"
+                    <li class="nav__items"><a href="<?= $link->url ?>" class="nav__link <?= dw_is_active($link->url) ?>"
                                               title="Vers la page <?= $link->label ?>"><?= $link->label ?></a></li>
                 <?php endforeach; ?>
             </ul>

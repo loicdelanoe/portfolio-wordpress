@@ -23,6 +23,14 @@ input, textarea, select {
   border-radius: 0;
 }
 
+a.active {
+  font-weight: bold;
+
+  &:after {
+    width: 100%;
+  }
+}
+
 @media screen and (min-width: 1024px) {
   section, .header__container, .footer__container {
     max-width: 1200px;
