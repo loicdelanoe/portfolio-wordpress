@@ -6,6 +6,7 @@
 @import 'partials/skip-link';
 @import 'partials/cursor';
 @import 'js-class';
+@import 'components/wysiwyg';
 
 @import 'partials/bg';
 @import 'partials/cta';
@@ -39,6 +40,9 @@
 @import "partials/form/field";
 @import "pages/contact/cordcontact";
 @import "pages/contact/info";
+
+@import "pages/legal/juridic";
+@import "components/container";
 
 @import "partials/footer";
 @import "partials/footerlist";

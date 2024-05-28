@@ -1,5 +1,7 @@
 <?php
 
+namespace inc;
+
 class ContactForm
 {
     public function __construct($data)

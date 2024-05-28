@@ -6,14 +6,14 @@
         <div class="bg">
             <section class="herosingle">
                 <div data-animation="slide-left">
-                    <a class="herosingle__back" href="<?= home_url() ?>/projets" title="Retour aux projets">←
+                    <a class="herosingle__back" href="<?= home_url('projets') ?>" title="Retour aux projets">←
                         Retour aux projets</a>
                     <h2 class="herosingle__title"><?= get_the_title() ?></h2>
                 </div>
                 <div class="herosingle__container" data-animation="slide-left">
                     <a class="cta" href="<?= get_field('github_link') ?>" data-variant="secondary">Github</a>
                     <?php if (!get_field('site_link')): ?>
-                        <a class="cta" href="#" data-variant="disabled" aria-disabled="true">Visiter le site</a>
+                        <a class="cta" href="#" data-variant="disabled" aria-disabled="true">Site indisponible</a>
                     <?php else: ?>
                         <a class="cta" href="<?= get_field('site_link') ?>">Visiter le site</a>
                     <?php endif; ?>
@@ -23,10 +23,10 @@
         <section class="resume">
             <div>
                 <h2 class="resume__title" data-animation="show-up">Résumé</h2>
-                <p class="resume__content" data-animation="show-up"><?= get_field('resume') ?></p>
+                <div class="resume__content" data-animation="show-up" data-tag="wysiwyg"><?= get_field('resume') ?></div>
             </div>
             <div class="resume__container" data-animation="show-up">
-                <?= wp_get_attachment_image(get_field('resume_image'), 'project_thumbnail', false, [
+                <?= wp_get_attachment_image(get_field('resume_image'), 'full', false, [
                     'class' => 'resume__img',
                 ]) ?>
             </div>
@@ -45,13 +45,13 @@
             <section class="overview">
                 <h2 class="overview__title sro" data-animation="show-up">Vue d'ensemble</h2>
                 <div class="overview__container" data-animation="show-up">
-                    <?= wp_get_attachment_image(get_field('overview_image'), 'project_thumbnail', false, [
+                    <?= wp_get_attachment_image(get_field('overview_image'), 'full', false, [
                         'class' => 'overview__img',
                     ]) ?>
                 </div>
                 <article class="functionality">
                     <h3 class="functionality__title" data-animation="show-up">Fonctionnalités</h3>
-                    <p class="functionality__content" data-animation="show-up"><?= get_field('functionality') ?></p>
+                    <div class="functionality__content" data-animation="show-up" data-tag="wysiwyg"><?= get_field('functionality') ?></div>
                 </article>
             </section>
 
@@ -87,7 +87,7 @@
 
             <?php endwhile; endif; // Fermeture de "The Loop" de Wordpress ?>
         </div>
-        <a class="cta project__cta" href="<?= home_url() ?>/projets" title="Voir tous les projets"
+        <a class="cta project__cta" href="<?= home_url('projets') ?>" title="Voir tous les projets"
            data-animation="show-up">Tous mes projets</a>
     </section>
 </main>

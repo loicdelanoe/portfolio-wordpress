@@ -7,13 +7,15 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="author" content="Loïc Delanoë">
     <meta name="title" content="Loïc D.">
-    <meta name="keywords" content="Portfolio, Loïc Delanoë, développeur web, développeur, front-end, back-end, full-stack, HEPL, étudiant">
+    <meta name="keywords"
+          content="Portfolio, Loïc Delanoë, développeur web, développeur, front-end, back-end, full-stack, HEPL, étudiant">
     <meta name="description" content="<?= get_bloginfo('description') ?>">
+    <link rel="shortcut icon" href="<?= get_site_icon_url(); ?>"/>
     <link rel="canonical" href="<?= dw_get_canonical_url() ?>">
     <link rel="stylesheet" href="<?= dw_asset('css/main.css') ?>">
     <title><?= get_bloginfo('name') ?></title>
 </head>
-<body>
+<body itemscope itemtype="https://schema.org/Person">
 <a href="#main" class="skip-link">Aller au contenu</a>
 <header class="header" id="header" role="banner">
     <h1 class="sro"><?= get_the_title() ?></h1>

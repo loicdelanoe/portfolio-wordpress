@@ -1,5 +1,5 @@
 .tools {
-  padding: 3em 24px 0 24px;
+  padding: 0 24px 4em 24px;
   overflow: hidden;
 
   &__title {
@@ -23,11 +23,14 @@
 
 @media screen and (min-width: 768px) {
   .tools {
-    padding: 5em 24px 0 24px;
+    padding: 0 24px 5em 24px;
   }
 }
 
 @media screen and (min-width: 1024px) {
+  .tools {
+    padding-bottom: 6em;
+  }
 }
 
 @keyframes scroll {
@@ -37,4 +40,8 @@
   to {
     transform: translateX(calc(-128px * 11));
   }
+}
+
+@media screen and (max-width: 1024px){
+
 }

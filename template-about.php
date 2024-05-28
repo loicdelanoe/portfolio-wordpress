@@ -8,37 +8,12 @@
         </div>
         <section class="about">
             <h2 class="sro">À Propos</h2>
-            <?= wp_get_attachment_image(get_field('profil_image'), 'project_thumbnail', false, [
+            <?= wp_get_attachment_image(get_field('profil_image'), 'full', false, [
                 'class' => 'about__img',
                 'data-animation' => 'show-up',
             ]) ?>
-            <p class="about__content" data-animation="show-up"><?= get_field('about_text') ?></p>
+            <div class="about__content" data-tag="wysiwyg" data-animation="show-up"><?= get_field('about_text') ?></div>
         </section>
-        <div class="bg">
-            <section class="formations">
-                <h2 class="formations__title" data-animation="show-up"><span>Mes</span> Formations</h2>
-                <ul class="formations__container" data-animation="show-up">
-                    <?php
-                    $formations = new WP_Query([
-                        'post_type' => 'formations',
-                        'post_status' => 'publish',
-                        'orderby' => 'date',
-                        'order' => 'ASC',
-                    ]);
-
-                    if ($formations->have_posts()): while ($formations->have_posts()): $formations->the_post();
-                        ?>
-                        <li class="formation">
-                            <div class="formation__container" data-animation="show-up">
-                                <time class="formation__date"><?= get_field('date') ?></time>
-                                <h3 class="formation__title"><?= get_field('title') ?></h3>
-                                <small><?= get_field('options') ?></small>
-                            </div>
-                        </li>
-                    <?php endwhile; endif; ?>
-                </ul>
-            </section>
-        </div>
         <section class="tools" data-animation="show-up">
             <h2 class="tools__title"><span>Mes</span> Outils</h2>
             <ul class="tools__container">
@@ -112,6 +87,31 @@
                 </li>
             </ul>
         </section>
+        <div class="bg">
+            <section class="formations">
+                <h2 class="formations__title" data-animation="show-up"><span>Mes</span> Formations</h2>
+                <ul class="formations__container" data-animation="show-up">
+                    <?php
+                    $formations = new WP_Query([
+                        'post_type' => 'formations',
+                        'post_status' => 'publish',
+                        'orderby' => 'date',
+                        'order' => 'ASC',
+                    ]);
+
+                    if ($formations->have_posts()): while ($formations->have_posts()): $formations->the_post();
+                        ?>
+                        <li class="formation">
+                            <div class="formation__container" data-animation="show-up">
+                                <time class="formation__date"><?= get_field('date') ?></time>
+                                <h3 class="formation__title"><?= get_field('title') ?></h3>
+                                <small><?= get_field('options') ?></small>
+                            </div>
+                        </li>
+                    <?php endwhile; endif; ?>
+                </ul>
+            </section>
+        </div>
         <section class="approachs">
             <h2 class="approachs__title" data-animation="show-up"><span>Mon</span>Approche</h2>
             <ul class="approachs__container">
@@ -141,7 +141,7 @@
         </section>
         <section class="talk">
             <h2 data-animation="show-up">Discutons :)</h2>
-            <a class="cta" href="<?= home_url() ?>/contact" data-animation="show-up">Contactez-moi</a>
+            <a class="cta" href="<?= home_url('contact') ?>" data-animation="show-up">Contactez-moi</a>
         </section>
     </main>
 <?php get_footer() ?>

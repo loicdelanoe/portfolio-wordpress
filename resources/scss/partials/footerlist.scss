@@ -1,15 +1,10 @@
 .footerlist {
-  &__description {
-    margin-bottom: 2.5em;
-
-    & > p {
-      margin-top: 0.2em;
-      margin-bottom: 1em;
-    }
-  }
-
   &__link {
     padding: 0.2em 0;
+  }
+
+  &__text {
+    max-width: 300px;
   }
 }
 

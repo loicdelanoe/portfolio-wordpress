@@ -1,5 +1,7 @@
 <?php /* Template Name: "Contact" */ ?>
-<?php get_header() ?>
+<?php use inc\ContactForm;
+
+get_header() ?>
     <main id="main">
         <div class="bg">
             <section class="herocontact">

@@ -1,6 +1,6 @@
 .about {
   margin-top: -3em;
-  padding-bottom: 80px;
+  padding-bottom: 2em;
   position: relative;
   z-index: 9;
 
@@ -19,7 +19,7 @@
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 3em;
-    padding-bottom: 8em;
+    padding-bottom: 4em;
 
     &__img {
       margin-bottom: 0;
@@ -36,6 +36,7 @@
 @media screen and (min-width: 1024px) {
   .about {
     gap: 8em;
+    padding-bottom: 6em;
 
     &__content {
       padding-top: 10em;
