@@ -71,28 +71,28 @@ table {
   src: url("../fonts/Kalnia-Regular.ttf");
   font-weight: normal;
   font-style: normal;
-  font-display: block;
+  font-display: swap;
 }
 @font-face {
   font-family: "Kalnia";
   src: url("../fonts/Kalnia-SemiBold.ttf");
   font-weight: 600;
   font-style: normal;
-  font-display: block;
+  font-display: swap;
 }
 @font-face {
   font-family: "Kalnia";
   src: url("../fonts/Kalnia-Light.ttf");
   font-weight: 300;
   font-style: normal;
-  font-display: block;
+  font-display: swap;
 }
 @font-face {
   font-family: "Poppins";
   src: url("../fonts/Poppins-Regular.ttf");
   font-weight: normal;
   font-style: normal;
-  font-display: block;
+  font-display: swap;
 }
 body {
   font-family: "Poppins", "Roboto", Arial, sans-serif;
@@ -1420,6 +1420,37 @@ input[id=burger]:checked ~ .burger__wrapper span:nth-child(3) {
 
 .juridic {
   padding: 5rem 24px;
+}
+
+.notfound {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 90vh;
+  position: relative;
+}
+.notfound:after {
+  position: absolute;
+  content: url("../img/lower-partition.svg");
+  z-index: -1;
+  bottom: 0;
+  margin-bottom: -0.25em;
+  left: 24px;
+}
+.notfound__title {
+  text-align: center;
+}
+.notfound__number {
+  font-size: 2.5em;
+}
+.notfound__text {
+  max-width: 25em;
+  text-align: center;
+}
+.notfound__container {
+  display: flex;
+  gap: 1em;
 }
 
 .container__legal {

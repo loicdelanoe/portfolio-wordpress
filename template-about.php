@@ -8,7 +8,7 @@
         </div>
         <section class="about">
             <h2 class="sro">À Propos</h2>
-            <?= wp_get_attachment_image(get_field('profil_image'), 'full', false, [
+            <?= wp_get_attachment_image(get_field('profil_image'), 'medium', false, [
                 'class' => 'about__img',
                 'data-animation' => 'show-up',
             ]) ?>
@@ -18,72 +18,72 @@
             <h2 class="tools__title"><span>Mes</span> Outils</h2>
             <ul class="tools__container">
                 <li>
-                    <img class="tools__item" src="<?= dw_asset('img/icons/css.svg') ?>" alt="Cascading Style Sheet">
+                    <img width="64" height="64" class="tools__item" src="<?= dw_asset('img/icons/css.svg') ?>" alt="Cascading Style Sheet">
                 </li>
                 <li>
-                    <img class="tools__item" src="<?= dw_asset('img/icons/html.svg') ?>"
+                    <img width="64" height="64" class="tools__item" src="<?= dw_asset('img/icons/html.svg') ?>"
                          alt="HyperText Markup Language">
                 </li>
                 <li>
-                    <img class="tools__item" src="<?= dw_asset('img/icons/sass.svg') ?>" alt="">
+                    <img width="64" height="64" class="tools__item" src="<?= dw_asset('img/icons/sass.svg') ?>" alt="">
                 </li>
                 <li>
-                    <img class="tools__item" src="<?= dw_asset('img/icons/ts.svg') ?>" alt="TypeScript">
+                    <img width="64" height="64" class="tools__item" src="<?= dw_asset('img/icons/ts.svg') ?>" alt="TypeScript">
                 </li>
                 <li>
-                    <img class="tools__item" src="<?= dw_asset('img/icons/js.svg') ?>" alt="JavaScript">
+                    <img width="64" height="64" class="tools__item" src="<?= dw_asset('img/icons/js.svg') ?>" alt="JavaScript">
                 </li>
                 <li>
-                    <img class="tools__item" src="<?= dw_asset('img/icons/laravel.svg') ?>" alt="Laravel">
+                    <img width="64" height="64" class="tools__item" src="<?= dw_asset('img/icons/laravel.svg') ?>" alt="Laravel">
                 </li>
                 <li>
-                    <img class="tools__item" src="<?= dw_asset('img/icons/php.svg') ?>" alt="Php">
+                    <img width="64" height="64" class="tools__item" src="<?= dw_asset('img/icons/php.svg') ?>" alt="Php">
                 </li>
                 <li>
-                    <img class="tools__item" src="<?= dw_asset('img/icons/nodejs.svg') ?>" alt="NodeJS">
+                    <img width="64" height="64" class="tools__item" src="<?= dw_asset('img/icons/nodejs.svg') ?>" alt="NodeJS">
                 </li>
                 <li>
-                    <img class="tools__item" src="<?= dw_asset('img/icons/tailwindcss.svg') ?>" alt="TailwindCSS">
+                    <img width="64" height="64" class="tools__item" src="<?= dw_asset('img/icons/tailwindcss.svg') ?>" alt="TailwindCSS">
                 </li>
                 <li>
-                    <img class="tools__item" src="<?= dw_asset('img/icons/nextjs.svg') ?>" alt="NextJS">
+                    <img width="64" height="64" class="tools__item" src="<?= dw_asset('img/icons/nextjs.svg') ?>" alt="NextJS">
                 </li>
                 <li>
-                    <img class="tools__item" src="<?= dw_asset('img/icons/react.svg') ?>" alt="ReactJS">
+                    <img width="64" height="64" class="tools__item" src="<?= dw_asset('img/icons/react.svg') ?>" alt="ReactJS">
                 </li>
                 <li>
-                    <img class="tools__item" src="<?= dw_asset('img/icons/css.svg') ?>" alt="Cascading Style Sheet">
+                    <img width="64" height="64" class="tools__item" src="<?= dw_asset('img/icons/css.svg') ?>" alt="Cascading Style Sheet">
                 </li>
                 <li>
-                    <img class="tools__item" src="<?= dw_asset('img/icons/html.svg') ?>"
+                    <img width="64" height="64" class="tools__item" src="<?= dw_asset('img/icons/html.svg') ?>"
                          alt="HyperText Markup Language">
                 </li>
                 <li>
-                    <img class="tools__item" src="<?= dw_asset('img/icons/sass.svg') ?>" alt="">
+                    <img width="64" height="64" class="tools__item" src="<?= dw_asset('img/icons/sass.svg') ?>" alt="">
                 </li>
                 <li>
-                    <img class="tools__item" src="<?= dw_asset('img/icons/ts.svg') ?>" alt="TypeScript">
+                    <img width="64" height="64" class="tools__item" src="<?= dw_asset('img/icons/ts.svg') ?>" alt="TypeScript">
                 </li>
                 <li>
-                    <img class="tools__item" src="<?= dw_asset('img/icons/js.svg') ?>" alt="JavaScript">
+                    <img width="64" height="64" class="tools__item" src="<?= dw_asset('img/icons/js.svg') ?>" alt="JavaScript">
                 </li>
                 <li>
-                    <img class="tools__item" src="<?= dw_asset('img/icons/laravel.svg') ?>" alt="Laravel">
+                    <img width="64" height="64" class="tools__item" src="<?= dw_asset('img/icons/laravel.svg') ?>" alt="Laravel">
                 </li>
                 <li>
-                    <img class="tools__item" src="<?= dw_asset('img/icons/php.svg') ?>" alt="Php">
+                    <img width="64" height="64" class="tools__item" src="<?= dw_asset('img/icons/php.svg') ?>" alt="Php">
                 </li>
                 <li>
-                    <img class="tools__item" src="<?= dw_asset('img/icons/nodejs.svg') ?>" alt="NodeJS">
+                    <img width="64" height="64" class="tools__item" src="<?= dw_asset('img/icons/nodejs.svg') ?>" alt="NodeJS">
                 </li>
                 <li>
-                    <img class="tools__item" src="<?= dw_asset('img/icons/tailwindcss.svg') ?>" alt="TailwindCSS">
+                    <img width="64" height="64" class="tools__item" src="<?= dw_asset('img/icons/tailwindcss.svg') ?>" alt="TailwindCSS">
                 </li>
                 <li>
-                    <img class="tools__item" src="<?= dw_asset('img/icons/nextjs.svg') ?>" alt="NextJS">
+                    <img width="64" height="64" class="tools__item" src="<?= dw_asset('img/icons/nextjs.svg') ?>" alt="NextJS">
                 </li>
                 <li>
-                    <img class="tools__item" src="<?= dw_asset('img/icons/react.svg') ?>" alt="ReactJS">
+                    <img width="64" height="64" class="tools__item" src="<?= dw_asset('img/icons/react.svg') ?>" alt="ReactJS">
                 </li>
             </ul>
         </section>

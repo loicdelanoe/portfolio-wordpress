@@ -1,0 +1,28 @@
+.notfound {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  //padding: 4em 24px;
+  min-height: 90vh;
+
+  @include lower-partition;
+
+  &__title {
+    text-align: center;
+  }
+
+  &__number {
+    font-size: 2.5em;
+  }
+
+  &__text {
+    max-width: 25em;
+    text-align: center;
+  }
+
+  &__container {
+    display: flex;
+    gap: 1em;
+  }
+}
