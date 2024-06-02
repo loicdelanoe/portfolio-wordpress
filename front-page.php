@@ -2,7 +2,7 @@
 <main class="key" id="main">
     <div class="bg">
         <section class="hero">
-            <h2 class="hero__title" data-animation="show-up"><span class="light" itemprop="name">Loïc Delanoë</span> <span itemprop="jobTitle">Développeur Web</span></h2>
+            <h2 class="hero__title" data-animation="show-up"><span class="light" itemprop="name"><?= get_field('name') ?></span> <span itemprop="jobTitle"><?= get_field('job') ?></span></h2>
             <div class="hero__container" data-animation="show-up">
                 <a class="cta" href="<?= home_url('projets') ?>" title="Vers la page projets">Mes Projets</a>
                 <a class="cta" href="<?= home_url('a-propos') ?>" data-variant="secondary" title="Vers la page à propos">Me Découvrir</a>

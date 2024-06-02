@@ -50,11 +50,32 @@ function dw_get_navigation_links(string $location): array
 
 function load_scripts(): void
 {
-    wp_enqueue_script('jquery');
-
-    wp_enqueue_script('main', get_template_directory_uri() . '/public/js/main.js', [], 1.0, [
+    wp_enqueue_script('main', get_template_directory_uri() . '/public/js/main.js', [], false, [
         'in_footer' => true,
     ]);
+    wp_enqueue_style('my-theme', get_template_directory_uri() . '/public/css/main.css', [], false);
 }
 
 add_action('wp_enqueue_scripts', 'load_scripts');
+
+function dw_mime_types($mimes)
+{
+    $mimes['svg'] = 'image/svg+xml';
+    return $mimes;
+}
+
+add_filter('upload_mimes', 'dw_mime_types');
+
+function dw_og_page_title(): void
+{
+    if (is_front_page()) {
+        echo get_bloginfo('name');
+    } else if (is_archive()) {
+        echo get_the_archive_title() . ' | ' . get_bloginfo('name');
+    } else {
+        echo the_title() . ' | ' . get_bloginfo('name');
+    }
+}
+
+// Remove prefix from archive title
+add_filter( 'get_the_archive_title_prefix', '__return_empty_string' );

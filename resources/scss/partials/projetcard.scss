@@ -15,7 +15,7 @@
 
   &__title {
     display: flex;
-    font-size: 1em;
+    font-size: 1.7em;
     text-transform: uppercase;
     font-family: "Kalnia", "Georgia", serif;
     font-weight: 600;
@@ -23,8 +23,8 @@
 
     &:before {
       content: url("../img/fermata.svg");
-      color: white;
       margin-right: .5em;
+      width: 0.4em;
     }
   }
 

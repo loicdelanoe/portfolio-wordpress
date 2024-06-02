@@ -189,6 +189,9 @@ a.active:after {
     max-width: 1200px;
     margin: auto;
   }
+  section {
+    padding: 5em 24px;
+  }
 }
 .skip-link {
   background-color: #EFECE6;
@@ -314,6 +317,10 @@ a.active:after {
     transform: none;
   }
 }
+[data-tag=wysiwyg] h2 {
+  font-size: 52px;
+  margin-bottom: 0.6em;
+}
 [data-tag=wysiwyg] ul {
   list-style: initial;
   padding: 0 0.5em;
@@ -329,6 +336,20 @@ a.active:after {
 }
 [data-tag=wysiwyg] p {
   margin-bottom: 2em;
+}
+[data-tag=wysiwyg] sup {
+  vertical-align: super;
+  font-size: smaller;
+}
+[data-tag=wysiwyg] sub {
+  vertical-align: sub;
+  font-size: smaller;
+}
+[data-tag=wysiwyg] img {
+  width: auto;
+}
+[data-tag=wysiwyg] .wp-block-media-text {
+  display: grid;
 }
 
 .bg {
@@ -400,6 +421,18 @@ a.active:after {
   background-color: #EFECE6;
   position: relative;
   z-index: 10;
+}
+.header:after {
+  position: absolute;
+  content: "";
+  background-image: url("../img/bg.svg");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  display: block;
+  width: 100%;
+  height: 5vw;
+  bottom: -5vw;
+  z-index: -1;
 }
 .header__container {
   position: relative;
@@ -772,7 +805,6 @@ input[id=burger]:checked ~ .burger__wrapper span:nth-child(3) {
 @media screen and (min-width: 1024px) {
   .resume {
     padding-top: 6em;
-    padding-bottom: 6em;
   }
   .resume__title {
     font-size: 52px;
@@ -780,8 +812,7 @@ input[id=burger]:checked ~ .burger__wrapper span:nth-child(3) {
 }
 .color {
   margin: 0;
-  padding-left: 0;
-  padding-right: 0;
+  padding: 0;
   width: 100%;
   max-width: initial;
   position: relative;
@@ -799,7 +830,8 @@ input[id=burger]:checked ~ .burger__wrapper span:nth-child(3) {
   flex-direction: column;
 }
 .color__card {
-  border: 0.3px solid #2C231E;
+  border-top: 0.3px solid #2C231E;
+  border-bottom: 0.3px solid #2C231E;
   width: 100%;
   min-height: 3em;
 }
@@ -859,11 +891,13 @@ input[id=burger]:checked ~ .burger__wrapper span:nth-child(3) {
   text-align: justify;
 }
 
-@media screen and (min-width: 1024px) {
-  .functionality {
+@media screen and (min-width: 768px) {
+  .functionality__content {
     position: sticky;
     top: 1.5em;
   }
+}
+@media screen and (min-width: 1024px) {
   .functionality__title {
     font-size: 52px;
   }
@@ -919,8 +953,8 @@ input[id=burger]:checked ~ .burger__wrapper span:nth-child(3) {
   border-radius: 8px;
   -o-object-fit: cover;
      object-fit: cover;
-  -o-object-position: top;
-     object-position: top;
+  -o-object-position: center;
+     object-position: center;
 }
 
 @media screen and (min-width: 768px) {
@@ -943,6 +977,7 @@ input[id=burger]:checked ~ .burger__wrapper span:nth-child(3) {
   .about {
     gap: 8em;
     padding-bottom: 6em;
+    padding-top: 0;
   }
   .about__content {
     padding-top: 10em;
@@ -1019,7 +1054,8 @@ input[id=burger]:checked ~ .burger__wrapper span:nth-child(3) {
   .formation__container {
     margin-right: auto;
     position: relative;
-    min-width: 280px;
+    width: 280px;
+    text-align: right;
   }
   .formation__container:after {
     position: absolute;
@@ -1032,6 +1068,7 @@ input[id=burger]:checked ~ .burger__wrapper span:nth-child(3) {
   .formation:nth-child(odd) .formation__container {
     margin-left: auto;
     margin-right: 0;
+    text-align: left;
   }
   .formation:nth-child(odd) .formation__container:after {
     margin-left: auto;
@@ -1054,7 +1091,7 @@ input[id=burger]:checked ~ .burger__wrapper span:nth-child(3) {
 }
 .tools__container {
   display: flex;
-  animation: scroll 25s linear infinite;
+  animation: scroll 15s linear infinite;
 }
 .tools__item {
   width: 64px;
@@ -1077,7 +1114,7 @@ input[id=burger]:checked ~ .burger__wrapper span:nth-child(3) {
     transform: translateX(0);
   }
   to {
-    transform: translateX(-1408px);
+    transform: translateX(-1280px);
   }
 }
 .approachs {
@@ -1259,7 +1296,7 @@ input[id=burger]:checked ~ .burger__wrapper span:nth-child(3) {
 }
 .projetcard__title {
   display: flex;
-  font-size: 1em;
+  font-size: 1.7em;
   text-transform: uppercase;
   font-family: "Kalnia", "Georgia", serif;
   font-weight: 600;
@@ -1267,8 +1304,8 @@ input[id=burger]:checked ~ .burger__wrapper span:nth-child(3) {
 }
 .projetcard__title:before {
   content: url("../img/fermata.svg");
-  color: white;
   margin-right: 0.5em;
+  width: 0.4em;
 }
 .projetcard__container {
   width: 100%;

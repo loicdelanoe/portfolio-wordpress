@@ -1,4 +1,9 @@
 [data-tag="wysiwyg"] {
+  h2 {
+    font-size: 52px;
+    margin-bottom: 0.6em;
+  }
+
   ul {
     list-style: initial;
     padding: 0 0.5em;
@@ -17,5 +22,23 @@
 
   p {
     margin-bottom: 2em;
+  }
+
+  sup {
+    vertical-align: super;
+    font-size: smaller;
+  }
+
+  sub {
+    vertical-align: sub;
+    font-size: smaller;
+  }
+
+  img {
+    width: auto;
+  }
+
+  .wp-block-media-text {
+    display: grid;
   }
 }

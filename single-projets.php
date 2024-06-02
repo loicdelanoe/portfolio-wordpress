@@ -21,10 +21,7 @@
             </section>
         </div>
         <section class="resume">
-            <div>
-                <h2 class="resume__title" data-animation="show-up">Résumé</h2>
-                <div class="resume__content" data-animation="show-up" data-tag="wysiwyg"><?= get_field('resume') ?></div>
-            </div>
+            <div class="resume__content" data-animation="show-up" data-tag="wysiwyg"><?= get_field('resume') ?></div>
             <div class="resume__container" data-animation="show-up">
                 <?= wp_get_attachment_image(get_field('resume_image'), 'project_thumbnail', false, [
                     'class' => 'resume__img',
@@ -43,16 +40,14 @@
         </section>
         <div class="bg">
             <section class="overview">
-                <h2 class="overview__title sro" data-animation="show-up">Vue d'ensemble</h2>
                 <div class="overview__container" data-animation="show-up">
                     <?= wp_get_attachment_image(get_field('overview_image'), 'large', false, [
                         'class' => 'overview__img',
                     ]) ?>
                 </div>
-                <article class="functionality">
-                    <h3 class="functionality__title" data-animation="show-up">Fonctionnalités</h3>
-                    <div class="functionality__content" data-animation="show-up" data-tag="wysiwyg"><?= get_field('functionality') ?></div>
-                </article>
+                <div class="functionality__content" data-animation="show-up"
+                     data-tag="wysiwyg"><?= get_field('functionality') ?>
+                </div>
             </section>
 
         </div>

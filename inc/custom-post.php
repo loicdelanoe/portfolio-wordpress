@@ -6,7 +6,7 @@ register_post_type('projets', [
     'description' => 'Mes projets',
     'public' => true,
     'hierarchical' => false,
-    'menu_position' => 21,
+    'menu_position' => 5,
     'menu_icon' => 'dashicons-portfolio',
     'has_archive' => true,
     'rewrite' => [
@@ -19,10 +19,23 @@ register_post_type('formations', [
     'description' => 'Mes formations',
     'public' => true,
     'hierarchical' => false,
-    'menu_position' => 22,
-    'menu_icon' => 'dashicons-portfolio',
+    'menu_position' => 20,
+    'menu_icon' => 'dashicons-networking',
     'has_archive' => false,
     'rewrite' => [
         'slug' => 'formations',
+    ]
+]);
+
+register_post_type('skills', [
+    'label' => 'Compétences',
+    'description' => 'Mes compétences',
+    'public' => true,
+    'hierarchical' => false,
+    'menu_position' => 22,
+    'menu_icon' => 'dashicons-lightbulb',
+    'has_archive' => false,
+    'rewrite' => [
+        'slug' => 'competences',
     ]
 ]);

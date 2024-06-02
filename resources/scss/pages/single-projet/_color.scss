@@ -1,7 +1,6 @@
 .color {
   margin: 0;
-  padding-left: 0;
-  padding-right: 0;
+  padding: 0;
   width: 100%;
   max-width: initial;
   position: relative;
@@ -21,7 +20,8 @@
   }
 
   &__card {
-    border: .3px solid $textColor;
+    border-top: .3px solid $textColor;
+    border-bottom: .3px solid $textColor;
     width: 100%;
     min-height: 3em;
   }

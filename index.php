@@ -2,9 +2,9 @@
 
     <main>
         <?php while (have_posts()) : the_post(); ?>
-            <div class="container" data-tag="wysiwyg">
-                <?= the_content() ?>
-            </div>
+            <section data-tag="wysiwyg">
+                <?php the_content() ?>
+            </section>
         <?php endwhile; ?>
     </main>
 

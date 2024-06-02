@@ -8,7 +8,7 @@
         </div>
         <section class="about">
             <h2 class="sro">À Propos</h2>
-            <?= wp_get_attachment_image(get_field('profil_image'), 'medium', false, [
+            <?= wp_get_attachment_image(get_field('profil_image'), 'large', false, [
                 'class' => 'about__img',
                 'data-animation' => 'show-up',
             ]) ?>
@@ -17,74 +17,25 @@
         <section class="tools" data-animation="show-up">
             <h2 class="tools__title"><span>Mes</span> Outils</h2>
             <ul class="tools__container">
-                <li>
-                    <img width="64" height="64" class="tools__item" src="<?= dw_asset('img/icons/css.svg') ?>" alt="Cascading Style Sheet">
-                </li>
-                <li>
-                    <img width="64" height="64" class="tools__item" src="<?= dw_asset('img/icons/html.svg') ?>"
-                         alt="HyperText Markup Language">
-                </li>
-                <li>
-                    <img width="64" height="64" class="tools__item" src="<?= dw_asset('img/icons/sass.svg') ?>" alt="">
-                </li>
-                <li>
-                    <img width="64" height="64" class="tools__item" src="<?= dw_asset('img/icons/ts.svg') ?>" alt="TypeScript">
-                </li>
-                <li>
-                    <img width="64" height="64" class="tools__item" src="<?= dw_asset('img/icons/js.svg') ?>" alt="JavaScript">
-                </li>
-                <li>
-                    <img width="64" height="64" class="tools__item" src="<?= dw_asset('img/icons/laravel.svg') ?>" alt="Laravel">
-                </li>
-                <li>
-                    <img width="64" height="64" class="tools__item" src="<?= dw_asset('img/icons/php.svg') ?>" alt="Php">
-                </li>
-                <li>
-                    <img width="64" height="64" class="tools__item" src="<?= dw_asset('img/icons/nodejs.svg') ?>" alt="NodeJS">
-                </li>
-                <li>
-                    <img width="64" height="64" class="tools__item" src="<?= dw_asset('img/icons/tailwindcss.svg') ?>" alt="TailwindCSS">
-                </li>
-                <li>
-                    <img width="64" height="64" class="tools__item" src="<?= dw_asset('img/icons/nextjs.svg') ?>" alt="NextJS">
-                </li>
-                <li>
-                    <img width="64" height="64" class="tools__item" src="<?= dw_asset('img/icons/react.svg') ?>" alt="ReactJS">
-                </li>
-                <li>
-                    <img width="64" height="64" class="tools__item" src="<?= dw_asset('img/icons/css.svg') ?>" alt="Cascading Style Sheet">
-                </li>
-                <li>
-                    <img width="64" height="64" class="tools__item" src="<?= dw_asset('img/icons/html.svg') ?>"
-                         alt="HyperText Markup Language">
-                </li>
-                <li>
-                    <img width="64" height="64" class="tools__item" src="<?= dw_asset('img/icons/sass.svg') ?>" alt="">
-                </li>
-                <li>
-                    <img width="64" height="64" class="tools__item" src="<?= dw_asset('img/icons/ts.svg') ?>" alt="TypeScript">
-                </li>
-                <li>
-                    <img width="64" height="64" class="tools__item" src="<?= dw_asset('img/icons/js.svg') ?>" alt="JavaScript">
-                </li>
-                <li>
-                    <img width="64" height="64" class="tools__item" src="<?= dw_asset('img/icons/laravel.svg') ?>" alt="Laravel">
-                </li>
-                <li>
-                    <img width="64" height="64" class="tools__item" src="<?= dw_asset('img/icons/php.svg') ?>" alt="Php">
-                </li>
-                <li>
-                    <img width="64" height="64" class="tools__item" src="<?= dw_asset('img/icons/nodejs.svg') ?>" alt="NodeJS">
-                </li>
-                <li>
-                    <img width="64" height="64" class="tools__item" src="<?= dw_asset('img/icons/tailwindcss.svg') ?>" alt="TailwindCSS">
-                </li>
-                <li>
-                    <img width="64" height="64" class="tools__item" src="<?= dw_asset('img/icons/nextjs.svg') ?>" alt="NextJS">
-                </li>
-                <li>
-                    <img width="64" height="64" class="tools__item" src="<?= dw_asset('img/icons/react.svg') ?>" alt="ReactJS">
-                </li>
+                <?php
+                $skills = new WP_Query([
+                    'post_type' => 'skills',
+                    'post_status' => 'publish',
+                    'orderby' => 'date',
+                    'order' => 'DESC',
+                ]);
+
+                for ($i = 0; $i < 2; $i++): ?>
+
+                    <?php if ($skills->have_posts()): while ($skills->have_posts()): $skills->the_post(); ?>
+                        <li>
+                            <?= wp_get_attachment_image(get_field('tools_image'), 'thumbnail', false, [
+                                'class' => 'tools__item',
+                            ]) ?>
+                        </li>
+                     <?php endwhile; endif; ?>
+                <?php endfor; ?>
+
             </ul>
         </section>
         <div class="bg">

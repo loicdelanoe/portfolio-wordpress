@@ -31,6 +31,6 @@
         </article>
     </div>
 </footer>
-<script type="module" src="<?= dw_asset('js/main.js') ?>"></script>
+<?php wp_footer(); ?>
 </body>
 </html>

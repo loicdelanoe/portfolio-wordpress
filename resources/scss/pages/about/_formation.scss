@@ -33,8 +33,8 @@
     &__container {
       margin-right: auto;
       position: relative;
-      min-width: 280px;
-
+      width: 280px;
+      text-align: right;
 
       &:after {
         position: absolute;
@@ -49,6 +49,7 @@
     &:nth-child(odd) &__container {
       margin-left: auto;
       margin-right: 0;
+      text-align: left;
 
       &:after {
         margin-left: auto;
