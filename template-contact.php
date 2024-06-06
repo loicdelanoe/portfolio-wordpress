@@ -5,12 +5,12 @@ get_header() ?>
     <main id="main">
         <div class="bg">
             <section class="herocontact">
-                <h2 class="herocontact__title" data-animation="show-up"><span>Restons</span> En contact</h2>
+                <h2 class="herocontact__title no-opacity" data-animation="show-up"><span>Restons</span> En contact</h2>
             </section>
         </div>
         <section class="contact">
             <h2 class="sro">Formulaire de contact</h2>
-            <article class="cordcontact" data-animation="show-up">
+            <article class="cordcontact no-opacity" data-animation="show-up">
                 <h2 class="sro">Coordonnées</h2>
                 <p class="cordcontact__content"><?= get_field('contact_text') ?></p>
                 <dl class="cordcontact__container info">
@@ -29,7 +29,7 @@ get_header() ?>
                 <?php if ($feedback) : ?>
                     <p class="field__valid"><?= $feedback ?></p>
                 <?php endif; ?>
-                <div class="field__container" data-animation="show-up">
+                <div class="field__container no-opacity" data-animation="show-up">
                     <label class="field__label" for="lastname">Nom *</label>
                     <input class="field__input" type="text" name="lastname" id="lastname" placeholder="Doe"
                            value="<?= $_SESSION['old']['lastname'] ?? '' ?>">
@@ -37,7 +37,7 @@ get_header() ?>
                         <p class="field__error"><?= $_SESSION['errors']['lastname'] ?></p>
                     <?php endif; ?>
                 </div>
-                <div class="field__container" data-animation="show-up">
+                <div class="field__container no-opacity" data-animation="show-up">
                     <label class="field__label" for="name">Prénom *</label>
                     <input class="field__input" type="text" name="name" id="name" placeholder="John"
                            value="<?= $_SESSION['old']['name'] ?? '' ?>">
@@ -45,7 +45,7 @@ get_header() ?>
                         <p class="field__error"><?= $_SESSION['errors']['name'] ?></p>
                     <?php endif; ?>
                 </div>
-                <div class="field__container" data-animation="show-up">
+                <div class="field__container no-opacity" data-animation="show-up">
                     <label class="field__label" for="email">Email *</label>
                     <input class="field__input" type="email" name="email" id="email" placeholder="john@doe.com"
                            value="<?= $_SESSION['old']['email'] ?? '' ?>">
@@ -53,7 +53,7 @@ get_header() ?>
                         <p class="field__error"><?= $_SESSION['errors']['email'] ?></p>
                     <?php endif; ?>
                 </div>
-                <div class="field__container" data-animation="show-up">
+                <div class="field__container no-opacity" data-animation="show-up">
                     <label class="field__label" for="phone">Téléphone</label>
                     <input class="field__input" type="tel" name="phone" id="phone" placeholder="06 89 78 67 45"
                            value="<?= $_SESSION['old']['phone'] ?? '' ?>">
@@ -61,7 +61,7 @@ get_header() ?>
                         <p class="field__error"><?= $_SESSION['errors']['phone'] ?></p>
                     <?php endif; ?>
                 </div>
-                <div class="field__container field__container--textarea" data-animation="show-up">
+                <div class="field__container field__container--textarea no-opacity" data-animation="show-up">
                     <label class="field__label" for="message">Message *</label>
                     <textarea class="field__textarea" name="message" id="message" cols="30" rows="10"
                               placeholder="J'ai un projet pour vous..."><?= $_SESSION['old']['message'] ?? '' ?></textarea>
@@ -70,7 +70,7 @@ get_header() ?>
                     <?php endif; ?>
                 </div>
                 <input type="hidden" name="action" value="custom_contact_form">
-                <button class="cta field__submit" type="submit" data-animation="show-up">Envoyer</button>
+                <button class="cta field__submit no-opacity" type="submit" data-animation="show-up">Envoyer</button>
                 <?php
                 $_SESSION['errors'] = [];
                 $_SESSION['old'] = [];
