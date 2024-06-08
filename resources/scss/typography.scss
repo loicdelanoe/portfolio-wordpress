@@ -30,6 +30,14 @@
   font-display: auto;
 }
 
+@font-face {
+  font-family: 'icomoon';
+  src: url('../fonts/icomoon.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
 body {
   font-family: "Poppins", "Roboto", Arial, sans-serif;
 }

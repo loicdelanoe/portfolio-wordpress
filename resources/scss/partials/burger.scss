@@ -7,6 +7,10 @@ input[id="burger"] {
   cursor: pointer;
   z-index: 11;
 
+  body:has(&:checked) {
+    overflow: hidden;
+  }
+
   &:checked ~ .burger__wrapper {
     position: fixed;
     right: 24px;

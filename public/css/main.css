@@ -94,6 +94,13 @@ table {
   font-style: normal;
   font-display: auto;
 }
+@font-face {
+  font-family: "icomoon";
+  src: url("../fonts/icomoon.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
 body {
   font-family: "Poppins", "Roboto", Arial, sans-serif;
 }
@@ -171,6 +178,7 @@ button {
 
 input, textarea, select {
   border-radius: 0;
+  font-family: inherit;
 }
 
 a.active {
@@ -318,7 +326,6 @@ a.active:after {
   }
 }
 [data-tag=wysiwyg] h2 {
-  font-size: 52px;
   margin-bottom: 0.6em;
 }
 [data-tag=wysiwyg] ul {
@@ -348,10 +355,12 @@ a.active:after {
 [data-tag=wysiwyg] img {
   width: auto;
 }
-[data-tag=wysiwyg] .wp-block-media-text {
-  display: grid;
-}
 
+@media screen and (min-width: 1024px) {
+  [data-tag=wysiwyg] h2 {
+    font-size: 52px;
+  }
+}
 .bg {
   position: relative;
   z-index: 2;
@@ -456,6 +465,9 @@ input[id=burger] {
   cursor: pointer;
   z-index: 11;
 }
+body:has(input[id=burger]:checked) {
+  overflow: hidden;
+}
 input[id=burger]:checked ~ .burger__wrapper {
   position: fixed;
   right: 24px;
@@ -517,8 +529,10 @@ input[id=burger]:checked ~ .burger__wrapper span:nth-child(3) {
   min-height: 1px;
   background-color: #2C231E;
   animation: full-width 1.2s;
+  z-index: 4;
 }
 .nav__branding {
+  z-index: 4;
   font-family: "Kalnia", "Georgia", serif;
   display: flex;
   align-items: center;
@@ -816,7 +830,6 @@ input[id=burger]:checked ~ .burger__wrapper span:nth-child(3) {
   width: 100%;
   max-width: initial;
   position: relative;
-  z-index: 10;
 }
 .color__title {
   margin-bottom: 1em;
@@ -830,10 +843,34 @@ input[id=burger]:checked ~ .burger__wrapper span:nth-child(3) {
   flex-direction: column;
 }
 .color__card {
-  border-top: 0.3px solid #2C231E;
-  border-bottom: 0.3px solid #2C231E;
+  position: relative;
   width: 100%;
   min-height: 3em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+}
+.color__card:hover > p {
+  color: white;
+}
+.color__container {
+  position: absolute;
+  inset: 0;
+  transition: 0.3s;
+}
+.color__container:hover {
+  filter: brightness(50%);
+}
+.color__text {
+  position: relative;
+  z-index: 2;
+  color: transparent;
+  margin-bottom: 0;
+  font-size: 1.1em;
+  font-weight: bold;
+  transition: 0.3s;
+  pointer-events: none;
 }
 
 @media screen and (min-width: 768px) {
@@ -1056,19 +1093,21 @@ input[id=burger]:checked ~ .burger__wrapper span:nth-child(3) {
     position: relative;
     width: 280px;
     text-align: right;
+    padding-left: 3rem;
   }
   .formation__container:after {
     position: absolute;
     content: url("../img/about-left-note.svg");
     width: 100%;
     height: auto;
-    bottom: -3em;
-    right: -9em;
+    bottom: -3rem;
+    right: -4rem;
   }
   .formation:nth-child(odd) .formation__container {
     margin-left: auto;
     margin-right: 0;
     text-align: left;
+    padding-left: 0;
   }
   .formation:nth-child(odd) .formation__container:after {
     margin-left: auto;
@@ -1426,13 +1465,34 @@ input[id=burger]:checked ~ .burger__wrapper span:nth-child(3) {
 }
 .field__error {
   margin-bottom: 1.5em;
-  -webkit-text-fill-color: rgb(255, 0, 0);
+  -webkit-text-fill-color: #BD1208;
   -webkit-opacity: 1;
-  color: rgb(255, 0, 0);
+  color: #BD1208;
+}
+.field__error:before {
+  content: "\ea08";
+  color: #BD1208;
+  margin-right: 0.5em;
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: "icomoon" !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+label[data-type=required]:after {
+  content: " *";
+  color: #BD1208;
 }
 
 @media screen and (min-width: 768px) {
-  .field__container--textarea {
+  .field__container--full {
     grid-column: span 2;
   }
 }

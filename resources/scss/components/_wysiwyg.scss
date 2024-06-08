@@ -1,6 +1,5 @@
 [data-tag="wysiwyg"] {
   h2 {
-    font-size: 52px;
     margin-bottom: 0.6em;
   }
 
@@ -37,8 +36,12 @@
   img {
     width: auto;
   }
+}
 
-  .wp-block-media-text {
-    display: grid;
+@media screen and (min-width: 1024px) {
+  [data-tag="wysiwyg"] {
+    h2 {
+      font-size: 52px;
+    }
   }
 }

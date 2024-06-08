@@ -91,7 +91,7 @@
             </ul>
         </section>
         <section class="talk">
-            <h2 class= data-animation="show-up">Discutons :)</h2>
+            <h2 class="talk__title" data-animation="show-up">Discutons :)</h2>
             <a class="cta" href="<?= home_url('contact') ?>" data-animation="show-up">Contactez-moi</a>
         </section>
     </main>

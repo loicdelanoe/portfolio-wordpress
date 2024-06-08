@@ -34,7 +34,7 @@
                 <?php
                 $colors = explode(',', get_field('colors'));
                 foreach ($colors as $color) {
-                    echo "<li class='color__card' style='background-color: {$color}' data-animation='show-up'></li>";
+                    echo "<li class='color__card' data-animation='show-up'><div class='color__container' style='background-color: {$color}'></div><p class='color__text'>{$color}</p></li>";
                 }; ?>
             </ul>
         </section>
@@ -49,7 +49,6 @@
                      data-tag="wysiwyg"><?= get_field('functionality') ?>
                 </div>
             </section>
-
         </div>
     <?php endwhile; endif; // Fermeture de "The Loop" de Wordpress ?>
 

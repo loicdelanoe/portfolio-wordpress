@@ -35,14 +35,15 @@
       position: relative;
       width: 280px;
       text-align: right;
+      padding-left: 3rem;
 
       &:after {
         position: absolute;
         content: url("../img/about-left-note.svg");
         width: 100%;
         height: auto;
-        bottom: -3em;
-        right: -9em;
+        bottom: -3rem;
+        right: -4rem;
       }
     }
 
@@ -50,6 +51,7 @@
       margin-left: auto;
       margin-right: 0;
       text-align: left;
+      padding-left: 0;
 
       &:after {
         margin-left: auto;

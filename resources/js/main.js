@@ -9,4 +9,6 @@ class Main {
     }
 }
 
-new Main();
+// window.addEventListener("load", () => {
+    /*window.main = */new Main();
+// });

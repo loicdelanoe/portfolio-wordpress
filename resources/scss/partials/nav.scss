@@ -13,9 +13,11 @@
     min-height: 1px;
     background-color: $textColor;
     animation: full-width 1.2s;
+    z-index: 4;
   }
 
   &__branding {
+    z-index: 4;
     font-family: 'Kalnia', "Georgia", serif;
     display: flex;
     align-items: center;

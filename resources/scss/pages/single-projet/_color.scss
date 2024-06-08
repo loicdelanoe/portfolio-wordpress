@@ -4,7 +4,7 @@
   width: 100%;
   max-width: initial;
   position: relative;
-  z-index: 10;
+  //z-index: 10;
 
   &__title {
     margin-bottom: 1em;
@@ -20,10 +20,38 @@
   }
 
   &__card {
-    border-top: .3px solid $textColor;
-    border-bottom: .3px solid $textColor;
+    position: relative;
     width: 100%;
     min-height: 3em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+
+    &:hover > p {
+      color: white;
+    }
+  }
+
+  &__container {
+    position: absolute;
+    inset: 0;
+    transition: .3s;
+
+    &:hover {
+      filter: brightness(50%);
+    }
+  }
+
+  &__text {
+    position: relative;
+    z-index: 2;
+    color: transparent;
+    margin-bottom: 0;
+    font-size: 1.1em;
+    font-weight: bold;
+    transition: .3s;
+    pointer-events: none;
   }
 }
 

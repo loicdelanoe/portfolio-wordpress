@@ -38,16 +38,41 @@
 
   &__error {
     margin-bottom: 1.5em;
-    -webkit-text-fill-color: rgba(255, 0, 0, 1);
+    -webkit-text-fill-color: $red;
     -webkit-opacity: 1;
-    color: rgba(255, 0, 0, 1);
+    color: $red;
+
+    &:before {
+      content: '\ea08 ';
+      color: $red;
+      margin-right: 0.5em;
+      /* use !important to prevent issues with browser extensions that change fonts */
+      font-family: 'icomoon' !important;
+      speak: never;
+      font-style: normal;
+      font-weight: normal;
+      font-variant: normal;
+      text-transform: none;
+      line-height: 1;
+
+      /* Better Font Rendering =========== */
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+  }
+}
+
+label[data-type="required"] {
+  &:after {
+    content: ' *';
+    color: $red;
   }
 }
 
 @media screen and (min-width: 768px) {
   .field {
     &__container {
-      &--textarea {
+      &--full{
         grid-column: span 2;
       }
     }
