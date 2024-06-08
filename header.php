@@ -22,14 +22,6 @@
     <title><?= get_bloginfo('name') ?></title>
 </head>
 <body itemscope itemtype="https://schema.org/Person">
-<noscript>
-    <style>
-        [data-animation="show-up"],
-        [data-animation="slide-left"] {
-            opacity: 1;
-        }
-    </style>
-</noscript>
 <a href="#main" class="skip-link">Aller au contenu</a>
 <header class="header" id="header" role="banner">
     <h1 class="sro"><?= get_the_title() ?></h1>

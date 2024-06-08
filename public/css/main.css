@@ -71,28 +71,28 @@ table {
   src: url("../fonts/Kalnia-Regular.ttf");
   font-weight: normal;
   font-style: normal;
-  font-display: swap;
+  font-display: auto;
 }
 @font-face {
   font-family: "Kalnia";
   src: url("../fonts/Kalnia-SemiBold.ttf");
   font-weight: 600;
   font-style: normal;
-  font-display: swap;
+  font-display: auto;
 }
 @font-face {
   font-family: "Kalnia";
   src: url("../fonts/Kalnia-Light.ttf");
   font-weight: 300;
   font-style: normal;
-  font-display: swap;
+  font-display: auto;
 }
 @font-face {
   font-family: "Poppins";
   src: url("../fonts/Poppins-Regular.ttf");
   font-weight: normal;
   font-style: normal;
-  font-display: swap;
+  font-display: auto;
 }
 body {
   font-family: "Poppins", "Roboto", Arial, sans-serif;

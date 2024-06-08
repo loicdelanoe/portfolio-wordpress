@@ -7,6 +7,18 @@ export class Observer {
         this.slideLeftElements = document.querySelectorAll(`[data-animation="${settings.slideLeftClass}"]`)
         this.slideRightElements = document.querySelectorAll(`[data-animation="${settings.slideLeftClass}"]:nth-child(even)`)
 
+        this.slideLeftElements.forEach((slideLeftElement) => {
+            slideLeftElement.classList.add(settings.NoOpacityClass);
+        });
+
+        this.slideRightElements.forEach((slideRightElement) => {
+            slideRightElement.classList.add(settings.NoOpacityClass);
+        });
+
+        this.showUpElements.forEach((showUpElement) => {
+            showUpElement.classList.add(settings.NoOpacityClass);
+        });
+
         this.showUpObserver = new IntersectionObserver(this.showUpAnimation);
         this.slideLeftObserver = new IntersectionObserver(this.slideLeftAnimation);
         this.slideRightObserver = new IntersectionObserver(this.slideRightAnimation);

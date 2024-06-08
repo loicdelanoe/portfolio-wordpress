@@ -2,7 +2,7 @@
 <main id="main">
     <div class="bg">
         <section class="heroprojets">
-            <h2 class="heroprojets__title no-opacity" data-animation="show-up"><span>Découvrez</span> Mes travaux</h2>
+            <h2 class="heroprojets__title" data-animation="show-up"><span>Découvrez</span> Mes travaux</h2>
         </section>
     </div>
     <section class="projets">
@@ -10,7 +10,7 @@
 
         <div class="project__container">
             <?php if (have_posts()): while (have_posts()): the_post(); // Ouverture de "The Loop" de Wordpress ?>
-                <article class="projetcard no-opacity" data-animation="slide-left">
+                <article class="projetcard" data-animation="slide-left">
                     <a class="projetcard__link" href="<?= get_permalink(); ?>"><span class="sro">
                             Consulter le <?= get_the_title(); ?>
                         </span></a>
@@ -24,7 +24,7 @@
             <?php endwhile; endif; // Fermeture de "The Loop" de Wordpress ?>
         </div>
 
-        <p class="projects__nomore no-opacity" data-animation="show-up">Vous êtes arrivé au bout !</p>
+        <p class="projects__nomore" data-animation="show-up">Vous êtes arrivé au bout !</p>
     </section>
 </main>
 <?php get_footer() ?>
