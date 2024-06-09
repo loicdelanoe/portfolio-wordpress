@@ -1,8 +1,6 @@
 <?php get_header() ?>
 <main id="main">
     <?php if (have_posts()): while (have_posts()): the_post(); // Ouverture de "The Loop" de Wordpress ?>
-
-        <h1 class="sro"><?= get_the_title() ?></h1>
         <div class="bg">
             <section class="herosingle">
                 <div class="" data-animation="slide-left">

@@ -1,5 +1,7 @@
 <?php /* Template Name: "Contact" */ ?>
-<?php use inc\ContactForm;
+<?php
+
+use inc\ContactForm;
 
 get_header() ?>
     <main id="main">
@@ -78,7 +80,7 @@ get_header() ?>
                     <?php endif; ?>
                 </div>
                 <input type="hidden" name="action" value="custom_contact_form">
-                <button class="cta field__submit" type="submit" data-animation="show-up">Envoyer</button>
+                <button class="cta field__submit" type="submit" name="submit" data-animation="show-up">Envoyer</button>
                 <?php
                 $_SESSION['errors'] = [];
                 $_SESSION['old'] = [];
