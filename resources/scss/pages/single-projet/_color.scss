@@ -27,31 +27,46 @@
     justify-content: center;
     align-items: center;
     padding: 2rem;
+    cursor: pointer;
+    color: transparent;
 
-    &:hover > p {
+    &:after {
+      position: absolute;
+      content: 'Copié';
+      opacity: 0;
       color: white;
+      top: -1.4rem;
+      visibility: hidden;
     }
-  }
 
-  &__container {
-    position: absolute;
-    inset: 0;
-    transition: .3s;
+    &:before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: transparent;
+      transition: .3s;
+    }
 
-    &:hover {
-      filter: brightness(50%);
+    &:hover:before {
+      background-color: rgba(0, 0, 0, 0.5);
+    }
+
+    &:hover > .color__text {
+      opacity: 1;
+      visibility: visible;
     }
   }
 
   &__text {
     position: relative;
     z-index: 2;
-    color: transparent;
+    color: white;
     margin-bottom: 0;
     font-size: 1.1em;
     font-weight: bold;
+    opacity: 0;
+    visibility: hidden;
     transition: .3s;
-    pointer-events: none;
   }
 }
 

@@ -32,7 +32,7 @@
                 <?php
                 $colors = explode(',', get_field('colors'));
                 foreach ($colors as $color) {
-                    echo "<li class='color__card' data-animation='show-up'><div class='color__container' style='background-color: {$color}'></div><p class='color__text'>{$color}</p></li>";
+                    echo "<li class='color__card' data-animation='show-up' data-clipboard='{$color}' style='background-color: {$color}'><span class='color__text'>{$color}</span></li>";
                 }; ?>
             </ul>
         </section>

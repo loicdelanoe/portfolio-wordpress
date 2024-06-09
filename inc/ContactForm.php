@@ -2,6 +2,10 @@
 
 namespace inc;
 
+if (!session_id()) {
+    session_start();
+}
+
 class ContactForm
 {
     public function __construct($data)
@@ -24,9 +28,8 @@ class ContactForm
         if (count($_SESSION['errors']) > 0) {
             $_SESSION['old'] = $data;
         } else {
-            self::sendMail($data);
-
             $_SESSION['feedback'] = "Merci&nbsp;! Votre message a bien été envoyé :)";
+            self::sendMail($data);
         }
 
         wp_redirect(wp_get_referer());

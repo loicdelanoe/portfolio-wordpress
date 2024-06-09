@@ -15,7 +15,7 @@
 
   &__title {
     display: flex;
-    font-size: 1.7em;
+    font-size: 1.2em;
     text-transform: uppercase;
     font-family: "Kalnia", "Georgia", serif;
     font-weight: 600;
@@ -49,6 +49,10 @@
 
     &__two:nth-child(odd) {
       margin-top: 0;
+    }
+
+    &__title {
+      font-size: 1.7em;
     }
   }
 }

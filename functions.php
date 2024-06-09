@@ -1,9 +1,5 @@
 <?php
 
-if (!session_id()) {
-    session_start();
-}
-
 require_once(get_template_directory() . '/inc/clean-header.php');
 require_once(get_template_directory() . '/inc/ContactForm.php');
 require_once(get_template_directory() . '/inc/custom-post.php');
