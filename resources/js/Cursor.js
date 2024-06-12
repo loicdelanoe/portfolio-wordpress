@@ -6,13 +6,8 @@ export class Cursor {
         this.cursor = document.querySelector('.cursor');
         this.projectLinks = document.querySelectorAll('.projetcard__link');
 
-
-        this.projectLinks.forEach((link) => {
-            this.removePointer(link);
-        });
-
         this.handleMouseMove();
-        this.AddCursorStyle();
+        this.AddCursorStyle(this.projectLinks, 'link');
     }
 
     handleMouseMove() {
@@ -22,14 +17,16 @@ export class Cursor {
         })
     }
 
-    AddCursorStyle() {
-        this.projectLinks.forEach((link) => {
-            link.addEventListener('mouseover', () => {
-                this.cursor.classList.add('link');
+    AddCursorStyle(array, cssClass) {
+        array.forEach((element) => {
+            this.removePointer(element);
+
+            element.addEventListener('mouseover', () => {
+                this.cursor.classList.add(cssClass);
             });
 
-            link.addEventListener('mouseleave', () => {
-                this.cursor.classList.remove('link');
+            element.addEventListener('mouseleave', () => {
+                this.cursor.classList.remove(cssClass);
             });
         })
     }

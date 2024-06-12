@@ -38,11 +38,12 @@
         </section>
         <div class="bg">
             <section class="overview">
-                <div class="overview__container" data-animation="show-up">
+                <a class="overview__container" data-animation="show-up"
+                   href="<?= wp_get_attachment_image_url(get_field('overview_image'), 'full') ?>">
                     <?= wp_get_attachment_image(get_field('overview_image'), 'large', false, [
                         'class' => 'overview__img',
                     ]) ?>
-                </div>
+                </a>
                 <div class="functionality__content" data-animation="show-up"
                      data-tag="wysiwyg"><?= get_field('functionality') ?>
                 </div>
