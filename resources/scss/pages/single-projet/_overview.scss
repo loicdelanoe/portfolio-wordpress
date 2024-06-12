@@ -5,6 +5,11 @@
   &__container {
     width: 100%;
     margin-bottom: 2.5em;
+    transition: .3s;
+
+    &:hover {
+      filter: brightness(70%);
+    }
   }
 
   &__img {
@@ -15,6 +20,8 @@
 
   &__link {
     width: 100%;
+
+
   }
 }
 

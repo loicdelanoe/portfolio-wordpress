@@ -30,8 +30,8 @@
                 if ($projets->have_posts()): while ($projets->have_posts()): $projets->the_post();
                     ?>
                     <article class="projetcard" data-animation="slide-left">
-                        <a class="projetcard__link" href="<?= get_permalink(); ?>"><span class="sro">
-                            Consulter le <?= get_the_title(); ?>
+                        <a class="projetcard__link" href="<?= get_permalink(); ?>" title="Consulter <?= get_the_title(); ?>"><span class="sro">
+                            Consulter <?= get_the_title(); ?>
                         </span></a>
                         <div class="projetcard__container" itemprop="workExample">
                             <?= wp_get_attachment_image(get_field('resume_image'), 'project_thumbnail', false, [

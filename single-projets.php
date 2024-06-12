@@ -39,7 +39,8 @@
         <div class="bg">
             <section class="overview">
                 <a class="overview__container" data-animation="show-up"
-                   href="<?= wp_get_attachment_image_url(get_field('overview_image'), 'full') ?>">
+                   href="<?= wp_get_attachment_image_url(get_field('overview_image'), 'full') ?>" title="Voir l'image">
+                    <span class="sro">Voir l'image</span>
                     <?= wp_get_attachment_image(get_field('overview_image'), 'large', false, [
                         'class' => 'overview__img',
                     ]) ?>
@@ -67,8 +68,8 @@
             if ($projects->have_posts()): while ($projects->have_posts()): $projects->the_post(); ?>
 
                 <article class="projetcard projetcard__two" data-animation="slide-left">
-                    <a class="projetcard__link" href="<?= get_permalink(); ?>"><span class="sro">
-                            Consulter le <?= get_the_title(); ?>
+                    <a class="projetcard__link" href="<?= get_permalink(); ?>" title="Consulter <?= get_the_title(); ?>"><span class="sro">
+                            Consulter <?= get_the_title(); ?>
                         </span></a>
                     <div class="projetcard__container">
                         <?= wp_get_attachment_image(get_field('resume_image'), 'project_thumbnail', false, [

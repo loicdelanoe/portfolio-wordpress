@@ -258,6 +258,35 @@ a.active:after {
   background-color: #F0ECE6;
 }
 
+.zoom {
+  border-radius: 50%;
+  width: 50px;
+  line-height: 50px;
+  animation: scaleUp 0.4s;
+  text-align: center;
+}
+.zoom:after {
+  display: inline-block;
+  transform: translate(-15%, -45%);
+  color: #2C231E;
+  content: "\e987";
+  padding: 20px 20px;
+  font-size: 1.4em;
+  border-radius: 50%;
+  background-color: #F0ECE6;
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: "icomoon" !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
 @keyframes scaleUp {
   0% {
     scale: 0;
@@ -911,6 +940,10 @@ input[id=burger]:checked ~ .burger__wrapper span:nth-child(3) {
 .overview__container {
   width: 100%;
   margin-bottom: 2.5em;
+  transition: 0.3s;
+}
+.overview__container:hover {
+  filter: brightness(70%);
 }
 .overview__img {
   border-radius: 8px;
