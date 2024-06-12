@@ -6,9 +6,11 @@ export class Cursor {
         this.cursor = document.querySelector('.cursor');
         this.projectLinks = document.querySelectorAll('.projetcard__link');
         this.images = document.querySelectorAll('.overview__img');
+        this.images = document.querySelectorAll('[data-zoom]');
 
         this.handleMouseMove();
         this.AddCursorStyle(this.projectLinks, 'link');
+        this.AddCursorStyle(this.images, 'zoom');
         this.AddCursorStyle(this.images, 'zoom');
     }
 

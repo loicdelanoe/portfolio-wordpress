@@ -3,6 +3,9 @@ export const settings = {
     NoOpacityClass: 'no-opacity',
     slideLeftClass: "slide-left",
     slideRightClass: "slide-right",
+    regex: {
+        projectsPages: /\/projets\/./
+    },
     feedback: {
         display: [
             {

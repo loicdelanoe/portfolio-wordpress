@@ -39,7 +39,7 @@
         <div class="bg">
             <section class="overview">
                 <a class="overview__container" data-animation="show-up"
-                   href="<?= wp_get_attachment_image_url(get_field('overview_image'), 'full') ?>" title="Voir l'image">
+                   href="<?= wp_get_attachment_image_url(get_field('overview_image'), 'full') ?>" title="Voir l'image" data-zoom>
                     <span class="sro">Voir l'image</span>
                     <?= wp_get_attachment_image(get_field('overview_image'), 'large', false, [
                         'class' => 'overview__img',
@@ -50,6 +50,21 @@
                 </div>
             </section>
         </div>
+        <?php if (get_field('gallery') !== null): ?>
+            <section class="gallery">
+                <h2 class="gallery__title" data-animation="show-up">Galerie</h2>
+                <div class="gallery__container">
+                    <?php foreach (get_field('gallery') as $image): ?>
+                        <a class="gallery__link" href="<?= wp_get_attachment_image_url($image['id'], 'full') ?>" data-zoom>
+                            <?= wp_get_attachment_image($image['id'], 'medium', false, [
+                                'class' => 'gallery__img',
+                                'data-animation' => 'show-up'
+                            ]) ?>
+                        </a>
+                    <?php endforeach; ?>
+                </div>
+            </section>
+        <?php endif; ?>
     <?php endwhile; endif; // Fermeture de "The Loop" de Wordpress ?>
 
     <section class="other">
@@ -68,7 +83,8 @@
             if ($projects->have_posts()): while ($projects->have_posts()): $projects->the_post(); ?>
 
                 <article class="projetcard projetcard__two" data-animation="slide-left">
-                    <a class="projetcard__link" href="<?= get_permalink(); ?>" title="Consulter <?= get_the_title(); ?>"><span class="sro">
+                    <a class="projetcard__link" href="<?= get_permalink(); ?>"
+                       title="Consulter <?= get_the_title(); ?>"><span class="sro">
                             Consulter <?= get_the_title(); ?>
                         </span></a>
                     <div class="projetcard__container">
