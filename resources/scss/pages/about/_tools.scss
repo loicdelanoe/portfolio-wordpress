@@ -3,9 +3,7 @@
   overflow: hidden;
 
   &__title {
-    & span {
-      font-weight: 300;
-    }
+
   }
 
 
@@ -24,6 +22,10 @@
 @media screen and (min-width: 768px) {
   .tools {
     padding: 0 24px 5em 24px;
+
+    &__title {
+      font-size: 1.8em;
+    }
   }
 }
 
@@ -40,8 +42,4 @@
   to {
     transform: translateX(calc(-128px * 10));
   }
-}
-
-@media screen and (max-width: 1024px){
-
 }

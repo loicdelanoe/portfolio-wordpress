@@ -1,5 +1,6 @@
 <?php /* Template Name: "À Propos" */ ?>
 <?php get_header() ?>
+
     <main id="main">
         <div class="bg">
             <section class="heroabout">
@@ -15,7 +16,7 @@
             <div class="about__content" data-tag="wysiwyg" data-animation="show-up"><?= get_field('about_text') ?></div>
         </section>
         <section class="tools" data-animation="show-up">
-            <h2 class="tools__title"><span>Mes</span> Outils</h2>
+            <h2 class="tools__title">Mes Outils</h2>
             <ul class="tools__container">
                 <?php
                 $skills = new WP_Query([
@@ -29,7 +30,7 @@
 
                     <?php if ($skills->have_posts()): while ($skills->have_posts()): $skills->the_post(); ?>
                         <li>
-                            <?= wp_get_attachment_image(get_field('tools_image'), 'thumbnail', false, [
+                            <?= wp_get_attachment_image(get_field('tools_image'), 'thumbnail', true, [
                                 'class' => 'tools__item',
                             ]) ?>
                         </li>

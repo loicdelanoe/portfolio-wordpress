@@ -11,8 +11,8 @@ remove_action('wp_head', 'wlwmanifest_link'); // remove wlwmanifest.xml (needed 
 
 remove_action('wp_head', 'start_post_rel_link', 10, 0); // remove random post link
 remove_action('wp_head', 'parent_post_rel_link', 10, 0); // remove parent post link
-//remove_action('wp_head', 'adjacent_posts_rel_link', 10, 0); // remove the next and previous post links
-//remove_action('wp_head', 'adjacent_posts_rel_link_wp_head', 10, 0 );
+remove_action('wp_head', 'adjacent_posts_rel_link', 10, 0); // remove the next and previous post links
+remove_action('wp_head', 'adjacent_posts_rel_link_wp_head', 10, 0 );
 
 remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
 remove_action( 'wp_print_styles', 'print_emoji_styles' );
