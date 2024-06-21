@@ -39,7 +39,8 @@
         <div class="bg">
             <section class="overview">
                 <a class="overview__container" data-animation="show-up"
-                   href="<?= wp_get_attachment_image_url(get_field('overview_image'), 'full') ?>" title="Voir l'image" data-zoom>
+                   href="<?= wp_get_attachment_image_url(get_field('overview_image'), 'full') ?>" title="Voir l'image"
+                   data-zoom>
                     <span class="sro">Voir l'image</span>
                     <?= wp_get_attachment_image(get_field('overview_image'), 'large', false, [
                         'class' => 'overview__img',
@@ -55,7 +56,8 @@
                 <h2 class="gallery__title" data-animation="show-up">Galerie</h2>
                 <div class="gallery__container">
                     <?php foreach (get_field('gallery') as $image): ?>
-                        <a class="gallery__link" href="<?= wp_get_attachment_image_url($image['id'], 'full') ?>" data-zoom>
+                        <a class="gallery__link" href="<?= wp_get_attachment_image_url($image['id'], 'full') ?>"
+                           data-zoom>
                             <?= wp_get_attachment_image($image['id'], 'medium', false, [
                                 'class' => 'gallery__img',
                                 'data-animation' => 'show-up'
@@ -65,6 +67,22 @@
                 </div>
             </section>
         <?php endif; ?>
+        <section class="herosingle herosingle--bottom">
+            <div class="" data-animation="slide-left">
+                <a class="herosingle__back" href="<?= home_url('projets') ?>" title="Retour aux projets">←
+                    Retour aux projets</a>
+                <h2 class="herosingle__title"><?= get_the_title() ?></h2>
+            </div>
+            <div class="herosingle__container" data-animation="slide-left">
+                <a class="cta" href="<?= get_field('github_link') ?>" data-variant="secondary"
+                   target="_blank">Github</a>
+                <?php if (!get_field('site_link')): ?>
+                    <a class="cta" href="#" data-variant="disabled" aria-disabled="true">Site indisponible</a>
+                <?php else: ?>
+                    <a class="cta" href="<?= get_field('site_link') ?>" target="_blank">Visiter le site</a>
+                <?php endif; ?>
+            </div>
+        </section>
     <?php endwhile; endif; // Fermeture de "The Loop" de Wordpress ?>
 
     <section class="other">

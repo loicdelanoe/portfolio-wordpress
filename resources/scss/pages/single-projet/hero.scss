@@ -3,6 +3,10 @@
   flex-direction: column;
   padding: 81px 24px 2em 24px;
 
+  &--bottom {
+    padding-top: 4em;
+  }
+
   &__back {
     font-family: "Kalnia", "Georgia", serif;
     font-size: .9em;
@@ -36,6 +40,11 @@
   &__container {
     display: flex;
     gap: 15px;
+
+    &--center {
+      grid-column: span 2;
+      justify-content: center;
+    }
   }
 }
 
@@ -44,5 +53,10 @@
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
+
+    &--bottom {
+      padding-top: 8em;
+
+    }
   }
 }
