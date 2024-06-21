@@ -9,11 +9,11 @@
                     <h2 class="herosingle__title"><?= get_the_title() ?></h2>
                 </div>
                 <div class="herosingle__container" data-animation="slide-left">
-                    <a class="cta" href="<?= get_field('github_link') ?>" data-variant="secondary">Github</a>
+                    <a class="cta" href="<?= get_field('github_link') ?>" data-variant="secondary" target="_blank">Github</a>
                     <?php if (!get_field('site_link')): ?>
                         <a class="cta" href="#" data-variant="disabled" aria-disabled="true">Site indisponible</a>
                     <?php else: ?>
-                        <a class="cta" href="<?= get_field('site_link') ?>">Visiter le site</a>
+                        <a class="cta" href="<?= get_field('site_link') ?>" target="_blank">Visiter le site</a>
                     <?php endif; ?>
                 </div>
             </section>

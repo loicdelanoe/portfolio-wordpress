@@ -14,6 +14,7 @@
   0% {
     opacity: 0;
     transform: translateY(25px);
+    transition: ease-in;
   }
   100% {
     opacity: 1;
@@ -25,6 +26,7 @@
   0% {
     opacity: 0;
     width: 0;
+    transition: ease-in;
   }
   100% {
     opacity: 1;
@@ -40,6 +42,7 @@
   0% {
     opacity: 0;
     transform: translateX(-50px);
+    transition: ease-in;
   }
   100% {
     opacity: 1;
@@ -55,6 +58,7 @@
   0% {
     opacity: 0;
     transform: translateX(50px);
+    transition: ease-in;
   }
   100% {
     opacity: 1;

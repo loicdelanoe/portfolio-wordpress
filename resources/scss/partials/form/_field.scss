@@ -60,6 +60,18 @@
       -moz-osx-font-smoothing: grayscale;
     }
   }
+
+  &__required {
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid $textColor;
+    margin-bottom: 1.5em;
+  }
+
+  &__text {
+    &--red {
+      color: $red;
+    }
+  }
 }
 
 label[data-type="required"] {

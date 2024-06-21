@@ -48,7 +48,7 @@
                         'post_type' => 'formations',
                         'post_status' => 'publish',
                         'orderby' => 'date',
-                        'order' => 'ASC',
+                        'order' => 'DESC',
                     ]);
 
                     if ($formations->have_posts()): while ($formations->have_posts()): $formations->the_post();

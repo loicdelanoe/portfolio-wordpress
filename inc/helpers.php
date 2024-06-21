@@ -79,3 +79,12 @@ function dw_og_page_title(): void
 
 // Remove prefix from archive title
 add_filter( 'get_the_archive_title_prefix', '__return_empty_string' );
+
+// Remove JQuery migrate if not needed (console log ouput fix)
+add_action('wp_default_scripts', function ($scripts) {
+    if (!empty($scripts->registered['jquery'])) {
+        $scripts->registered['jquery']->deps = array_diff($scripts->registered['jquery']->deps, ['jquery-migrate']);
+    }
+});
+
+add_image_size('project_thumbnail', 560, 560);
