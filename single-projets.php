@@ -4,16 +4,16 @@
         <div class="bg">
             <section class="herosingle">
                 <div class="" data-animation="slide-left">
-                    <a class="herosingle__back" href="<?= home_url('projets') ?>" title="Retour aux projets">←
-                        Retour aux projets</a>
+                    <a class="herosingle__back" href="<?= get_post_type_archive_link('projets') ?>" title="Retour aux projets">←
+                        <?= pll_e('Retour aux projets') ?></a>
                     <h2 class="herosingle__title"><?= get_the_title() ?></h2>
                 </div>
                 <div class="herosingle__container" data-animation="slide-left">
                     <a class="cta" href="<?= get_field('github_link') ?>" data-variant="secondary" target="_blank">Github</a>
                     <?php if (!get_field('site_link')): ?>
-                        <a class="cta" href="#" data-variant="disabled" aria-disabled="true">Site indisponible</a>
+                        <a class="cta" href="#" data-variant="disabled" aria-disabled="true"><?= pll_e("Site indisponible") ?></a>
                     <?php else: ?>
-                        <a class="cta" href="<?= get_field('site_link') ?>" target="_blank">Visiter le site</a>
+                        <a class="cta" href="<?= get_field('site_link') ?>" target="_blank"><?= pll_e("Visiter le site") ?></a>
                     <?php endif; ?>
                 </div>
             </section>
@@ -27,7 +27,7 @@
             </div>
         </section>
         <section class="color">
-            <h2 class="color__title" data-animation="show-up">Palette de couleurs</h2>
+            <h2 class="color__title" data-animation="show-up"><?= pll_e('Palette de couleurs') ?></h2>
             <ul class="color__list">
                 <?php
                 $colors = explode(',', get_field('colors'));
@@ -53,7 +53,7 @@
         </div>
         <?php if (get_field('gallery') !== null): ?>
             <section class="gallery">
-                <h2 class="gallery__title" data-animation="show-up">Galerie</h2>
+                <h2 class="gallery__title" data-animation="show-up"><?= pll_e("Galerie") ?></h2>
                 <div class="gallery__container">
                     <?php foreach (get_field('gallery') as $image): ?>
                         <a class="gallery__link" href="<?= wp_get_attachment_image_url($image['id'], 'full') ?>"
@@ -69,24 +69,23 @@
         <?php endif; ?>
         <section class="herosingle herosingle--bottom">
             <div class="" data-animation="slide-left">
-                <a class="herosingle__back" href="<?= home_url('projets') ?>" title="Retour aux projets">←
-                    Retour aux projets</a>
+                <a class="herosingle__back" href="<?= get_post_type_archive_link('projets') ?>" title="Retour aux projets">←
+                    <?= pll_e('Retour aux projets') ?></a>
                 <h2 class="herosingle__title"><?= get_the_title() ?></h2>
             </div>
             <div class="herosingle__container" data-animation="slide-left">
-                <a class="cta" href="<?= get_field('github_link') ?>" data-variant="secondary"
-                   target="_blank">Github</a>
+                <a class="cta" href="<?= get_field('github_link') ?>" data-variant="secondary" target="_blank">Github</a>
                 <?php if (!get_field('site_link')): ?>
-                    <a class="cta" href="#" data-variant="disabled" aria-disabled="true">Site indisponible</a>
+                    <a class="cta" href="#" data-variant="disabled" aria-disabled="true"><?= pll_e("Site indisponible") ?></a>
                 <?php else: ?>
-                    <a class="cta" href="<?= get_field('site_link') ?>" target="_blank">Visiter le site</a>
+                    <a class="cta" href="<?= get_field('site_link') ?>" target="_blank"><?= pll_e("Visiter le site") ?></a>
                 <?php endif; ?>
             </div>
         </section>
     <?php endwhile; endif; // Fermeture de "The Loop" de Wordpress ?>
 
     <section class="other">
-        <h3 class="other__title" data-animation="show-up">Mes autres projets</h3>
+        <h3 class="other__title" data-animation="show-up"><?= pll_e("Mes autres projets") ?></h3>
         <div class="project__container project__container--two">
             <?php
             $projects = new WP_Query([
@@ -116,7 +115,7 @@
             <?php endwhile; endif; // Fermeture de "The Loop" de Wordpress ?>
         </div>
         <a class="cta project__cta" href="<?= home_url('projets') ?>" title="Voir tous les projets"
-           data-animation="show-up">Tous mes projets</a>
+           data-animation="show-up"><?= pll_e("Tous mes projets") ?></a>
     </section>
 </main>
 <?php get_footer() ?>

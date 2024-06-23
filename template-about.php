@@ -4,7 +4,7 @@
     <main id="main">
         <div class="bg">
             <section class="heroabout">
-                <h2 class="heroabout__title" data-animation="show-up"><span>À Propos</span> De moi</h2>
+                <h2 class="heroabout__title" data-animation="show-up" data-variant="secondary"><?= strip_tags(get_field('sub_title'), ['strong']) ?></h2>
             </section>
         </div>
         <section class="about">
@@ -16,7 +16,7 @@
             <div class="about__content" data-tag="wysiwyg" data-animation="show-up"><?= get_field('about_text') ?></div>
         </section>
         <section class="tools" data-animation="show-up">
-            <h2 class="tools__title">Mes Outils</h2>
+            <h2 class="tools__title"><?= pll_e('Mes Outils') ?></h2>
             <ul class="tools__container">
                 <?php
                 $skills = new WP_Query([
@@ -35,13 +35,15 @@
                             ]) ?>
                         </li>
                      <?php endwhile; endif; ?>
-                <?php endfor; ?>
+                <?php endfor;
+                wp_reset_postdata();
+                ?>
 
             </ul>
         </section>
         <div class="bg">
             <section class="formations">
-                <h2 class="formations__title" data-animation="show-up"><span>Mes</span> Formations</h2>
+                <h2 class="formations__title" data-animation="show-up" data-variant="secondary"><?= strip_tags(get_field('formation_title'), ['strong']) ?></h2>
                 <ul class="formations__container" data-animation="show-up">
                     <?php
                     $formations = new WP_Query([
@@ -60,40 +62,36 @@
                                 <small><?= get_field('options') ?></small>
                             </div>
                         </li>
-                    <?php endwhile; endif; ?>
+                    <?php endwhile; endif; wp_reset_postdata(); ?>
                 </ul>
             </section>
         </div>
         <section class="approachs">
-            <h2 class="approachs__title" data-animation="show-up"><span>Mon</span>Approche</h2>
+            <h2 class="approachs__title" data-animation="show-up" data-variant="secondary"><?= strip_tags(get_field('approach_title'), ['strong']) ?></h2>
             <ul class="approachs__container">
                 <li class="approachs__item approachs__item--design approach" data-animation="show-up">
                     <div class="approach__container">
-                        <h3 class="approach__title">Design</h3>
-                        <p class="approach__content">Il est important de fournir un design complet et soigné aux clients
-                            afin qu’ils aient une bonne
-                            idée de ce que leur site va donner quand il sera déployé.</p>
+                        <h3 class="approach__title"><?= get_field('first_title') ?></h3>
+                        <div class="approach__content"><?= get_field('first_content') ?></div>
                     </div>
                 </li>
                 <li class="approachs__item approachs__item--dev approach" data-animation="show-up">
                     <div class="approach__container">
-                        <h3 class="approach__title">Développement</h3>
-                        <p class="approach__content">Après le design, le développement est tout aussi important, mais
-                            surtout le respect des normes / conventions des langages (sémantique en HTML).</p>
+                        <h3 class="approach__title"><?= get_field('secondary_title') ?></h3>
+                        <div class="approach__content"><?= get_field('secondary_content') ?></div>
                     </div>
                 </li>
                 <li class="approachs__item approachs__item--access approach" data-animation="show-up">
                     <div class="approach__container">
-                        <h3 class="approach__title">Accessibilité</h3>
-                        <p class="approach__content">L’accessibilité d’un site web est cruciale, en effet n’importe quel
-                            site internet doit être pensé aussi pour les personnes en situation de handicap.</p>
+                        <h3 class="approach__title"><?= get_field('third_title') ?></h3>
+                        <div class="approach__content"><?= get_field('third_content') ?></div>
                     </div>
                 </li>
             </ul>
         </section>
         <section class="talk">
-            <h2 class="talk__title" data-animation="show-up">Discutons :)</h2>
-            <a class="cta" href="<?= home_url('contact') ?>" data-animation="show-up">Contactez-moi</a>
+            <h2 class="talk__title" data-animation="show-up"><?= pll_e('Discutons :)') ?></h2>
+            <a class="cta" href="<?= dw_get_permalink('contact') ?>" data-animation="show-up"><?= pll_e('Contactez-moi') ?></a>
         </section>
     </main>
 <?php get_footer() ?>

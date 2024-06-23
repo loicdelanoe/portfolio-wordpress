@@ -88,3 +88,23 @@ add_action('wp_default_scripts', function ($scripts) {
 });
 
 add_image_size('project_thumbnail', 560, 560);
+
+function dw_get_languages(): array
+{
+    $languages = [];
+
+    $polylangs = pll_the_languages(['echo' => false, 'raw' => true]);
+
+    foreach($polylangs as $code => $polylang) {
+        $lang = new stdClass();
+        $lang->url = $polylang['url'];
+        $lang->current = $polylang['current_lang'];
+        $lang->label = $polylang['name'];
+        $lang->code = $code;
+        $lang->locale = $polylang['locale'];
+
+        $languages[] = $lang;
+    }
+
+    return $languages;
+}

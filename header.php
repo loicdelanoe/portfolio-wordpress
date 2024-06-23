@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="fr">
+<html lang="<?= pll_current_language('locale'); ?>">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
@@ -41,6 +41,12 @@
                     <li class="nav__items"><a href="<?= $link->url ?>" class="nav__link <?= dw_is_active($link->url) ?>"
                                               title="Vers la page <?= $link->label ?>"><?= $link->label ?></a></li>
                 <?php endforeach; ?>
+
+                <li class="nav__languages">
+                    <?php foreach(dw_get_languages() as $lang): ?>
+                        <li><a href="<?= $lang->url; ?>" class="nav__link <?php if($lang->current):?> active<?php endif;?>" hreflang="<?= $lang->locale; ?>" title="<?= $lang->label; ?>"><?= $lang->code; ?></a></li>
+                    <?php endforeach; ?>
+                </li>
             </ul>
         </nav>
     </div>

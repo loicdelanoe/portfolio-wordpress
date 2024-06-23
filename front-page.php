@@ -4,8 +4,8 @@
         <section class="hero">
             <h2 class="hero__title" data-animation="show-up"><span class="light" itemprop="name"><?= get_field('name') ?></span> <span itemprop="jobTitle"><?= get_field('job') ?></span></h2>
             <div class="hero__container" data-animation="show-up">
-                <a class="cta" href="<?= home_url('projets') ?>" title="Vers la page projets">Mes Projets</a>
-                <a class="cta" href="<?= home_url('a-propos') ?>" data-variant="secondary" title="Vers la page à propos">Me Découvrir</a>
+                <a class="cta" href="<?= get_post_type_archive_link('projets') ?>" title="Vers la page projets"><?=  pll_e('Mes projets') ?></a>
+                <a class="cta" href="<?= dw_get_permalink('a-propos') ?>" data-variant="secondary" title="Vers la page à propos"><?= pll_e('Me découvrir') ?></a>
             </div>
             <div class="hero__container--partition partition" data-animation="show-up">
                 <p class="partition__text">Scroll down →</p>
@@ -16,7 +16,7 @@
     <section class="project" itemprop="knowsAbout" itemscope itemtype="https://schema.org/CreativeWork">
         <h2 class="sro">Projets</h2>
         <article class="project__wrapper">
-            <h2 class="project__title" data-animation="show-up"><span>Derniers</span> Projets</h2>
+            <h2 class="project__title" data-animation="show-up" data-variant="secondary"><?= strip_tags(get_field('projects_title'), ['strong']) ?></h2>
             <div class="project__container">
                 <?php
                 $projets = new WP_Query([
@@ -42,7 +42,7 @@
                     </article>
                 <?php endwhile; endif; ?>
             </div>
-            <a class="cta project__cta" href="<?= home_url('projets') ?>" data-animation="show-up" title="Vers la page projets">Voir mes projets</a>
+            <a class="cta project__cta" href="<?= get_post_type_archive_link('projets') ?>" data-animation="show-up" title="Vers la page projets"><?= pll_e('Voir mes projets') ?></a>
         </article>
     </section>
 </main>

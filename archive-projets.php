@@ -2,7 +2,7 @@
 <main id="main">
     <div class="bg">
         <section class="heroprojets">
-            <h2 class="heroprojets__title" data-animation="show-up"><span>Découvrez</span> Mes travaux</h2>
+            <h2 class="heroprojets__title" data-animation="show-up" data-variant="secondary"><?= strip_tags(get_field('sub_title', 'options'), ['strong']) ?></h2>
         </section>
     </div>
     <section class="projets">
@@ -24,7 +24,7 @@
             <?php endwhile; endif; // Fermeture de "The Loop" de Wordpress ?>
         </div>
 
-        <p class="projects__nomore" data-animation="show-up">Vous êtes arrivé au bout !</p>
+        <p class="projects__nomore" data-animation="show-up"><?= pll_e('Vous êtes arrivé au bout !') ?></p>
     </section>
 </main>
 <?php get_footer() ?>
