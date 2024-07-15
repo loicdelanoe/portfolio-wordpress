@@ -54,6 +54,10 @@
     align-items: center;
     justify-content: space-between;
 
+    &__title--container {
+      max-width: 45rem;
+    }
+
     &--bottom {
       padding-top: 8em;
 

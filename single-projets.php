@@ -3,7 +3,7 @@
     <?php if (have_posts()): while (have_posts()): the_post(); // Ouverture de "The Loop" de Wordpress ?>
         <div class="bg">
             <section class="herosingle">
-                <div class="" data-animation="slide-left">
+                <div class="herosingle__title--container" data-animation="slide-left">
                     <a class="herosingle__back" href="<?= get_post_type_archive_link('projets') ?>" title="Retour aux projets">←
                         <?= pll_e('Retour aux projets') ?></a>
                     <h2 class="herosingle__title"><?= get_the_title() ?></h2>
@@ -68,7 +68,7 @@
             </section>
         <?php endif; ?>
         <section class="herosingle herosingle--bottom">
-            <div class="" data-animation="slide-left">
+            <div class="herosingle__title--container" data-animation="slide-left">
                 <a class="herosingle__back" href="<?= get_post_type_archive_link('projets') ?>" title="Retour aux projets">←
                     <?= pll_e('Retour aux projets') ?></a>
                 <h2 class="herosingle__title"><?= get_the_title() ?></h2>
@@ -114,7 +114,7 @@
 
             <?php endwhile; endif; // Fermeture de "The Loop" de Wordpress ?>
         </div>
-        <a class="cta project__cta" href="<?= home_url('projets') ?>" title="Voir tous les projets"
+        <a class="cta project__cta" href="<?= get_post_type_archive_link('projets') ?>" title="Voir tous les projets"
            data-animation="show-up"><?= pll_e("Tous mes projets") ?></a>
     </section>
 </main>
