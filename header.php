@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="<?= pll_current_language('locale'); ?>">
+<html lang="<?= str_replace('_', '-', pll_current_language('locale')); ?>">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
@@ -8,7 +8,7 @@
     <meta name="author" content="Loïc Delanoë">
     <meta name="title" content="Loïc D.">
     <meta name="keywords"
-          content="Portfolio, Loïc Delanoë, développeur web, développeur, front-end, back-end, full-stack, HEPL, étudiant">
+          content="Portfolio, Loïc Delanoë, développeur web, graphiste, développeur, front-end, back-end, full-stack, HEPL, étudiant, Loir-et-cher, Vendôme, Blois, freelance">
     <meta name="description" content="<?= get_bloginfo('description') ?>">
     <!-- Open Graph -->
     <meta property="og:locale" content="fr_FR">
@@ -42,11 +42,11 @@
                                               title="Vers la page <?= $link->label ?>"><?= $link->label ?></a></li>
                 <?php endforeach; ?>
 
-                <li class="nav__languages">
-                    <?php foreach(dw_get_languages() as $lang): ?>
-                        <li><a href="<?= $lang->url; ?>" class="nav__link <?php if($lang->current):?> active<?php endif;?>" hreflang="<?= $lang->locale; ?>" title="<?= $lang->label; ?>"><?= $lang->code; ?></a></li>
-                    <?php endforeach; ?>
-                </li>
+                <?php foreach (dw_get_languages() as $lang): ?>
+                    <li><a href="<?= $lang->url; ?>"
+                           class="nav__link nav__language <?php if ($lang->current): ?> active sro<?php endif; ?>"
+                           hreflang="<?= $lang->locale; ?>" title="<?= $lang->label; ?>"><?= $lang->code; ?></a></li>
+                <?php endforeach; ?>
             </ul>
         </nav>
     </div>

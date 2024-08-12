@@ -76,6 +76,10 @@
       padding: 0.2em 0;
     }
   }
+
+  &__language {
+    text-transform: uppercase;
+  }
 }
 
 @media screen and (min-width: 1024px) {

@@ -23,6 +23,7 @@ class ContactForm
             "phone" => [],
             "subject" => ['required'],
             "message" => ['required'],
+            "g-recaptcha-response" => ['recaptcha'],
         ];
 
         self::validate($data, $rules);
@@ -64,7 +65,7 @@ class ContactForm
     private static function required(string $key, array $data): bool
     {
         if (empty($data[$key])) {
-            $_SESSION['errors'][$key] = pll__("Ce champ est requis", 'dw');
+            $_SESSION['errors'][$key] = pll__("Ce champ est requis");
             return false;
         }
 
@@ -88,5 +89,27 @@ class ContactForm
         $subject = $data['subject'];
 
         wp_mail(get_bloginfo('admin_email'), $subject, $data['message'], $headers);
+    }
+
+    private static function recaptcha(string $key, array $data)
+    {
+        $secret_key = '6LchZCQqAAAAAIvctA_-YSlhZK9ZlPKAFiw9pumk';
+
+        $response = wp_remote_post("https://www.google.com/recaptcha/api/siteverify", [
+            'body' => [
+                'secret' => $secret_key,
+                'response' => $data[$key],
+            ]
+        ]);
+
+        $response_body = wp_remote_retrieve_body($response);
+        $result = json_decode($response_body, true);
+
+        if (!$result['success']) {
+            $_SESSION['errors'][$key] = pll__("La vérification reCAPTCHA a échoué. Veuillez réessayer.");
+            return false;
+        }
+
+        return true;
     }
 }

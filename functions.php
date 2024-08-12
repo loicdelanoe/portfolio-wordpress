@@ -21,3 +21,12 @@ register_nav_menu('main', 'Navigation principale, en-tête du site');
 register_nav_menu('footer', 'Navigation de pied de page');
 
 require_once(get_template_directory() . '/inc/ContactForm.php');
+
+function load_recaptcha(): void
+{
+    wp_enqueue_script('recaptcha', 'https://www.google.com/recaptcha/api.js', [], false, [
+        'strategy' => 'defer'
+    ]);
+}
+
+add_action('wp_enqueue_scripts', 'load_recaptcha');

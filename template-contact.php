@@ -85,6 +85,13 @@ get_header() ?>
                             <p class="field__error"><?= $_SESSION['errors']['message'] ?></p>
                         <?php endif; ?>
                     </div>
+                    <div class="field__container field__container--full" data-animation="show-up">
+                        <div class="g-recaptcha field__label" data-sitekey="6LchZCQqAAAAAGVp4aVrkUJDSWi_1dA162Jnb2Rz">
+                        </div>
+                        <?php if ($_SESSION['errors']['g-recaptcha-response'] ?? null): ?>
+                            <p class="field__error"><?= $_SESSION['errors']['g-recaptcha-response'] ?></p>
+                        <?php endif; ?>
+                    </div>
                     <input type="hidden" name="action" value="custom_contact_form">
                     <input type="hidden" name="lang" value="<?= pll_current_language('locale'); ?>">
                     <button class="cta field__submit" type="submit" name="submit"
