@@ -6,16 +6,26 @@
           content="width=device-width, initial-scale=1.0, maximum-scale=2.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="author" content="Loïc Delanoë">
-    <meta name="title" content="Loïc D.">
     <meta name="keywords"
           content="Portfolio, Loïc Delanoë, développeur web, graphiste, développeur, front-end, back-end, full-stack, HEPL, étudiant, Loir-et-cher, Vendôme, Blois, freelance">
     <meta name="description" content="<?= get_bloginfo('description') ?>">
+    <!-- Profil details -->
+    <meta property="profile:first_name" content="Loïc">
+    <meta property="profile:last_name" content="Delanoë">
     <!-- Open Graph -->
     <meta property="og:locale" content="fr_FR">
     <meta property="og:type" content="website">
     <meta property="og:title" content="<?php dw_og_page_title() ?>">
+    <meta property="og:description" content="<?= get_bloginfo('description') ?>">
+    <meta property="og:image" content="https://loicdelanoe.com/wp-content/uploads/2024/05/my-logo.png">
     <meta property="og:url" content="<?= home_url($_SERVER['REQUEST_URI']) ?>">
     <meta property="og:site_name" content="<?= get_bloginfo('name') ?>">
+    <!-- Twitter card-->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Loïc Delanoë | Webmaster et Graphiste">
+    <meta name="twitter:description" content="<?= get_bloginfo('description') ?>">
+    <meta name="twitter:image" content="https://loicdelanoe.com/wp-content/uploads/2024/05/my-logo.png">
+    <meta name="twitter:site" content="@loic_del41">
     <!-- Wordpress head -->
     <?php wp_head() ?>
     <!-- Title -->

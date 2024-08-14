@@ -83,12 +83,11 @@ class ContactForm
 
     private static function sendMail(array $data): void
     {
-        $headers[] = "From {$data['name']} {$data['lastname']}: {$data['email']}";
-        $headers[] = "Reply-To: {$data['email']}";
+        $headers = [
+            "Content-Type: text/html; charset=UTF-8",
+        ];
 
-        $subject = $data['subject'];
-
-        wp_mail(get_bloginfo('admin_email'), $subject, $data['message'], $headers);
+        wp_mail(get_bloginfo('admin_email'), $data['subject'], get_email_template($data), $headers);
     }
 
     private static function recaptcha(string $key, array $data)

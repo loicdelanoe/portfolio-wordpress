@@ -38,6 +38,7 @@ add_action('init', function () {
         pll_register_string('contact-required-field-text', 'Ce champ est requis', 'Contact form');
         pll_register_string('contact-required-email-text', "L'adresse mail n'est pas valide", 'Contact form');
         pll_register_string('contact-feedback-text', "Merci ! Votre message a bien été envoyé :)", 'Contact form');
+        pll_register_string('contact-recaptcha', "La vérification reCAPTCHA a échoué. Veuillez réessayer.", 'Contact form');
     }
 });
 
