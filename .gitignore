@@ -30,7 +30,7 @@ wp-cli.local.yml
 
 # Node
 node_modules
-package-lock.json
+yarn.lock
 package.json
 vite.config.js
 
