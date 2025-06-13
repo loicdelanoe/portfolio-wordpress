@@ -42,7 +42,7 @@ class PLL_REST_Post extends PLL_REST_Translated_Object {
 	}
 
 	/**
-	 * Filters the query per language according to the 'lang' parameter.
+	 * Filters the query per language according to the 'lang' parameter from the REST request.
 	 *
 	 * @since 2.6.9
 	 *
@@ -58,19 +58,20 @@ class PLL_REST_Post extends PLL_REST_Translated_Object {
 	}
 
 	/**
-	 * Whether or not the given query is filterable by language.
+	 * Tells whether or not the given query is filterable by language.
 	 *
 	 * @since 3.2
 	 *
 	 * @param WP_Query $query The query to check.
-	 * @return boolean
+	 * @return bool True if filterable by language. False if the query is already filtered,
+	 *                   no language has been passed in the request or the post type is not supported.
 	 */
 	protected function can_filter_query( $query ) {
 		$query_post_types           = ! empty( $query->query['post_type'] ) ? (array) $query->query['post_type'] : array( 'post' );
 		$allowed_post_types         = array_keys( $this->content_types );
 		$allowed_queried_post_types = array_intersect( $query_post_types, $allowed_post_types );
 
-		return isset( $this->request['lang'] ) && ! empty( $allowed_queried_post_types );
+		return empty( $query->get( 'lang' ) ) && ! empty( $this->request['lang'] ) && ! empty( $allowed_queried_post_types );
 	}
 
 	/**
@@ -286,7 +287,7 @@ class PLL_REST_Post extends PLL_REST_Translated_Object {
 			 *
 			 * @since 2.6
 			 *
-			 * @param array        $row      Datas in a translations table row
+			 * @param array        $row      Data in a translations table row
 			 * @param int          $id       Source post id.
 			 * @param PLL_Language $language Translation language
 			 */
@@ -301,7 +302,7 @@ class PLL_REST_Post extends PLL_REST_Translated_Object {
 	 *
 	 * @since 3.2
 	 *
-	 * @param int          $id       The id of the existing post to get datas for the translations table element.
+	 * @param int          $id       The id of the existing post to get data for the translations table element.
 	 * @param int          $tr_id    The id of the translated post for the given language if exists.
 	 * @param PLL_Language $language The given language object.
 	 * @return array The translation data of the given language.

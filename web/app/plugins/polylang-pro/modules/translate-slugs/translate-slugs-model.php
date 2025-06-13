@@ -22,7 +22,7 @@ class PLL_Translate_Slugs_Model {
 	public $links_model;
 
 	/**
-	 * Stores the informations on translatable slugs.
+	 * Stores the information on translatable slugs.
 	 *
 	 * @var array
 	 */
@@ -80,8 +80,12 @@ class PLL_Translate_Slugs_Model {
 
 		$this->remove_filters();
 
-		if ( pll_is_plugin_active( POLYLANG_BASENAME ) && get_option( 'polylang' ) ) {
-			$this->prepare_rewrite_rules();
+		if ( pll_is_plugin_active( POLYLANG_BASENAME ) && ! empty( $this->model->options['version'] ) ) {
+			if ( did_action( 'pll_prepare_rewrite_rules' ) ) {
+				$this->prepare_rewrite_rules();
+			} else {
+				add_action( 'pll_prepare_rewrite_rules', array( $this, 'prepare_rewrite_rules' ), 20 ); // After Polylang.
+			}
 		}
 	}
 
@@ -151,7 +155,7 @@ class PLL_Translate_Slugs_Model {
 	}
 
 	/**
-	 * Returns informations on translatable slugs
+	 * Returns information on translatable slugs
 	 * and stores them in a transient
 	 *
 	 * @since 1.9
@@ -536,7 +540,7 @@ class PLL_Translate_Slugs_Model {
 		if ( empty( $translation ) ) {
 			return '';
 		}
-		$translation = esc_url_raw( $translation );
+		$translation = sanitize_url( $translation );
 		$translation = str_replace( 'http://', '', $translation );
 		$translation = trim( $translation, '/' );
 

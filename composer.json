@@ -17,7 +17,12 @@
     }
   ],
   "keywords": [
-    "bedrock", "composer", "roots", "wordpress", "wp", "wp-config"
+    "bedrock",
+    "composer",
+    "roots",
+    "wordpress",
+    "wp",
+    "wp-config"
   ],
   "support": {
     "issues": "https://github.com/roots/bedrock/issues",
@@ -27,7 +32,22 @@
     {
       "type": "composer",
       "url": "https://wpackagist.org",
-      "only": ["wpackagist-plugin/*", "wpackagist-theme/*"]
+      "only": [
+        "wpackagist-plugin/*",
+        "wpackagist-theme/*"
+      ]
+    },
+    {
+      "type": "git",
+      "url": "https://github.com/wordpress-premium/advanced-custom-fields-pro.git"
+    },
+    {
+      "type": "git",
+      "url": "https://github.com/wordpress-premium/polylang-pro"
+    },
+    {
+      "type": "git",
+      "url": "https://github.com/loicdelanoe/clean-header"
     }
   ],
   "require": {
@@ -39,7 +59,14 @@
     "roots/bedrock-disallow-indexing": "^2.0",
     "roots/wordpress": "6.8.1",
     "roots/wp-config": "1.0.0",
-    "wpackagist-theme/twentytwentyfive": "^1.0"
+    "wpackagist-theme/twentytwentyfive": "^1.0",
+    "wordpress-premium/advanced-custom-fields-pro": "dev-main",
+    "wordpress-premium/polylang-pro": "dev-master",
+    "wpackagist-plugin/fancybox-for-wordpress": "^3.3",
+    "wpackagist-plugin/google-sitemap-generator": "^4.1",
+    "wpackagist-plugin/navz-photo-gallery": "^3.0",
+    "wpackagist-plugin/acf-options-for-polylang": "^1.1",
+    "loicdelanoe/clean-header": "dev-main"
   },
   "require-dev": {
     "roave/security-advisories": "dev-latest",
@@ -57,9 +84,15 @@
   "prefer-stable": true,
   "extra": {
     "installer-paths": {
-      "web/app/mu-plugins/{$name}/": ["type:wordpress-muplugin"],
-      "web/app/plugins/{$name}/": ["type:wordpress-plugin"],
-      "web/app/themes/{$name}/": ["type:wordpress-theme"]
+      "web/app/mu-plugins/{$name}/": [
+        "type:wordpress-muplugin"
+      ],
+      "web/app/plugins/{$name}/": [
+        "type:wordpress-plugin"
+      ],
+      "web/app/themes/{$name}/": [
+        "type:wordpress-theme"
+      ]
     },
     "wordpress-install-dir": "web/wp"
   },
