@@ -71,46 +71,96 @@ stderr_logfile=/var/log/worker-phpfpm.log
 '''
 
 "nginx.conf" = '''
-worker_processes 1;
+user www-data www-data;
+worker_processes 5;
 daemon off;
 
+worker_rlimit_nofile 8192;
+
 events {
-  worker_connections 1024;
+  worker_connections  4096;  # Default: 1024
 }
 
 http {
-  include       /etc/nginx/mime.types;
-  default_type  application/octet-stream;
-  sendfile        on;
-  keepalive_timeout  65;
+    include    $!{nginx}/conf/mime.types;
+    index    index.html index.htm index.php;
 
-  server {
-    listen ${PORT};
-    server_name localhost;
+    default_type application/octet-stream;
+    log_format   main '$remote_addr - $remote_user [$time_local]  $status '
+        '"$request" $body_bytes_sent "$http_referer" '
+        '"$http_user_agent" "$http_x_forwarded_for"';
+    access_log /var/log/nginx-access.log;
+    error_log /var/log/nginx-error.log;
+    sendfile     on;
+    tcp_nopush   on;
+    server_names_hash_bucket_size 128; # this seems to be required for some vhosts
 
-    root /app/web;  # IMPORTANT, dossier public de Bedrock
-    index index.php index.html index.htm;
+    server {
+        listen ${PORT};
+        listen [::]:${PORT};
+        server_name localhost;
 
-    location / {
-      try_files $uri $uri/ /index.php?$args;
+        $if(NIXPACKS_PHP_ROOT_DIR) (
+            root ${NIXPACKS_PHP_ROOT_DIR};
+        ) else (
+            root /app/web;
+        )
+
+        add_header X-Content-Type-Options "nosniff";
+
+        client_max_body_size 35M;
+
+        index index.php;
+
+        charset utf-8;
+
+        $if(IS_LARAVEL) (
+            location / {
+                try_files $uri $uri/ /index.php?$query_string;
+            }
+        ) else ()
+
+        $if(NIXPACKS_PHP_FALLBACK_PATH) (
+          location / {
+            try_files $uri $uri/ ${NIXPACKS_PHP_FALLBACK_PATH}?$query_string;
+          }
+        ) else ()
+
+        location = /favicon.ico { access_log off; log_not_found off; }
+        location = /robots.txt  { access_log off; log_not_found off; }
+
+        $if(IS_LARAVEL) (
+            error_page 404 /index.php;
+        ) else ()
+
+        location ~ \.php$ {
+            fastcgi_pass 127.0.0.1:9000;
+            fastcgi_param SCRIPT_FILENAME $realpath_root$fastcgi_script_name;
+            include $!{nginx}/conf/fastcgi_params;
+            include $!{nginx}/conf/fastcgi.conf;
+
+            fastcgi_param PHP_VALUE "upload_max_filesize=30M \n post_max_size=35M";
+
+            fastcgi_param HTTPS on;
+            fastcgi_param HTTP_X_FORWARDED_PROTO $scheme;
+        }
+
+        location /ssr {
+            proxy_pass http://127.0.0.1:13714;
+            proxy_http_version 1.1;
+            proxy_set_header Upgrade $http_upgrade;
+            proxy_set_header Connection 'upgrade';
+            proxy_set_header Host $host;
+            proxy_cache_bypass $http_upgrade;
+            proxy_set_header X-Real-IP $remote_addr;
+            proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+            proxy_set_header X-Forwarded-Proto $scheme;
+        }
+
+
+        location ~ /\.(?!well-known).* {
+            deny all;
+        }
     }
-
-    location ~ \.php$ {
-      include fastcgi_params;
-      fastcgi_pass 127.0.0.1:9000;
-      fastcgi_index index.php;
-      fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
-      fastcgi_param HTTPS on;
-    }
-
-    # Empêcher l'accès aux dossiers sensibles
-    location ~* /(?:uploads|files)/.*\.php$ {
-      deny all;
-    }
-
-    location ~ /\.ht {
-      deny all;
-    }
-  }
 }
 '''
