@@ -10,8 +10,6 @@ cmds = [
     "...",
     # Change folder permissions for Laravel
     "chown -R www-data:www-data /app",
-    "chown -R www-data:www-data /app/storage",
-    "chown -R www-data:www-data /app/bootstrap/cache",
 ]
 
 [start]
