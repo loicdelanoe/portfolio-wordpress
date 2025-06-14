@@ -2,10 +2,6 @@
 
 namespace inc;
 
-if (!session_id()) {
-    session_start();
-}
-
 class ContactForm
 {
     public function __construct($data)
@@ -98,7 +94,7 @@ class ContactForm
             'body' => [
                 'secret' => $secret_key,
                 'response' => $data[$key],
-            ]
+            ],
         ]);
 
         $response_body = wp_remote_retrieve_body($response);
