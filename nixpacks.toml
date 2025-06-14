@@ -9,6 +9,7 @@ cmds = [
     "cp /assets/worker-phpfpm.conf /etc/supervisor/conf.d/",
     "cp /assets/nginx.conf /etc/nginx.conf",
     "chmod +x /assets/start.sh",
+    "...",
 ]
 
 [start]
