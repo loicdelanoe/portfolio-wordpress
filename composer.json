@@ -47,7 +47,7 @@
     },
     {
       "type": "git",
-      "url": "https://github.com/loicdelanoe/clean-header"
+      "url": "https://github.com/loicdelanoe/clean-header.git"
     }
   ],
   "require": {

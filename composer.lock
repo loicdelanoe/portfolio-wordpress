@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "638115c6789b35b831fec68ba7f9b3bd",
+    "content-hash": "7c9cf52d27f3fdce6195707ec5ba8c04",
     "packages": [
         {
             "name": "composer/installers",
@@ -219,7 +219,7 @@
             "version": "1.0.0",
             "source": {
                 "type": "git",
-                "url": "https://github.com/loicdelanoe/clean-header",
+                "url": "https://github.com/loicdelanoe/clean-header.git",
                 "reference": "e13da503d4e82b2ea885657628d4a948e286559e"
             },
             "require": {
