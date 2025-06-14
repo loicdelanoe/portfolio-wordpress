@@ -43,7 +43,7 @@
     },
     {
       "type": "git",
-      "url": "https://github.com/wordpress-premium/polylang-pro"
+      "url": "https://github.com/wordpress-premium/polylang-pro.git"
     },
     {
       "type": "git",
@@ -60,13 +60,13 @@
     "roots/wordpress": "6.8.1",
     "roots/wp-config": "1.0.0",
     "wpackagist-theme/twentytwentyfive": "^1.0",
-    "wordpress-premium/advanced-custom-fields-pro": "dev-main",
-    "wordpress-premium/polylang-pro": "dev-master",
+    "wordpress-premium/advanced-custom-fields-pro": "6.4.2",
+    "wordpress-premium/polylang-pro": "3.7.1",
     "wpackagist-plugin/fancybox-for-wordpress": "^3.3",
     "wpackagist-plugin/google-sitemap-generator": "^4.1",
     "wpackagist-plugin/navz-photo-gallery": "^3.0",
     "wpackagist-plugin/acf-options-for-polylang": "^1.1",
-    "loicdelanoe/clean-header": "dev-main"
+    "loicdelanoe/clean-header": "1.0.0"
   },
   "require-dev": {
     "roave/security-advisories": "dev-latest",

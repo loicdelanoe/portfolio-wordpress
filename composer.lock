@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "8a9d8b69770ec4e4b3e8e5cbb6c79711",
+    "content-hash": "638115c6789b35b831fec68ba7f9b3bd",
     "packages": [
         {
             "name": "composer/installers",
@@ -216,7 +216,7 @@
         },
         {
             "name": "loicdelanoe/clean-header",
-            "version": "dev-main",
+            "version": "1.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/loicdelanoe/clean-header",
@@ -225,7 +225,6 @@
             "require": {
                 "php": ">=8.0"
             },
-            "default-branch": true,
             "type": "wordpress-plugin",
             "authors": [
                 {
@@ -1061,13 +1060,12 @@
         },
         {
             "name": "wordpress-premium/advanced-custom-fields-pro",
-            "version": "dev-main",
+            "version": "v6.4.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/wordpress-premium/advanced-custom-fields-pro.git",
                 "reference": "adec36a96078161a71f35cd332322a96740ccda7"
             },
-            "default-branch": true,
             "type": "wordpress-plugin",
             "license": [
                 "GPL-2.0-or-later"
@@ -1077,13 +1075,12 @@
         },
         {
             "name": "wordpress-premium/polylang-pro",
-            "version": "dev-master",
+            "version": "v3.7.1",
             "source": {
                 "type": "git",
-                "url": "https://github.com/wordpress-premium/polylang-pro",
+                "url": "https://github.com/wordpress-premium/polylang-pro.git",
                 "reference": "96ce69a24c53a018527959bfb59fdf1eccf091e3"
             },
-            "default-branch": true,
             "type": "wordpress-plugin",
             "license": [
                 "GPL-3.0-or-later"
@@ -2218,10 +2215,7 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
-        "loicdelanoe/clean-header": 20,
-        "roave/security-advisories": 20,
-        "wordpress-premium/advanced-custom-fields-pro": 20,
-        "wordpress-premium/polylang-pro": 20
+        "roave/security-advisories": 20
     },
     "prefer-stable": true,
     "prefer-lowest": false,
