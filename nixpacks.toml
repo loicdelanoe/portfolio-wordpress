@@ -10,6 +10,7 @@ cmds = [
     "...",
     # Change folder permissions for Laravel
     "chown -R www-data:www-data /app",
+    "chown -R www-data:www-data /app/web/app/plugins/polylang-pro",
 ]
 
 [start]
