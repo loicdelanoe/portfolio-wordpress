@@ -17,34 +17,57 @@ cmd = "/assets/start.sh"
 [staticAssets]
 "start.sh" = '''
 #!/bin/bash
-echo "Starting supervisord..."
+
+# Copy the example environment file to .env
+cp /app/.env.example /app/.env
+
+# Start supervisor
 supervisord -c /etc/supervisord.conf -n
 '''
 
 "supervisord.conf" = '''
+[unix_http_server]
+file=/assets/supervisor.sock
+
 [supervisord]
-nodaemon=true
+logfile=/var/log/supervisord.log
+logfile_maxbytes=50MB
+logfile_backups=10
+loglevel=info
+pidfile=/assets/supervisord.pid
+nodaemon=false
+silent=false
+minfds=1024
+minprocs=200
+
+[rpcinterface:supervisor]
+supervisor.rpcinterface_factory = supervisor.rpcinterface:make_main_rpcinterface
+
+[supervisorctl]
+serverurl=unix:///assets/supervisor.sock
 
 [include]
 files = /etc/supervisor/conf.d/*.conf
 '''
 
 "worker-nginx.conf" = '''
-[program:nginx]
+[program:worker-nginx]
+process_name=%(program_name)s_%(process_num)02d
 command=nginx -c /etc/nginx.conf
 autostart=true
 autorestart=true
-stdout_logfile=/var/log/nginx.log
-stderr_logfile=/var/log/nginx.err
+stdout_logfile=/var/log/worker-nginx.log
+stderr_logfile=/var/log/worker-nginx.log
 '''
 
 "worker-phpfpm.conf" = '''
-[program:phpfpm]
-command=php-fpm -F
+[program:worker-phpfpm]
+process_name=%(program_name)s_%(process_num)02d
+command=php-fpm -y /assets/php-fpm.conf -F
 autostart=true
 autorestart=true
-stdout_logfile=/var/log/phpfpm.log
-stderr_logfile=/var/log/phpfpm.err
+stdout_logfile=/var/log/worker-phpfpm.log
+stderr_logfile=/var/log/worker-phpfpm.log
 '''
 
 "nginx.conf" = '''
