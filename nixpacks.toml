@@ -133,24 +133,16 @@ http {
 
         charset utf-8;
 
-        $if(IS_LARAVEL) (
-            location / {
-                try_files $uri $uri/ /index.php?$query_string;
-            }
-        ) else ()
+        location ~* /app/uploads/.*.php$ {
+            deny all;
+        }
 
-        $if(NIXPACKS_PHP_FALLBACK_PATH) (
-          location / {
-            try_files $uri $uri/ ${NIXPACKS_PHP_FALLBACK_PATH}?$query_string;
-          }
-        ) else ()
+        location / {
+            try_files $uri $uri/ /index.php?$args;
+        }
 
         location = /favicon.ico { access_log off; log_not_found off; }
         location = /robots.txt  { access_log off; log_not_found off; }
-
-        $if(IS_LARAVEL) (
-            error_page 404 /index.php;
-        ) else ()
 
         location ~ \.php$ {
             fastcgi_pass 127.0.0.1:9000;
