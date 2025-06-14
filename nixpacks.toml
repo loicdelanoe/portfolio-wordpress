@@ -9,7 +9,6 @@ cmds = [
     "chmod +x /assets/start.sh",
     "...",
     # Change folder permissions for Laravel
-    "chmod -R 775 /app/storage /app/bootstrap/cache",
     "chown -R www-data:www-data /app",
     "chown -R www-data:www-data /app/storage",
     "chown -R www-data:www-data /app/bootstrap/cache",
@@ -77,36 +76,6 @@ stdout_logfile=/var/log/worker-phpfpm.log
 stderr_logfile=/var/log/worker-phpfpm.log
 '''
 
-"worker-laravel.conf" = '''
-[program:worker-laravel]
-process_name=%(program_name)s_%(process_num)02d
-command=bash -c 'sleep 60; exec php /app/artisan queue:work --sleep=3 --tries=3 --max-time=3600'
-autostart=true
-autorestart=true
-stopasgroup=true
-killasgroup=true
-numprocs=8
-startsecs=0
-stopwaitsecs=3600
-stdout_logfile=/var/log/worker-laravel.log
-stderr_logfile=/var/log/worker-laravel.log
-'''
-
-"worker-ssr.conf" = '''
-[program:worker-ssr]
-process_name=%(program_name)s_%(process_num)02d
-directory=/app
-command=node bootstrap/ssr/ssr.js
-autostart=true
-autorestart=true
-stopasgroup=true
-killasgroup=true
-startsecs=0
-stopwaitsecs=3600
-stdout_logfile=/var/log/worker-ssr.log
-stderr_logfile=/var/log/worker-ssr.log
-'''
-
 "php-fpm.conf" = '''
 [www]
 listen = 127.0.0.1:9000
@@ -155,7 +124,7 @@ http {
         $if(NIXPACKS_PHP_ROOT_DIR) (
             root ${NIXPACKS_PHP_ROOT_DIR};
         ) else (
-            root /app;
+            root /app/web;
         )
 
         add_header X-Content-Type-Options "nosniff";
@@ -196,19 +165,6 @@ http {
             fastcgi_param HTTPS on;
             fastcgi_param HTTP_X_FORWARDED_PROTO $scheme;
         }
-
-        location /ssr {
-            proxy_pass http://127.0.0.1:13714;
-            proxy_http_version 1.1;
-            proxy_set_header Upgrade $http_upgrade;
-            proxy_set_header Connection 'upgrade';
-            proxy_set_header Host $host;
-            proxy_cache_bypass $http_upgrade;
-            proxy_set_header X-Real-IP $remote_addr;
-            proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-            proxy_set_header X-Forwarded-Proto $scheme;
-        }
-
 
         location ~ /\.(?!well-known).* {
             deny all;
