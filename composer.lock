@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "21a0b579bb5c43497b301e08f2fee767",
+    "content-hash": "f5a2e17b913f59eb98d5e1f99ef12687",
     "packages": [
         {
             "name": "composer/installers",
@@ -1060,12 +1060,13 @@
         },
         {
             "name": "wordpress-premium/advanced-custom-fields-pro",
-            "version": "v6.4.2",
+            "version": "dev-main",
             "source": {
                 "type": "git",
                 "url": "https://github.com/wordpress-premium/advanced-custom-fields-pro.git",
                 "reference": "adec36a96078161a71f35cd332322a96740ccda7"
             },
+            "default-branch": true,
             "type": "wordpress-plugin",
             "license": [
                 "GPL-2.0-or-later"
@@ -2217,6 +2218,7 @@
     "minimum-stability": "dev",
     "stability-flags": {
         "roave/security-advisories": 20,
+        "wordpress-premium/advanced-custom-fields-pro": 20,
         "wordpress-premium/polylang-pro": 20
     },
     "prefer-stable": true,
