@@ -86,8 +86,8 @@
     "installer-paths": {
       "web/app/mu-plugins/{$name}/": [
         "type:wordpress-muplugin",
-        "wordpress-premium/polylang-pro",
         "wordpress-premium/advanced-custom-fields-pro",
+        "wordpress-premium/polylang-pro",
         "wpackagist-plugin/acf-options-for-polylang"
       ],
       "web/app/plugins/{$name}/": [
