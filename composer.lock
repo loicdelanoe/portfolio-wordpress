@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "97ee4fabffeda38506700c58ea146701",
+    "content-hash": "21a0b579bb5c43497b301e08f2fee767",
     "packages": [
         {
             "name": "composer/installers",
@@ -1075,12 +1075,13 @@
         },
         {
             "name": "wordpress-premium/polylang-pro",
-            "version": "v3.7.1",
+            "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/wordpress-premium/polylang-pro.git",
                 "reference": "96ce69a24c53a018527959bfb59fdf1eccf091e3"
             },
+            "default-branch": true,
             "type": "wordpress-plugin",
             "license": [
                 "GPL-3.0-or-later"
@@ -2215,7 +2216,8 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
-        "roave/security-advisories": 20
+        "roave/security-advisories": 20,
+        "wordpress-premium/polylang-pro": 20
     },
     "prefer-stable": true,
     "prefer-lowest": false,

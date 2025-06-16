@@ -61,7 +61,7 @@
     "roots/wp-config": "1.0.0",
     "wpackagist-theme/twentytwentyfive": "^1.0",
     "wordpress-premium/advanced-custom-fields-pro": "6.4.2",
-    "wordpress-premium/polylang-pro": "3.7.1",
+    "wordpress-premium/polylang-pro": "dev-master",
     "wpackagist-plugin/fancybox-for-wordpress": "^3.3",
     "wpackagist-plugin/google-sitemap-generator": "^4.1",
     "wpackagist-plugin/navz-photo-gallery": "^3.0",
