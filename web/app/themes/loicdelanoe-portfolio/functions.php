@@ -1,8 +1,8 @@
 <?php
 
-if (!session_id()) {
-    session_start();
-}
+// if (!session_id()) {
+//     session_start();
+// }
 
 // Charger les fichiers de traduction :
 load_theme_textdomain('dw', __DIR__ . '/locales');
