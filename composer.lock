@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "f5a2e17b913f59eb98d5e1f99ef12687",
+    "content-hash": "1e5c8639a2d56de19c327b1ffe0ae81a",
     "packages": [
         {
             "name": "composer/installers",
@@ -1076,13 +1076,12 @@
         },
         {
             "name": "wordpress-premium/polylang-pro",
-            "version": "dev-master",
+            "version": "v3.7.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/wordpress-premium/polylang-pro.git",
                 "reference": "96ce69a24c53a018527959bfb59fdf1eccf091e3"
             },
-            "default-branch": true,
             "type": "wordpress-plugin",
             "license": [
                 "GPL-3.0-or-later"
@@ -2218,8 +2217,7 @@
     "minimum-stability": "dev",
     "stability-flags": {
         "roave/security-advisories": 20,
-        "wordpress-premium/advanced-custom-fields-pro": 20,
-        "wordpress-premium/polylang-pro": 20
+        "wordpress-premium/advanced-custom-fields-pro": 20
     },
     "prefer-stable": true,
     "prefer-lowest": false,
